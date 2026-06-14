@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedram Taheri | Fine Art Portfolio</title>
+    <style>
+        /* Modern Dark Theme Style */
+        body { 
+            background-color: #0c0f14; 
+            color: #f1f2f6; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+            border-bottom: 1px solid #1e2430;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+        nav a {
+            color: #a4b0be;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: #f39c12; /* Artistic Gold Highlight */
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #747d8c;
+            line-height: 1.6;
+        }
+        .gallery-section {
+            padding: 0 8% 80px 8%;
+            text-align: center;
+        }
+        .grid-placeholder {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .art-card {
+            background-color: #151a24;
+            border: 1px solid #1e2430;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #57606f;
+            font-size: 14px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .art-card:hover {
+            transform: translateY(-5px);
+            border-color: #f39c12;
+            color: #f39c12;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 13px;
+            color: #57606f;
+            border-top: 1px solid #1e2430;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">PEDRAM TAHERI</div>
+        <nav>
+            <a href="#" class="active">Paintings</a>
+            <!-- This link points to your future subdomain for astronomy -->
+            <a href="https://pedramtaheri.com">Astrophotography</a>
+            <a href="#">About & Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Fine Art & Paintings</h1>
+            <p>Welcome to my visual art portfolio. This space is dedicated to my paintings, focusing on contemporary expressions and visual explorations. Explore the galleries below.</p>
+        </section>
+
+        <section class="gallery-section">
+            <div class="grid-placeholder">
+                <div class="art-card">Artwork Image Placeholder 1</div>
+                <div class="art-card">Artwork Image Placeholder 2</div>
+                <div class="art-card">Artwork Image Placeholder 3</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
