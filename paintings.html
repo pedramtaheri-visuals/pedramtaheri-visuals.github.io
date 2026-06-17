@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paintings | Pedram Taheri</title>
+    <style>
+        /* Modern Minimalist Dark Theme */
+        body { 
+            background-color: #0c0f14; 
+            color: #f1f2f6; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+            border-bottom: 1px solid #1e2430;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        nav a {
+            color: #a4b0be;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: #f39c12; 
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        .hero p {
+            font-size: 16px;
+            color: #747d8c;
+            line-height: 1.6;
+        }
+        .gallery-section {
+            padding: 0 8% 80px 8%;
+        }
+        /* Grid layout for real artworks */
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 45px;
+            margin-top: 20px;
+        }
+        .artwork-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .image-frame {
+            width: 100%;
+            background-color: #151a24;
+            border: 1px solid #1e2430;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .image-frame:hover {
+            border-color: #f39c12;
+        }
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        .image-frame:hover img {
+            transform: scale(1.03);
+        }
+        .artwork-details {
+            margin-top: 18px;
+        }
+        .artwork-details h3 {
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0 0 6px 0;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+        .artwork-details p {
+            font-size: 13px;
+            color: #747d8c;
+            margin: 0;
+            line-height: 1.4;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 13px;
+            color: #57606f;
+            border-top: 1px solid #1e2430;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">PEDRAM TAHERI</a>
+        <nav>
+            <a href="paintings.html" class="active">Paintings</a>
+            <a href="astrophotography.html">Astrophotography</a>
+            <a href="classes.html">Academy</a>
+            <a href="about.html">About & Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Fine Art & Paintings</h1>
+            <p>Internal Exploration. A curated collection of contemporary and expressive paintings, focusing on rich textures, deep-layer colors, and visual translations of inner landscapes.</p>
+        </section>
+
+        <section class="gallery-section">
+            <div class="artwork-grid">
+                
+                <!-- Artwork 1 -->
+                <div class="artwork-item">
+                    <div class="image-frame">
+                        <img src="painting1.jpg" alt="Fine Art by Pedram Taheri">
+                    </div>
+                    <div class="artwork-details">
+                        <h3>Untitled I</h3>
+                        <p>Acrylic & Texture on Canvas<br>80 x 80 cm</p>
+                    </div>
+                </div>
+
+                <!-- Artwork 2 -->
+                <div class="artwork-item">
+                    <div class="image-frame">
+                        <img src="painting2.jpg" alt="Fine Art by Pedram Taheri">
+                    </div>
+                    <div class="artwork-details">
+                        <h3>Untitled II</h3>
+                        <p>Oil on Canvas<br>60 x 90 cm</p>
+                    </div>
+                </div>
+
+                <!-- Artwork 3 -->
+                <div class="artwork-item">
+                    <div class="image-frame">
+                        <img src="painting3.jpg" alt="Fine Art by Pedram Taheri">
+                    </div>
+                    <div class="artwork-details">
+                        <h3>Untitled III</h3>
+                        <p>Mixed Media on Canvas<br>100 x 100 cm</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
