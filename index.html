@@ -67,14 +67,14 @@
         /* Immersive Visual Cards with Large Images */
         .art-card {
             position: relative;
-            height: 480px; /* Increased height so art is clearly visible */
+            height: 480px; 
             border: 1px solid #1e2430;
             border-radius: 12px;
             overflow: hidden;
             display: flex;
             align-items: flex-end;
             transition: transform 0.4s, border-color 0.4s;
-            text-decoration: none; /* Card itself is clickable */
+            text-decoration: none; 
         }
         .art-card:hover {
             transform: translateY(-10px);
@@ -91,16 +91,16 @@
             transition: transform 0.6s;
         }
         .art-card:hover .card-bg {
-            transform: scale(1.05); /* Soft cinematic zoom on hover */
+            transform: scale(1.05); 
         }
-        /* Elegant Gradient Overlay to separate text from image */
+        /* Refined cinematic overlay for better artwork visibility */
         .card-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(12, 15, 20, 0.95) 20%, rgba(12, 15, 20, 0.4) 60%, rgba(12, 15, 20, 0.1) 100%);
+            background: linear-gradient(to top, rgba(12, 15, 20, 0.95) 15%, rgba(12, 15, 20, 0.3) 55%, rgba(12, 15, 20, 0.05) 100%);
             z-index: 2;
         }
         .card-content {
@@ -133,7 +133,7 @@
             border-radius: 4px;
             font-size: 14px;
             font-weight: bold;
-            background: rgba(12, 15, 20, 0.5); /* Semi-transparent button base */
+            background: rgba(12, 15, 20, 0.4); 
             transition: background 0.3s, color 0.3s, border-color 0.3s;
         }
         .btn:hover {
@@ -178,7 +178,7 @@
         <section class="gallery-section">
             <div class="grid-container">
                 
-                <!-- Box 1: Paintings -->
+                <!-- Card 1: Paintings (Left) -->
                 <a href="paintings.html" class="art-card">
                     <img src="painting-cover.jpg" alt="Fine Art & Paintings by Pedram Taheri" class="card-bg">
                     <div class="card-overlay"></div>
@@ -189,7 +189,7 @@
                     </div>
                 </a>
 
-                <!-- Box 2: Astrophotography -->
+                <!-- Card 2: Astrophotography (Center) -->
                 <a href="astrophotography.html" class="art-card">
                     <img src="astro-cover.jpg" alt="Astrophotography by Pedram Taheri" class="card-bg">
                     <div class="card-overlay"></div>
@@ -200,7 +200,7 @@
                     </div>
                 </a>
 
-                <!-- Box 3: Offline Classes -->
+                <!-- Card 3: Academy (Right) -->
                 <a href="classes.html" class="art-card">
                     <img src="classes-cover.jpg" alt="Art & Astro Academy by Pedram Taheri" class="card-bg">
                     <div class="card-overlay"></div>
