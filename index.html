@@ -18,10 +18,9 @@
         .immersive-header-container {
             position: relative;
             width: 100%;
-            /* افزایش چشمگیر ارتفاع در کامپیوتر برای فضای بیشتر رو به پایین و جلوگیری از کات شدن عکس */
             height: 105vh; 
             background-image: url('hero-painting.jpg'); 
-            background-size: 100% auto; /* چسبیدن کامل به لبه‌های چپ و راست اسکرین */
+            background-size: 100% auto; 
             background-repeat: no-repeat;
             background-position: top center;
             background-color: #0c0f14;
@@ -31,17 +30,11 @@
             justify-content: space-between;
         }
 
-        /* Responsive height fix for laptops and smaller screens */
         @media (max-width: 1400px) {
-            .immersive-header-container {
-                height: 95vh;
-            }
+            .immersive-header-container { height: 95vh; }
         }
         @media (max-width: 1024px) {
-            .immersive-header-container {
-                height: 75vh;
-                background-size: cover; /* حفظ چیدمان در تبلت و موبایل */
-            }
+            .immersive-header-container { height: 75vh; background-size: cover; }
         }
 
         /* Floating Transparent Navigation Layer over the painting */
@@ -51,7 +44,7 @@
             align-items: center;
             padding: 40px 8%;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
-            z-index: 10;
+            z-index: 100;
         }
         .logo { 
             font-size: 24px; 
@@ -61,7 +54,12 @@
             letter-spacing: 2px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.6); 
         }
-        nav a { 
+        
+        /* Desktop Navigation Links */
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a { 
             color: #ffffff; 
             text-decoration: none; 
             margin-left: 25px; 
@@ -70,8 +68,52 @@
             transition: color 0.3s; 
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
-        nav a:hover { 
+        .nav-links a:hover { 
             color: #f39c12; 
+        }
+
+        /* Mobile Menu Trigger Word (Hidden on Desktop) */
+        .menu-trigger {
+            display: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Responsive Mobile Layout Fix */
+        @media (max-width: 850px) {
+            .nav-links {
+                display: none; /* مخفی کردن منوی خطی در حالت ریسپانسیو */
+                flex-direction: column;
+                position: absolute;
+                top: 90px;
+                right: 8%;
+                background: rgba(12, 15, 20, 0.95);
+                backdrop-filter: blur(10px);
+                border: 1px solid #1e2430;
+                padding: 20px;
+                border-radius: 8px;
+                width: 200px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            }
+            .nav-links.active {
+                display: flex; /* نمایش منو به صورت آبشاری هنگام کلیک */
+            }
+            .nav-links a {
+                margin: 10px 0;
+                font-size: 16px;
+            }
+            .menu-trigger {
+                display: block; /* نمایش کلمه منو در گوشی */
+            }
         }
 
         /* Smooth extended dark fade at the bottom to blend painting into the dark page */
@@ -80,7 +122,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 35%; /* افزایش ضخامت سایه برای محو شدگی عمیق‌تر نقاشی عریض */
+            height: 35%; 
             background: linear-gradient(to top, #0c0f14 15%, transparent 100%);
             z-index: 1;
         }
@@ -129,11 +171,16 @@
 </head>
 <body>
 
-    <!-- Upper Immersive Banner Section (Navigation Layered OVER Painting) -->
+    <!-- Upper Immersive Banner Section -->
     <header class="immersive-header-container">
         <div class="nav-overlay-header">
             <a href="#" class="logo">PEDRAM M. TAHERI</a>
-            <nav>
+            
+            <!-- Mobile Menu Trigger -->
+            <div class="menu-trigger" id="mobile-menu-btn">Menu ☰</div>
+            
+            <!-- Navigation Links Wrapper -->
+            <nav class="nav-links" id="nav-menu-container">
                 <a href="paintings.html">Paintings</a>
                 <a href="astrophotography.html">Astrophotography</a>
                 <a href="classes.html">Academy</a>
@@ -141,7 +188,6 @@
             </nav>
         </div>
         
-        <!-- Blends the image bottom smoothly into the background -->
         <div class="banner-bottom-fade"></div>
     </header>
 
@@ -192,5 +238,7 @@
     </main>
 
     <footer><p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p></footer>
-</body>
-</html>
+
+    <!-- Smart JavaScript for Mobile Toggle Button -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
