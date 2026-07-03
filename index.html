@@ -4,154 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedram Taheri | Visual Exploration</title>
-    
-    <!-- لود کردن صحیح فونت‌ها با اصلاح ساختار لینک گوگل -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* Modern Immersive Theme Base */
-        body { 
-            background-color: #0c0f14; 
-            color: #f1f2f6; 
-            font-family: 'Montserrat', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-        }
-        
-        /* THE PERFECT FULL-WIDTH EXTENDED BANNER */
-        .immersive-header-container {
-            position: relative;
-            width: 100%;
-            height: 105vh; 
-            background-image: url('hero-painting.jpg'); 
-            background-size: 100% auto; 
-            background-repeat: no-repeat;
-            background-position: top center;
-            background-color: #0c0f14;
-            border-bottom: 1px solid #1e2430;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* Responsive height fix for laptops and smaller screens */
-        @media (max-width: 1400px) {
-            .immersive-header-container { height: 95vh; }
-        }
-        @media (max-width: 1024px) {
-            .immersive-header-container { height: 75vh; background-size: cover; }
-        }
-
-        /* ساختار دو خطی هدر بر اساس تصویر ارسالی شما */
-        .nav-overlay-header {
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            justify-content: center;
-            padding: 50px 20px 30px 20px;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-            z-index: 10;
-        }
-
-        /* استایل لوگو - حفظ فونت اصیل و لوکس Cinzel به عنوان امضا */
-        .logo { 
-            font-family: 'Cinzel', serif; 
-            font-size: 32px; 
-            font-weight: 400; 
-            color: #ffffff; 
-            text-decoration: none; 
-            letter-spacing: 7px; 
-            margin-bottom: 25px; 
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8); 
-            transition: color 0.3s;
-        }
-        .logo:hover {
-            color: #bdc3c7;
-        }
-
-        /* ردیف منوها - بازگشت به فونت مدرن و خوانای Montserrat */
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; 
-            gap: 30px; 
-        }
-
-        nav a { 
-            font-family: 'Montserrat', sans-serif;
-            color: rgba(255, 255, 255, 0.7); 
-            text-decoration: none; 
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 2px; 
-            text-transform: uppercase;
-            transition: color 0.3s, letter-spacing 0.3s; 
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-        }
-        nav a:hover { 
-            color: #ffffff; 
-            letter-spacing: 3px; 
-        }
-        
-        nav a.active-blog {
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        /* بهینه‌سازی کامل برای موبایل */
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 22px; 
-                letter-spacing: 4px;
-                margin-bottom: 15px;
-            }
-            nav {
-                gap: 15px 20px; 
-                padding: 0 10px;
-            }
-            nav a {
-                font-size: 11px; 
-                letter-spacing: 1px;
-            }
-        }
-
-        /* Smooth extended dark fade at the bottom */
-        .banner-bottom-fade {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 35%; 
-            background: linear-gradient(to top, #0c0f14 15%, transparent 100%);
-            z-index: 1;
-        }
-
-        /* Hero Text Box below the painting banner */
-        .hero { 
-            text-align: center; 
-            padding: 90px 20px 60px 20px; 
-            max-width: 800px; 
-            margin: 0 auto; 
-        }
-        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 42px; color: #ffffff; font-weight: 300; letter-spacing: 3px; margin-bottom: 20px; }
-        .hero p { font-size: 17px; color: #747d8c; line-height: 1.8; font-weight: 300; }
-        /* Gallery Grid Options - CSS */
+        /* Modern Immersive Theme CSS - Merged and Fixed */
+        body { background-color: #0c0f14; color: #f1f2f6; font-family: 'Montserrat', sans-serif; margin: 0; }
+        .immersive-header-container { position: relative; width: 100%; height: 105vh; background-image: url('hero-painting.jpg'); background-size: cover; background-position: top center; border-bottom: 1px solid #1e2430; display: flex; flex-direction: column; justify-content: space-between; }
+        .nav-overlay-header { display: flex; flex-direction: column; align-items: center; padding: 50px 20px; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); }
+        .logo { font-family: 'Cinzel', serif; font-size: 32px; color: #ffffff; text-decoration: none; letter-spacing: 7px; margin-bottom: 25px; }
+        nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; }
+        nav a:hover, nav a.active-blog { color: #ffffff; }
+        .hero { text-align: center; padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 42px; color: #ffffff; font-weight: 300; }
         .gallery-section { padding: 0 8% 80px 8%; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; margin-top: 20px; }
-        .art-card { position: relative; height: 480px; ... } /* ... بقیه استایل‌ها */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
+        .art-card { position: relative; height: 480px; border: 1px solid #1e2430; border-radius: 12px; overflow: hidden; text-decoration: none; display: flex; align-items: flex-end; transition: 0.4s; }
+        .art-card:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.5); }
+        .card-bg { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+        .card-overlay { position: absolute; width: 100%; height: 100%; background: linear-gradient(to top, rgba(12,15,20,0.95), transparent); }
+        .card-content { position: relative; padding: 35px 25px; color: #fff; text-align: center; }
+        .btn { display: inline-block; padding: 12px 28px; color: #fff; border: 1px solid #fff; text-decoration: none; font-size: 12px; letter-spacing: 2px; }
+        @media (max-width: 768px) { .logo { font-size: 22px; } .hero h1 { font-size: 32px; } }
     </style>
 </head>
 <body>
-    <!-- ساختار HTML گالری، کارت‌ها و فوتر -->
+    <header class="immersive-header-container">
+        <div class="nav-overlay-header">
+            <a href="#" class="logo">PEDRAM M.TAHERI</a>
+            <nav><a href="about.html">About</a><a href="paintings.html">Paintings</a><a href="blog.html" class="active-blog">Blog</a></nav>
+        </div>
+    </header>
     <main>
+        <section class="hero"><h1>Visual Exploration</h1><p>Welcome to my creative universe.</p></section>
         <section class="gallery-section">
             <div class="grid-container">
-                <!-- سه کارت آرت، اخترشناسی و آکادمی -->
+                <a href="paintings.html" class="art-card">
+                    <img src="painting-cover.jpg" class="card-bg">
+                    <div class="card-overlay"></div>
+                    <div class="card-content"><h3>Fine Art</h3><span class="btn">Explore</span></div>
+                </a>
             </div>
         </section>
     </main>
-    <footer>...</footer>
 </body>
 </html>
