@@ -183,7 +183,7 @@
             <a href="#" class="logo">PEDRAM M. TAHERI</a>
             
             <!-- Mobile Menu Trigger -->
-            <div class="menu-trigger" id="mobile-menu-btn" onclick="toggleMobileMenu(event)">Menu ☰</div>
+            <div class="menu-trigger" id="mobile-menu-btn">Menu ☰</div>
             
             <!-- Navigation Links Wrapper -->
             <nav class="nav-links" id="nav-menu-container">
@@ -249,5 +249,5 @@
 
     <!-- Interactive Mobile Navigation Logic -->
     <script>
-        function toggleMobileMenu(event) {
-            event.stopPropagation();
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
