@@ -13,58 +13,73 @@
             margin: 0; 
             padding: 0; 
         }
-        header { 
-            display: flex; 
-            justify-content: space-between; 
-            padding: 30px 8%; 
-            border-bottom: 1px solid #1e2430; 
+        
+        /* THE UPDATED HERO BANNER: Full width with internal floating Navigation */
+        .immersive-header-container {
+            position: relative;
+            width: 100%;
+            height: 75vh; /* ارتفاع بلند و سینمایی برای نمایش عالی نقاشی */
+            background-image: url('hero-painting.jpg'); /* تصویر نقاشی شما */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #1e2430;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Floating Transparent Navigation Layer over the painting */
+        .nav-overlay-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 8%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+            z-index: 10;
         }
         .logo { 
-            font-size: 22px; 
+            font-size: 24px; 
             font-weight: bold; 
             color: #ffffff; 
             text-decoration: none; 
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* سایه نرم برای خوانایی بهتر روی نقاشی */
         }
         nav a { 
-            color: #a4b0be; 
+            color: #ffffff; 
             text-decoration: none; 
             margin-left: 25px; 
+            font-size: 15px;
+            font-weight: 500;
             transition: color 0.3s; 
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
         nav a:hover { 
             color: #f39c12; 
         }
-        
-        /* UPDATED: Centered & Bounded Hero Banner for Square/Proportional Art */
-        .hero-banner-wrapper {
+
+        /* Ambient dark fade at the bottom of the painting to transition into the web page */
+        .banner-bottom-fade {
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            background: radial-gradient(circle at center, #131720 0%, #0c0f14 100%); /* هاله نوری نرم پشت نقاشی */
-            padding: 40px 0;
-            border-bottom: 1px solid #1e2430;
-            display: flex;
-            justify-content: center;
-        }
-        .hero-banner {
-            width: 90%;
-            max-width: 600px; /* محدود کردن عرض برای جلوگیری از دفرمه شدن عکس مربع */
-            aspect-ratio: 1 / 1; /* حفظ کادر کاملاً مربع نقاشی شما */
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-            border: 1px solid #1e2430;
-        }
-        .hero-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
+            height: 30%;
+            background: linear-gradient(to top, #0c0f14 0%, transparent 100%);
+            z-index: 1;
         }
 
-        /* Hero Text & Grid Content */
-        .hero { text-align: center; padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+        /* Hero Text Box below the painting banner */
+        .hero { 
+            text-align: center; 
+            padding: 80px 20px 60px 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
         .hero h1 { font-size: 46px; color: #ffffff; font-weight: 300; letter-spacing: 2px; margin-bottom: 20px; }
         .hero p { font-size: 18px; color: #747d8c; line-height: 1.6; }
         
+        /* Gallery Grid Options */
         .gallery-section { padding: 0 8% 80px 8%; }
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
         
@@ -96,29 +111,30 @@
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">PEDRAM TAHERI</a>
-        <nav>
-            <a href="paintings.html">Paintings</a>
-            <a href="astrophotography.html">Astrophotography</a>
-            <a href="classes.html">Academy</a>
-            <a href="about.html">About</a>
-        </nav>
+    <!-- Upper Immersive Banner Section (Navigation Layered OVER Painting) -->
+    <header class="immersive-header-container">
+        <div class="nav-overlay-header">
+            <a href="#" class="logo">PEDRAM M. TAHERI</a>
+            <nav>
+                <a href="paintings.html">Paintings</a>
+                <a href="astrophotography.html">Astrophotography</a>
+                <a href="classes.html">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+        
+        <!-- Blends the image bottom smoothly into the background -->
+        <div class="banner-bottom-fade"></div>
     </header>
 
     <main>
-        <!-- UPDATED: Bounded Wrapper for Square Art -->
-        <section class="hero-banner-wrapper">
-            <div class="hero-banner">
-                <img src="hero-painting.jpg" alt="Featured Painting by Pedram Taheri">
-            </div>
-        </section>
-
+        <!-- Welcome Intro Text Below Banner -->
         <section class="hero">
             <h1>Visual Exploration</h1>
             <p>Welcome to my creative universe. This space connects two distinct worlds: the internal emotional depth of contemporary paintings and the cosmic wonders of deep-space astrophotography.</p>
         </section>
 
+        <!-- Lower 3-Cards Grid Selection -->
         <section class="gallery-section">
             <div class="grid-container">
                 <!-- Card 1: Paintings -->
