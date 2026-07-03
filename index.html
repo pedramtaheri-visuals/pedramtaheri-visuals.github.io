@@ -25,9 +25,6 @@
             background-position: top center;
             background-color: #0c0f14;
             border-bottom: 1px solid #1e2430;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         @media (max-width: 1400px) {
@@ -37,15 +34,19 @@
             .immersive-header-container { height: 75vh; background-size: cover; }
         }
 
-        /* Floating Transparent Navigation Layer over the painting */
+        /* Floating Transparent Navigation Layer - NOW FULLY ISOLATED */
         .nav-overlay-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 40px 8%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
-            position: relative;
-            z-index: 9999; /* انتقال به بالاترین لایه برای فعال شدن کلیک */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            z-index: 99999; /* بالاترین لایه ممکن */
         }
         .logo { 
             font-size: 24px; 
@@ -59,7 +60,6 @@
         /* Desktop Navigation Links */
         .nav-links {
             display: flex;
-            z-index: 9999;
         }
         .nav-links a { 
             color: #ffffff; 
@@ -74,7 +74,7 @@
             color: #f39c12; 
         }
 
-        /* Mobile Menu Trigger Word (Hidden on Desktop) */
+        /* Mobile Menu Trigger Word */
         .menu-trigger {
             display: none;
             color: #ffffff;
@@ -84,11 +84,11 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-            background: rgba(0, 0, 0, 0.6);
-            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
             border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.2);
-            z-index: 10000;
+            border: 1px solid rgba(255,255,255,0.3);
+            pointer-events: auto; /* تضمین دریافت کلیک */
         }
 
         /* Responsive Mobile Layout Fix */
@@ -97,7 +97,7 @@
                 display: none; 
                 flex-direction: column;
                 position: absolute;
-                top: 95px;
+                top: 100px;
                 right: 8%;
                 background: rgba(12, 15, 20, 0.98);
                 backdrop-filter: blur(15px);
@@ -108,7 +108,7 @@
                 box-shadow: 0 15px 35px rgba(0,0,0,0.7);
             }
             .nav-links.active {
-                display: flex; /* باز شدن روان منو به صورت عمودی */
+                display: flex !important; /* باز شدن قطعی کادر منو */
             }
             .nav-links a {
                 margin: 12px 0;
@@ -121,7 +121,7 @@
             }
         }
 
-        /* Smooth extended dark fade at the bottom to blend painting into the dark page */
+        /* Smooth extended dark fade at the bottom */
         .banner-bottom-fade {
             position: absolute;
             bottom: 0;
@@ -178,11 +178,12 @@
 
     <!-- Upper Immersive Banner Section -->
     <header class="immersive-header-container">
+        <!-- Floating Isolated Header -->
         <div class="nav-overlay-header">
             <a href="#" class="logo">PEDRAM M. TAHERI</a>
             
             <!-- Mobile Menu Trigger -->
-            <div class="menu-trigger" id="mobile-menu-btn">Menu ☰</div>
+            <div class="menu-trigger" id="mobile-menu-btn" onclick="toggleMobileMenu(event)">Menu ☰</div>
             
             <!-- Navigation Links Wrapper -->
             <nav class="nav-links" id="nav-menu-container">
@@ -244,3 +245,4 @@
 
     <footer><p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p></footer>
 
+    <script>
