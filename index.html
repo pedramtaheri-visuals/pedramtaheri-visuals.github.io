@@ -5,73 +5,257 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedram Taheri | Visual Exploration</title>
     <style>
-        /* Modern Dark Theme Style */
-        body { background-color: #0c0f14; color: #f1f2f6; font-family: 'Helvetica Neue', sans-serif; margin: 0; }
-        header { display: flex; justify-content: space-between; padding: 30px 8%; border-bottom: 1px solid #1e2430; }
-        .logo { font-size: 22px; font-weight: bold; color: #ffffff; text-decoration: none; }
-        nav a { color: #a4b0be; text-decoration: none; margin-left: 25px; }
-        nav a:hover { color: #f39c12; }
-
-        /* Immersive Split Hero Section for Square Artwork */
-        .hero-container { display: flex; align-items: center; padding: 60px 8%; gap: 50px; max-width: 1400px; margin: 0 auto; }
-        .hero-text { flex: 1; }
-        .hero-text h1 { font-size: 46px; font-weight: 300; color: #ffffff; }
-        .hero-text p { color: #747d8c; line-height: 1.6; }
-        .hero-image-wrapper { flex: 1; display: flex; justify-content: center; }
-        .hero-square-image { width: 100%; max-width: 450px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; border: 1px solid #1e2430; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-
-        @media (max-width: 768px) {
-            .hero-container { flex-direction: column-reverse; text-align: center; padding: 40px 20px; }
-            .hero-square-image { max-width: 320px; }
+        /* Modern Immersive Theme */
+        body { 
+            background-color: #0c0f14; 
+            color: #f1f2f6; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
         }
 
-        /* Gallery Grid (Unchanged) */
-        .gallery-section { padding: 0 8% 80px 8%; }
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .art-card { position: relative; height: 480px; border: 1px solid #1e2430; border-radius: 12px; overflow: hidden; display: flex; align-items: flex-end; text-decoration: none; }
-        .art-card:hover { transform: translateY(-10px); border-color: #f39c12; }
-        .card-bg { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-        .card-overlay { position: absolute; width: 100%; height: 100%; background: linear-gradient(to top, rgba(12, 15, 20, 0.95), transparent); z-index: 2; }
-        .card-content { position: relative; z-index: 3; padding: 35px 25px; text-align: center; }
-        .card-content h3 { color: #ffffff; }
-        .card-content p { color: #bdc3c7; }
-        .btn { display: inline-block; padding: 12px 28px; color: #ffffff; border: 1px solid #ffffff; border-radius: 4px; text-decoration: none; }
-        .btn:hover { background: #ffffff; color: #0c0f14; }
-        .btn-gold { border-color: #f39c12; color: #f39c12; }
-        .btn-gold:hover { background: #f39c12; }
-        footer { text-align: center; padding: 40px; color: #57606f; }
+        /* Top Immersive Header Container with Background Painting Image */
+        .top-hero-banner {
+            position: relative;
+            width: 100%;
+            min-height: 80vh; /* Adjusts beautifully to any screen height */
+            background-image: url('hero-painting.jpg'); /* Upload your square painting with this exact name */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Transparent Top Navigation Layer */
+        .nav-overlay-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 8%;
+            background: linear-gradient(to bottom, rgba(12, 15, 20, 0.85), transparent);
+            z-index: 10;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        nav a {
+            color: #a4b0be;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f39c12; 
+        }
+
+        /* Ambient Dark Vignette to make text readable over the background */
+        .banner-bottom-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            background: linear-gradient(to top, #0c0f14 10%, rgba(12, 15, 20, 0.4) 60%, transparent 100%);
+            z-index: 1;
+        }
+
+        /* Welcome Text Box ("Explore and Relax") over the Banner Base */
+        .hero-intro-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px 20px 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero-intro-text h1 {
+            font-size: 48px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .hero-intro-text p {
+            font-size: 18px;
+            color: #bdc3c7;
+            line-height: 1.6;
+        }
+
+        /* Gallery 3-Cards Grid (From your Preferred Layout) */
+        .gallery-section {
+            padding: 0 8% 80px 8%;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 20px;
+        }
+        .art-card {
+            position: relative;
+            height: 480px; 
+            border: 1px solid #1e2430;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            text-decoration: none; 
+            transition: transform 0.4s, border-color 0.4s;
+        }
+        .art-card:hover {
+            transform: translateY(-10px);
+            border-color: #f39c12;
+        }
+        .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform 0.6s;
+        }
+        .art-card:hover .card-bg {
+            transform: scale(1.05); 
+        }
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(12, 15, 20, 0.95) 15%, rgba(12, 15, 20, 0.3) 55%, transparent 100%);
+            z-index: 2;
+        }
+        .card-content {
+            position: relative;
+            z-index: 3;
+            padding: 35px 25px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .card-content h3 {
+            font-size: 24px;
+            margin: 0 0 12px 0;
+            font-weight: 400;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+        .card-content p {
+            font-size: 14px;
+            color: #bdc3c7;
+            line-height: 1.5;
+            margin: 0 0 25px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            background: rgba(12, 15, 20, 0.4); 
+            transition: background 0.3s, color 0.3s;
+        }
+        .btn:hover {
+            background: #ffffff;
+            color: #0c0f14;
+        }
+        .btn-gold {
+            border-color: #f39c12;
+            color: #f39c12;
+        }
+        .btn-gold:hover {
+            background: #f39c12;
+            color: #0c0f14;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 13px;
+            color: #57606f;
+            border-top: 1px solid #1e2430;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">PEDRAM TAHERI</a>
-        <nav><a href="#">Paintings</a><a href="#">Astrophotography</a><a href="#">Academy</a></nav>
+
+    <!-- Upper Immersive Section with Nav + Painting Cover + Text -->
+    <header class="top-hero-banner">
+        <div class="nav-overlay-header">
+            <a href="#" class="logo">PEDRAM M. TAHERI</a>
+            <nav>
+                <a href="paintings.html">Paintings</a>
+                <a href="astrophotography.html">Astrophotography</a>
+                <a href="classes.html">Academy</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+
+        <div class="banner-bottom-overlay"></div>
+
+        <div class="hero-intro-text">
+            <h1>Explore and Relax.</h1>
+            <p>Connecting the internal emotional depth of contemporary paintings with the cosmic wonders of deep-space astrophotography.</p>
+        </div>
     </header>
+
+    <!-- Lower Section containing your main 3-Window Grid Options -->
     <main>
-        <section class="hero-container">
-            <div class="hero-text">
-                <h1>Visual Exploration</h1>
-                <p>Welcome to my creative universe. A blend of contemporary art and cosmic astrophotography.</p>
-            </div>
-            <div class="hero-image-wrapper">
-                <img src="hero-painting.jpg" alt="Featured Painting" class="hero-square-image">
-            </div>
-        </section>
         <section class="gallery-section">
             <div class="grid-container">
-                <a href="#" class="art-card">
-                    <img src="painting-cover.jpg" class="card-bg">
+                
+                <!-- Card 1: Paintings -->
+                <a href="paintings.html" class="art-card">
+                    <img src="painting-cover.jpg" alt="Fine Art" class="card-bg">
                     <div class="card-overlay"></div>
                     <div class="card-content">
-                        <h3>Fine Art</h3>
-                        <p>Expressing inner landscapes.</p>
-                        <span class="btn">Explore</span>
+                        <h3>Fine Art & Paintings</h3>
+                        <p>Internal Exploration: Expressing inner landscapes, textures, and contemporary emotions on canvas.</p>
+                        <span class="btn">Explore Gallery</span>
                     </div>
                 </a>
-                <!-- Other cards -->
+
+                <!-- Card 2: Astrophotography -->
+                <a href="astrophotography.html" class="art-card">
+                    <img src="astro-cover.jpg" alt="Astrophotography" class="card-bg">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3>Astrophotography</h3>
+                        <p>Cosmic Exploration: Capturing the unseen wonders of the deep sky, galaxies, and nebulas.</p>
+                        <span class="btn">View Deep Sky</span>
+                    </div>
+                </a>
+
+                <!-- Card 3: Academy -->
+                <a href="classes.html" class="art-card">
+                    <img src="classes-cover.jpg" alt="Art & Astro Academy" class="card-bg">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3>Art & Astro Academy</h3>
+                        <p>Educational Exploration: Master the techniques of visual arts and astrophotography through offline masterclasses.</p>
+                        <span class="btn btn-gold">Join Masterclass</span>
+                    </div>
+                </a>
+
             </div>
         </section>
     </main>
-    <footer><p>&copy; 2026 Pedram Taheri</p></footer>
+
+    <footer>
+        <p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
