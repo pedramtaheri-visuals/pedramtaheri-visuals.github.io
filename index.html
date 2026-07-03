@@ -46,7 +46,7 @@
             align-items: center;
             padding: 40px 8%;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-            z-index: 99999; /* بالاترین لایه ممکن */
+            z-index: 99999;
         }
         .logo { 
             font-size: 24px; 
@@ -88,7 +88,7 @@
             padding: 10px 20px;
             border-radius: 4px;
             border: 1px solid rgba(255,255,255,0.3);
-            pointer-events: auto; /* تضمین دریافت کلیک */
+            pointer-events: auto;
         }
 
         /* Responsive Mobile Layout Fix */
@@ -108,7 +108,7 @@
                 box-shadow: 0 15px 35px rgba(0,0,0,0.7);
             }
             .nav-links.active {
-                display: flex !important; /* باز شدن قطعی کادر منو */
+                display: flex !important;
             }
             .nav-links a {
                 margin: 12px 0;
@@ -209,40 +209,45 @@
             <div class="grid-container">
                 <!-- Card 1: Paintings -->
                 <a href="paintings.html" class="art-card">
-                    <img src="painting-cover.jpg" alt="Fine Art" class="card-bg">
+                    <img src="painting-cover.jpg" alt="Fine Art Paintings" class="card-bg">
                     <div class="card-overlay"></div>
                     <div class="card-content">
-                        <h3>Fine Art & Paintings</h3>
-                        <p>Internal Exploration: Expressing inner landscapes, textures, and contemporary emotions on canvas.</p>
-                        <span class="btn">Explore Gallery</span>
+                        <h3>Paintings</h3>
+                        <p>Explore oil and mixed-media contemporary canvas works.</p>
+                        <span class="btn">View Gallery</span>
                     </div>
                 </a>
-                
+
                 <!-- Card 2: Astrophotography -->
                 <a href="astrophotography.html" class="art-card">
-                    <img src="astro-cover.jpg" alt="Astrophotography" class="card-bg">
+                    <img src="astro-cover.jpg" alt="Deep Space Astrophotography" class="card-bg">
                     <div class="card-overlay"></div>
                     <div class="card-content">
                         <h3>Astrophotography</h3>
-                        <p>Cosmic Exploration: Capturing the unseen wonders of the deep sky, galaxies, and nebulas.</p>
-                        <span class="btn">View Deep Sky</span>
+                        <p>Distant nebulas and galaxies captured from dark skies.</p>
+                        <span class="btn">Discover Cosmos</span>
                     </div>
                 </a>
-                
+
                 <!-- Card 3: Academy -->
                 <a href="classes.html" class="art-card">
-                    <img src="classes-cover.jpg" alt="Academy" class="card-bg">
+                    <img src="academy-cover.jpg" alt="Art & Astro Classes" class="card-bg">
                     <div class="card-overlay"></div>
                     <div class="card-content">
-                        <h3>Art & Astro Academy</h3>
-                        <p>Educational Exploration: Master the techniques of visual arts and astrophotography through offline masterclasses.</p>
-                        <span class="btn btn-gold">Join Masterclass</span>
+                        <h3>Academy</h3>
+                        <p>Join specialized processing workshops and art masterclasses.</p>
+                        <span class="btn btn-gold">Learn More</span>
                     </div>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer><p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p></footer>
+    <footer>
+        <p>&copy; 2026 Pedram M. Taheri. All Rights Reserved.</p>
+    </footer>
 
+    <!-- Interactive Mobile Navigation Logic -->
     <script>
+        function toggleMobileMenu(event) {
+            event.stopPropagation();
