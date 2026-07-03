@@ -25,6 +25,9 @@
             background-position: top center;
             background-color: #0c0f14;
             border-bottom: 1px solid #1e2430;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         @media (max-width: 1400px) {
@@ -34,19 +37,14 @@
             .immersive-header-container { height: 75vh; background-size: cover; }
         }
 
-        /* Floating Transparent Navigation Layer - NOW FULLY ISOLATED */
+        /* Floating Transparent Navigation Layer over the painting */
         .nav-overlay-header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-sizing: border-box;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 40px 8%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-            z-index: 99999;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+            z-index: 100;
         }
         .logo { 
             font-size: 24px; 
@@ -74,7 +72,7 @@
             color: #f39c12; 
         }
 
-        /* Mobile Menu Trigger Word */
+        /* Mobile Menu Trigger Word (Hidden on Desktop) */
         .menu-trigger {
             display: none;
             color: #ffffff;
@@ -84,44 +82,41 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 16px;
             border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.3);
-            pointer-events: auto;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         /* Responsive Mobile Layout Fix */
         @media (max-width: 850px) {
             .nav-links {
-                display: none; 
+                display: none; /* مخفی کردن منوی خطی در حالت ریسپانسیو */
                 flex-direction: column;
                 position: absolute;
-                top: 100px;
+                top: 90px;
                 right: 8%;
-                background: rgba(12, 15, 20, 0.98);
-                backdrop-filter: blur(15px);
+                background: rgba(12, 15, 20, 0.95);
+                backdrop-filter: blur(10px);
                 border: 1px solid #1e2430;
-                padding: 15px 25px;
+                padding: 20px;
                 border-radius: 8px;
-                width: 180px;
-                box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+                width: 200px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             }
             .nav-links.active {
-                display: flex !important;
+                display: flex; /* نمایش منو به صورت آبشاری هنگام کلیک */
             }
             .nav-links a {
-                margin: 12px 0;
+                margin: 10px 0;
                 font-size: 16px;
-                margin-left: 0;
-                text-align: left;
             }
             .menu-trigger {
-                display: block; 
+                display: block; /* نمایش کلمه منو در گوشی */
             }
         }
 
-        /* Smooth extended dark fade at the bottom */
+        /* Smooth extended dark fade at the bottom to blend painting into the dark page */
         .banner-bottom-fade {
             position: absolute;
             bottom: 0;
@@ -178,7 +173,6 @@
 
     <!-- Upper Immersive Banner Section -->
     <header class="immersive-header-container">
-        <!-- Floating Isolated Header -->
         <div class="nav-overlay-header">
             <a href="#" class="logo">PEDRAM M. TAHERI</a>
             
@@ -209,45 +203,42 @@
             <div class="grid-container">
                 <!-- Card 1: Paintings -->
                 <a href="paintings.html" class="art-card">
-                    <img src="painting-cover.jpg" alt="Fine Art Paintings" class="card-bg">
+                    <img src="painting-cover.jpg" alt="Fine Art" class="card-bg">
                     <div class="card-overlay"></div>
                     <div class="card-content">
-                        <h3>Paintings</h3>
-                        <p>Explore oil and mixed-media contemporary canvas works.</p>
-                        <span class="btn">View Gallery</span>
+                        <h3>Fine Art & Paintings</h3>
+                        <p>Internal Exploration: Expressing inner landscapes, textures, and contemporary emotions on canvas.</p>
+                        <span class="btn">Explore Gallery</span>
                     </div>
                 </a>
-
+                
                 <!-- Card 2: Astrophotography -->
                 <a href="astrophotography.html" class="art-card">
-                    <img src="astro-cover.jpg" alt="Deep Space Astrophotography" class="card-bg">
+                    <img src="astro-cover.jpg" alt="Astrophotography" class="card-bg">
                     <div class="card-overlay"></div>
                     <div class="card-content">
                         <h3>Astrophotography</h3>
-                        <p>Distant nebulas and galaxies captured from dark skies.</p>
-                        <span class="btn">Discover Cosmos</span>
+                        <p>Cosmic Exploration: Capturing the unseen wonders of the deep sky, galaxies, and nebulas.</p>
+                        <span class="btn">View Deep Sky</span>
                     </div>
                 </a>
-
+                
                 <!-- Card 3: Academy -->
                 <a href="classes.html" class="art-card">
-                    <img src="academy-cover.jpg" alt="Art & Astro Classes" class="card-bg">
+                    <img src="classes-cover.jpg" alt="Academy" class="card-bg">
                     <div class="card-overlay"></div>
                     <div class="card-content">
-                        <h3>Academy</h3>
-                        <p>Join specialized processing workshops and art masterclasses.</p>
-                        <span class="btn btn-gold">Learn More</span>
+                        <h3>Art & Astro Academy</h3>
+                        <p>Educational Exploration: Master the techniques of visual arts and astrophotography through offline masterclasses.</p>
+                        <span class="btn btn-gold">Join Masterclass</span>
                     </div>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Pedram M. Taheri. All Rights Reserved.</p>
-    </footer>
+    <footer><p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p></footer>
 
-    <!-- Interactive Mobile Navigation Logic -->
+    <!-- Smart JavaScript for Mobile Toggle Button -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuBtn = document.getElementById('mobile-menu-btn');
+        const menuBtn = document.getElementById('mobile-menu-btn');
