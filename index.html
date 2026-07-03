@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedram Taheri | Visual Exploration</title>
     
-    <!-- لود کردن فونت هنری و مینی‌مال گوگل مناسب گالری‌ها -->
+    <!-- لود کردن فونت‌ها: Cinzel فقط برای اسم شما و Montserrat برای منوها و بدنه -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2 family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
         /* Modern Immersive Theme Base */
         body { 
             background-color: #0c0f14; 
             color: #f1f2f6; 
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Montserrat', sans-serif; /* فونت مدرن و خوانا برای بدنه */
             margin: 0; 
             padding: 0; 
         }
@@ -55,7 +55,7 @@
             z-index: 10;
         }
 
-        /* استایل لوگو (اسم شما) دقیقا شبیه تصویر */
+        /* استایل لوگو - حفظ فونت اصیل و لوکس Cinzel به عنوان امضا */
         .logo { 
             font-family: 'Cinzel', serif; 
             font-size: 32px; 
@@ -71,7 +71,7 @@
             color: #bdc3c7;
         }
 
-        /* ردیف منوها */
+        /* ردیف منوها - بازگشت به فونت مدرن و خوانای Montserrat */
         nav {
             display: flex;
             justify-content: center;
@@ -80,19 +80,19 @@
         }
 
         nav a { 
-            font-family: 'Cinzel', serif;
+            font-family: 'Montserrat', sans-serif;
             color: rgba(255, 255, 255, 0.7); 
             text-decoration: none; 
             font-size: 13px;
-            font-weight: 400;
-            letter-spacing: 3px; 
+            font-weight: 500;
+            letter-spacing: 2px; 
             text-transform: uppercase;
             transition: color 0.3s, letter-spacing 0.3s; 
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
         nav a:hover { 
             color: #ffffff; 
-            letter-spacing: 4px; 
+            letter-spacing: 3px; 
         }
         
         nav a.active-blog {
@@ -135,7 +135,7 @@
             max-width: 800px; 
             margin: 0 auto; 
         }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 42px; color: #ffffff; font-weight: 300; letter-spacing: 3px; margin-bottom: 20px; }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 42px; color: #ffffff; font-weight: 300; letter-spacing: 3px; margin-bottom: 20px; }
         .hero p { font-size: 17px; color: #747d8c; line-height: 1.8; font-weight: 300; }
         /* Gallery Grid Options */
         .gallery-section { padding: 0 8% 80px 8%; }
@@ -158,13 +158,13 @@
         .card-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(12, 15, 20, 0.95) 15%, rgba(12, 15, 20, 0.3) 55%, transparent 100%); z-index: 2; }
         
         .card-content { position: relative; z-index: 3; padding: 35px 25px; width: 100%; text-align: center; box-sizing: border-box; }
-        .card-content h3 { font-family: 'Cinzel', serif; font-size: 22px; margin: 0 0 12px 0; font-weight: 400; color: #ffffff; letter-spacing: 1px; }
+        .card-content h3 { font-family: 'Montserrat', sans-serif; font-size: 22px; margin: 0 0 12px 0; font-weight: 500; color: #ffffff; letter-spacing: 1px; }
         .card-content p { font-size: 14px; color: #bdc3c7; line-height: 1.6; margin: 0 0 25px 0; }
         
-        .btn { display: inline-block; padding: 12px 28px; color: #ffffff; border: 1px solid rgba(255,255,255,0.6); text-decoration: none; border-radius: 0px; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 2px; background: rgba(12, 15, 20, 0.4); transition: background 0.3s, color 0.3s, border-color 0.3s; }
+        .btn { display: inline-block; padding: 12px 28px; color: #ffffff; border: 1px solid rgba(255,255,255,0.6); text-decoration: none; border-radius: 0px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; background: rgba(12, 15, 20, 0.4); transition: background 0.3s, color 0.3s, border-color 0.3s; }
         .btn:hover { background: #ffffff; color: #0c0f14; border-color: #ffffff; }
         
-        footer { text-align: center; padding: 40px; color: #57606f; border-top: 1px solid #1e2430; font-size: 12px; font-family: 'Cinzel', serif; letter-spacing: 1px; }
+        footer { text-align: center; padding: 40px; color: #57606f; border-top: 1px solid #1e2430; font-size: 12px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -210,8 +210,7 @@
                 </a>
                 
                 <!-- Card 2: Astrophotography -->
-                <a href="astrophotography.html" class="art-card">
-                    <img src="astro-cover.jpg" alt="Deep Sky Astrophotography" class="card-bg">
+                <a href="astro-cover.jpg" alt="Deep Sky Astrophotography" class="card-bg">
                     <div class="card-overlay"></div>
                     <div class="card-content" dir="ltr">
                         <h3>Astrophotography</h3>
@@ -235,7 +234,7 @@
     </main>
 
     <!-- بخش کپی رایت با اصلاح کامل جهت متن برای جلوگیری از برعکس شدن حروف -->
-    <footer style="text-align: center; padding: 40px; color: #57606f; border-top: 1px solid #1e2430; font-size: 12px; font-family: 'Cinzel', serif; letter-spacing: 1px; background-color: #0c0f14;" dir="ltr">
+    <footer style="text-align: center; padding: 40px; color: #57606f; border-top: 1px solid #1e2430; font-size: 12px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; background-color: #0c0f14;" dir="ltr">
         <p style="margin: 0; display: inline-block;">&copy; 2026 Pedram M. Taheri. All rights reserved.</p>
     </footer>
 
