@@ -1,223 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedram Taheri | Visual Exploration</title>
-    <style>
-        /* Modern Dark Theme Style */
-        body { 
-            background-color: #0c0f14; 
-            color: #f1f2f6; 
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spaceBg: '#07080a',
+                        spaceCard: '#13161c',
+                        goldAccent: '#c5a059',
+                    }
+                }
+            }
         }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 8%;
-            border-bottom: 1px solid #1e2430;
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-decoration: none;
-        }
-        nav a {
-            color: #a4b0be;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-        nav a:hover, nav a.active {
-            color: #f39c12; 
-        }
-        .hero {
-            text-align: center;
-            padding: 80px 20px 50px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .hero h1 {
-            font-size: 46px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-        .hero p {
-            font-size: 18px;
-            color: #747d8c;
-            line-height: 1.6;
-        }
-        .gallery-section {
-            padding: 0 8% 80px 8%;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            margin-top: 20px;
-        }
-        /* Immersive Visual Cards with Large Images */
-        .art-card {
-            position: relative;
-            height: 480px; 
-            border: 1px solid #1e2430;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            transition: transform 0.4s, border-color 0.4s;
-            text-decoration: none; 
-        }
-        .art-card:hover {
-            transform: translateY(-10px);
-            border-color: #f39c12;
-        }
-        .card-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-            transition: transform 0.6s;
-        }
-        .art-card:hover .card-bg {
-            transform: scale(1.05); 
-        }
-        /* Refined cinematic overlay for better artwork visibility */
-        .card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(12, 15, 20, 0.95) 15%, rgba(12, 15, 20, 0.3) 55%, rgba(12, 15, 20, 0.05) 100%);
-            z-index: 2;
-        }
-        .card-content {
-            position: relative;
-            z-index: 3;
-            padding: 35px 25px;
-            width: 100%;
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .card-content h3 {
-            font-size: 24px;
-            margin: 0 0 12px 0;
-            font-weight: 400;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-        .card-content p {
-            font-size: 14px;
-            color: #bdc3c7;
-            line-height: 1.5;
-            margin: 0 0 25px 0;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            color: #ffffff;
-            border: 1px solid #ffffff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: bold;
-            background: rgba(12, 15, 20, 0.4); 
-            transition: background 0.3s, color 0.3s, border-color 0.3s;
-        }
-        .btn:hover {
-            background: #ffffff;
-            color: #0c0f14;
-        }
-        .btn-gold {
-            border-color: #f39c12;
-            color: #f39c12;
-        }
-        .btn-gold:hover {
-            background: #f39c12;
-            color: #0c0f14;
-        }
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 13px;
-            color: #57606f;
-            border-top: 1px solid #1e2430;
-        }
-    </style>
+    </script>
 </head>
-<body>
-
-    <header>
-        <a href="#" class="logo">PEDRAM TAHERI</a>
-        <nav>
-            <a href="paintings.html">Paintings</a>
-            <a href="astrophotography.html">Astrophotography</a>
-            <a href="classes.html">Academy</a>
-            <a href="about.html">About & Contact</a>
+<body class="bg-spaceBg text-white font-sans">
+    <!-- Header -->
+    <header class="flex justify-between items-center p-6 border-b border-gray-800 sticky top-0 bg-spaceBg/90 backdrop-blur-sm z-50">
+        <h1 class="text-xl font-bold tracking-widest">PEDRAM TAHERI</h1>
+        <nav class="space-x-4 text-sm uppercase text-gray-400">
+            <a href="#paintings" class="hover:text-goldAccent">Paintings</a>
+            <a href="#astro" class="hover:text-goldAccent">Astrophotography</a>
         </nav>
     </header>
-
-    <main>
-        <section class="hero">
-            <h1>Visual Exploration</h1>
-            <p>Welcome to my creative universe. This space connects two distinct worlds: the internal emotional depth of contemporary paintings and the cosmic wonders of deep-space astrophotography.</p>
-        </section>
-
-        <section class="gallery-section">
-            <div class="grid-container">
-                
-                <!-- Card 1: Paintings (Left) -->
-                <a href="paintings.html" class="art-card">
-                    <img src="painting-cover.jpg" alt="Fine Art & Paintings by Pedram Taheri" class="card-bg">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3>Fine Art & Paintings</h3>
-                        <p>Internal Exploration: Expressing inner landscapes, textures, and contemporary emotions on canvas.</p>
-                        <span class="btn">Explore Gallery</span>
-                    </div>
-                </a>
-
-                <!-- Card 2: Astrophotography (Center) -->
-                <a href="astrophotography.html" class="art-card">
-                    <img src="astro-cover.jpg" alt="Astrophotography by Pedram Taheri" class="card-bg">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3>Astrophotography</h3>
-                        <p>Cosmic Exploration: Capturing the unseen wonders of the deep sky, galaxies, and nebulas.</p>
-                        <span class="btn">View Deep Sky</span>
-                    </div>
-                </a>
-
-                <!-- Card 3: Academy (Right) -->
-                <a href="classes.html" class="art-card">
-                    <img src="classes-cover.jpg" alt="Art & Astro Academy by Pedram Taheri" class="card-bg">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3>Art & Astro Academy</h3>
-                        <p>Educational Exploration: Master the techniques of visual arts and astrophotography through offline masterclasses.</p>
-                        <span class="btn btn-gold">Join Masterclass</span>
-                    </div>
-                </a>
-
-            </div>
-        </section>
+    <!-- Main Content -->
+    <main class="p-6 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-spaceCard p-6 rounded-lg border border-gray-800">
+            <h2 class="text-goldAccent text-2xl mb-4">Fine Art</h2>
+            <p class="text-gray-300">Internal Exploration: Expression of emotions on canvas.</p>
+        </div>
+        <div class="bg-spaceCard p-6 rounded-lg border border-gray-800">
+            <h2 class="text-goldAccent text-2xl mb-4">Astrophotography</h2>
+            <p class="text-gray-300">Cosmic Exploration: Capturing deep-sky wonders.</p>
+        </div>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p>
-    </footer>
-
 </body>
 </html>
