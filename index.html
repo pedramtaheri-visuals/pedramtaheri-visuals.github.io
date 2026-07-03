@@ -44,7 +44,8 @@
             align-items: center;
             padding: 40px 8%;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
-            z-index: 100;
+            position: relative;
+            z-index: 9999; /* انتقال به بالاترین لایه برای فعال شدن کلیک */
         }
         .logo { 
             font-size: 24px; 
@@ -58,6 +59,7 @@
         /* Desktop Navigation Links */
         .nav-links {
             display: flex;
+            z-index: 9999;
         }
         .nav-links a { 
             color: #ffffff; 
@@ -82,37 +84,40 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
             padding: 8px 16px;
             border-radius: 4px;
             border: 1px solid rgba(255,255,255,0.2);
+            z-index: 10000;
         }
 
         /* Responsive Mobile Layout Fix */
         @media (max-width: 850px) {
             .nav-links {
-                display: none; /* مخفی کردن منوی خطی در حالت ریسپانسیو */
+                display: none; 
                 flex-direction: column;
                 position: absolute;
-                top: 90px;
+                top: 95px;
                 right: 8%;
-                background: rgba(12, 15, 20, 0.95);
-                backdrop-filter: blur(10px);
+                background: rgba(12, 15, 20, 0.98);
+                backdrop-filter: blur(15px);
                 border: 1px solid #1e2430;
-                padding: 20px;
+                padding: 15px 25px;
                 border-radius: 8px;
-                width: 200px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                width: 180px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.7);
             }
             .nav-links.active {
-                display: flex; /* نمایش منو به صورت آبشاری هنگام کلیک */
+                display: flex; /* باز شدن روان منو به صورت عمودی */
             }
             .nav-links a {
-                margin: 10px 0;
+                margin: 12px 0;
                 font-size: 16px;
+                margin-left: 0;
+                text-align: left;
             }
             .menu-trigger {
-                display: block; /* نمایش کلمه منو در گوشی */
+                display: block; 
             }
         }
 
@@ -239,6 +244,3 @@
 
     <footer><p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p></footer>
 
-    <!-- Smart JavaScript for Mobile Toggle Button -->
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
