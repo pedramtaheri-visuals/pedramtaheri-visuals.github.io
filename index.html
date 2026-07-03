@@ -15,7 +15,7 @@
         body { 
             background-color: #0c0f14; 
             color: #f1f2f6; 
-            font-family: 'Montserrat', sans-serif; /* فونت بدنه نرم و مدرن */
+            font-family: 'Montserrat', sans-serif; 
             margin: 0; 
             padding: 0; 
         }
@@ -47,7 +47,7 @@
         /* ساختار دو خطی هدر بر اساس تصویر ارسالی شما */
         .nav-overlay-header {
             display: flex;
-            flex-direction: column; /* چیدمان زیر هم اسم و منوها */
+            flex-direction: column; 
             align-items: center;
             justify-content: center;
             padding: 50px 20px 30px 20px;
@@ -55,28 +55,37 @@
             z-index: 10;
         }
 
-        /* استایل لوگو (اسم شما) دقیقا شبیه تصویر */
+        /* استایل لوگو (اسم شما) - درشت‌تر، قدرتمندتر و با ابهت‌تر */
         .logo { 
-            font-family: 'Cinzel', serif; /* فونت کلاسیک هنری */
-            font-size: 32px; 
-            font-weight: 400; 
+            font-family: 'Cinzel', serif; 
+            font-size: 46px; /* افزایش سایز برای جلوه مینی‌مال و موزه‌ای */
+            font-weight: 600; 
             color: #ffffff; 
             text-decoration: none; 
-            letter-spacing: 7px; /* فاصله زیاد بین حروف برای ایجاد حس لوکس بودن */
-            margin-bottom: 25px; /* فاصله تا منوی پایین */
-            text-shadow: 0 2px 8px rgba(0,0,0,0.8); 
-            transition: color 0.3s;
+            letter-spacing: 9px; /* فاصله بین حروف متناسب با سایز جدید */
+            margin-bottom: 30px; 
+            text-shadow: 0 4px 12px rgba(0,0,0,0.9); 
+            transition: color 0.3s, letter-spacing 0.3s;
         }
         .logo:hover {
             color: #bdc3c7;
+            letter-spacing: 11px; 
+        }
+
+        /* پاسخگویی برای مانیتورهای بزرگ */
+        @media (min-width: 1600px) {
+            .logo {
+                font-size: 54px;
+                letter-spacing: 12px;
+            }
         }
 
         /* ردیف منوها */
         nav {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* جلوگیری از بهم ریختگی در صفحات کوچک */
-            gap: 30px; /* فاصله استاندارد بین آیتم‌ها */
+            flex-wrap: wrap; 
+            gap: 30px; 
         }
 
         nav a { 
@@ -85,36 +94,42 @@
             text-decoration: none; 
             font-size: 13px;
             font-weight: 400;
-            letter-spacing: 3px; /* فاصله بین حروف منو */
+            letter-spacing: 3px; 
             text-transform: uppercase;
             transition: color 0.3s, letter-spacing 0.3s; 
             text-shadow: 0 2px 4px rgba(0,0,0,0.6);
         }
         nav a:hover { 
             color: #ffffff; 
-            letter-spacing: 4px; /* افکت جذاب باز شدن حروف هنگام هاور */
+            letter-spacing: 4px; 
         }
         
-        /* متمایز کردن منوی بلاگ شبیه عکس ارسالی */
         nav a.active-blog {
             color: #ffffff;
             font-weight: 600;
         }
 
-        /* بهینه‌سازی کامل برای موبایل */
+        /* بهینه‌سازی کامل برای موبایل و تبلت */
         @media (max-width: 768px) {
             .logo {
-                font-size: 22px; /* کوچک‌تر شدن اسم در موبایل برای جا شدن در یک خط */
+                font-size: 26px; 
                 letter-spacing: 4px;
-                margin-bottom: 15px;
+                margin-bottom: 20px;
             }
             nav {
-                gap: 15px 20px; /* کاهش فاصله منوها در موبایل */
-                padding: 0 10px;
+                gap: 12px 18px; 
+                padding: 0 5px;
             }
             nav a {
-                font-size: 11px; /* کوچک‌تر شدن فونت منو در موبایل */
+                font-size: 11px; 
                 letter-spacing: 1px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 20px; 
+                letter-spacing: 3px;
             }
         }
 
@@ -222,9 +237,8 @@
                     </div>
                 </a>
                 
-                <!-- Card 3: Academy -->
+                <!-- Card 3: Academy (دکمه و ساختار کاملاً اصلاح شد) -->
                 <a href="classes.html" class="art-card">
                     <img src="classes-cover.jpg" alt="Art Academy & Workshops" class="card-bg">
                     <div class="card-overlay"></div>
                     <div class="card-content">
-                        <h3>Academy & Workshops</h3>
