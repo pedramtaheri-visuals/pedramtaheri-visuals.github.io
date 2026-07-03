@@ -14,22 +14,34 @@
             padding: 0; 
         }
         
-        /* THE UPDATED HERO BANNER: Contained background to fix composition */
+        /* THE PERFECT FULL-WIDTH EXTENDED BANNER */
         .immersive-header-container {
             position: relative;
             width: 100%;
-            height: 75vh; 
+            /* افزایش چشمگیر ارتفاع در کامپیوتر برای فضای بیشتر رو به پایین و جلوگیری از کات شدن عکس */
+            height: 105vh; 
             background-image: url('hero-painting.jpg'); 
-            background-size: contain; /* تغییر از cover به contain برای جمع شدن عکس از طرفین */
+            background-size: 100% auto; /* چسبیدن کامل به لبه‌های چپ و راست اسکرین */
             background-repeat: no-repeat;
-            background-position: center;
-            /* ایجاد یک هاله تیره و شیک در پشت نقاشی برای پر کردن طرفین */
+            background-position: top center;
             background-color: #0c0f14;
-            background-image: url('hero-painting.jpg'), radial-gradient(circle at center, #181d26 0%, #0c0f14 100%);
             border-bottom: 1px solid #1e2430;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+
+        /* Responsive height fix for laptops and smaller screens */
+        @media (max-width: 1400px) {
+            .immersive-header-container {
+                height: 95vh;
+            }
+        }
+        @media (max-width: 1024px) {
+            .immersive-header-container {
+                height: 75vh;
+                background-size: cover; /* حفظ چیدمان در تبلت و موبایل */
+            }
         }
 
         /* Floating Transparent Navigation Layer over the painting */
@@ -62,21 +74,21 @@
             color: #f39c12; 
         }
 
-        /* Ambient dark fade at the bottom of the painting to transition into the web page */
+        /* Smooth extended dark fade at the bottom to blend painting into the dark page */
         .banner-bottom-fade {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 25%;
-            background: linear-gradient(to top, #0c0f14 0%, transparent 100%);
+            height: 35%; /* افزایش ضخامت سایه برای محو شدگی عمیق‌تر نقاشی عریض */
+            background: linear-gradient(to top, #0c0f14 15%, transparent 100%);
             z-index: 1;
         }
 
         /* Hero Text Box below the painting banner */
         .hero { 
             text-align: center; 
-            padding: 80px 20px 60px 20px; 
+            padding: 90px 20px 60px 20px; 
             max-width: 800px; 
             margin: 0 auto; 
         }
@@ -117,7 +129,7 @@
 </head>
 <body>
 
-    <!-- Upper Immersive Banner Section -->
+    <!-- Upper Immersive Banner Section (Navigation Layered OVER Painting) -->
     <header class="immersive-header-container">
         <div class="nav-overlay-header">
             <a href="#" class="logo">PEDRAM M. TAHERI</a>
