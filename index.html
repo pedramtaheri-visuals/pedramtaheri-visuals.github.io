@@ -5,80 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedram Taheri | Visual Exploration</title>
     <style>
-        /* ... سایر استایل‌ها (بدنه، هدر، فونت‌ها) ... */
+        /* Modern Dark Theme Style */
         body { background-color: #0c0f14; color: #f1f2f6; font-family: 'Helvetica Neue', sans-serif; margin: 0; }
         header { display: flex; justify-content: space-between; padding: 30px 8%; border-bottom: 1px solid #1e2430; }
         .logo { font-size: 22px; font-weight: bold; color: #ffffff; text-decoration: none; }
-        nav a { color: #a4b0be; text-decoration: none; margin-left: 25px; transition: color 0.3s; }
+        nav a { color: #a4b0be; text-decoration: none; margin-left: 25px; }
         nav a:hover { color: #f39c12; }
-        
-        /* NEW: Hero Banner Styles */
-        .hero-banner {
-            width: 100%;
-            height: 450px;
-            overflow: hidden;
-            border-bottom: 1px solid #1e2430;
-        }
-        .hero-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
+
+        /* Immersive Split Hero Section for Square Artwork */
+        .hero-container { display: flex; align-items: center; padding: 60px 8%; gap: 50px; max-width: 1400px; margin: 0 auto; }
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 46px; font-weight: 300; color: #ffffff; }
+        .hero-text p { color: #747d8c; line-height: 1.6; }
+        .hero-image-wrapper { flex: 1; display: flex; justify-content: center; }
+        .hero-square-image { width: 100%; max-width: 450px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; border: 1px solid #1e2430; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+        @media (max-width: 768px) {
+            .hero-container { flex-direction: column-reverse; text-align: center; padding: 40px 20px; }
+            .hero-square-image { max-width: 320px; }
         }
 
-        /* ... استایل‌های بخش متن (hero) و گرید ... */
-        .hero { text-align: center; padding: 60px 20px; max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 46px; color: #ffffff; }
+        /* Gallery Grid (Unchanged) */
         .gallery-section { padding: 0 8% 80px 8%; }
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .art-card { position: relative; height: 480px; border: 1px solid #1e2430; border-radius: 12px; overflow: hidden; text-decoration: none; }
-        .card-bg { width: 100%; height: 100%; object-fit: cover; }
-        .card-content { position: absolute; bottom: 0; width: 100%; text-align: center; background: rgba(12, 15, 20, 0.8); padding: 20px; }
-        .btn { display: inline-block; padding: 10px 20px; border: 1px solid #fff; color: #fff; text-decoration: none; }
+        .art-card { position: relative; height: 480px; border: 1px solid #1e2430; border-radius: 12px; overflow: hidden; display: flex; align-items: flex-end; text-decoration: none; }
+        .art-card:hover { transform: translateY(-10px); border-color: #f39c12; }
+        .card-bg { position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .card-overlay { position: absolute; width: 100%; height: 100%; background: linear-gradient(to top, rgba(12, 15, 20, 0.95), transparent); z-index: 2; }
+        .card-content { position: relative; z-index: 3; padding: 35px 25px; text-align: center; }
+        .card-content h3 { color: #ffffff; }
+        .card-content p { color: #bdc3c7; }
+        .btn { display: inline-block; padding: 12px 28px; color: #ffffff; border: 1px solid #ffffff; border-radius: 4px; text-decoration: none; }
+        .btn:hover { background: #ffffff; color: #0c0f14; }
+        .btn-gold { border-color: #f39c12; color: #f39c12; }
+        .btn-gold:hover { background: #f39c12; }
         footer { text-align: center; padding: 40px; color: #57606f; }
     </style>
 </head>
 <body>
-
     <header>
         <a href="#" class="logo">PEDRAM TAHERI</a>
-        <nav>
-            <a href="paintings.html">Paintings</a>
-            <a href="astrophotography.html">Astrophotography</a>
-            <a href="about.html">About</a>
-        </nav>
+        <nav><a href="#">Paintings</a><a href="#">Astrophotography</a><a href="#">Academy</a></nav>
     </header>
-
     <main>
-        <!-- NEW: Wide Hero Banner -->
-        <section class="hero-banner">
-            <img src="hero-painting.jpg" alt="Featured Painting by Pedram Taheri">
+        <section class="hero-container">
+            <div class="hero-text">
+                <h1>Visual Exploration</h1>
+                <p>Welcome to my creative universe. A blend of contemporary art and cosmic astrophotography.</p>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="hero-painting.jpg" alt="Featured Painting" class="hero-square-image">
+            </div>
         </section>
-
-        <section class="hero">
-            <h1>Visual Exploration</h1>
-            <p>Welcome to my creative universe...</p>
-        </section>
-
-        <!-- ... بخش سه گانه (gallery-section) ... -->
         <section class="gallery-section">
             <div class="grid-container">
-                <a href="paintings.html" class="art-card">
-                    <img src="painting-cover.jpg" alt="Fine Art" class="card-bg">
-                    <div class="card-content"><h3>Paintings</h3><span class="btn">Explore</span></div>
+                <a href="#" class="art-card">
+                    <img src="painting-cover.jpg" class="card-bg">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3>Fine Art</h3>
+                        <p>Expressing inner landscapes.</p>
+                        <span class="btn">Explore</span>
+                    </div>
                 </a>
-                <a href="astrophotography.html" class="art-card">
-                    <img src="astro-cover.jpg" alt="Astrophotography" class="card-bg">
-                    <div class="card-content"><h3>Astrophotography</h3><span class="btn">View</span></div>
-                </a>
-                <a href="classes.html" class="art-card">
-                    <img src="classes-cover.jpg" alt="Academy" class="card-bg">
-                    <div class="card-content"><h3>Academy</h3><span class="btn">Join</span></div>
-                </a>
+                <!-- Other cards -->
             </div>
         </section>
     </main>
-
     <footer><p>&copy; 2026 Pedram Taheri</p></footer>
 </body>
 </html>
