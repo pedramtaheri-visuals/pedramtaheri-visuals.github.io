@@ -4,306 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paintings | Pedram M.Taheri</title>
-    
-    <!-- لود فونت‌های رسمی صفحات About و Contact شما -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
     <style>
-        /* استایل‌های پایه و یکدست شده با بخش بیوگرافی و تماس */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #111111;
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ناوبری اصلی (Header) - کپی دقیق از صفحه تماس و درباره شما */
-        header {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 50px 20px 30px;
-        }
-
-        .brand-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #111111;
-            text-decoration: none;
-        }
-
-        nav {
-            display: flex;
-            gap: 35px;
-        }
-
-        nav a {
-            font-size: 14px;
-            font-weight: 400;
-            color: #777777;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover, nav a.active {
-            color: #111111;
-            font-weight: 500;
-        }
-
-        /* ساختار محتوایی گالری بر اساس چیدمان فرم تماس و متن‌های About */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px 100px;
-        }
-
-        .section-header {
-            margin-bottom: 60px;
-            border-bottom: 1px solid #e5e5e5; /* خط جداکننده نازک مشابه بخش Contact */
-            padding-bottom: 20px;
-        }
-
-        .section-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            font-weight: 400;
-            color: #111111;
-            margin-bottom: 10px;
-        }
-
-        .section-header p {
-            font-size: 15px;
-            color: #666666;
-            font-weight: 300;
-        }
-
-        /* گالری نقاشی‌ها با ساختار سطر به سطر تمیز نمایشگاهی */
-        .paintings-list {
-            display: flex;
-            flex-direction: column;
-            gap: 80px;
-        }
-
-        .painting-row {
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            padding-bottom: 60px;
-            border-bottom: 1px solid #f5f5f5;
-        }
-
-        /* راست به چپ کردن تناوبی برای جذابیت بصری چیدمان */
-        .painting-row:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        /* بخش تصویر با حفظ ابعاد دقیق و بدون دفرمه شدن */
-        .image-holder {
-            flex: 1;
-            background-color: #fafafa;
-            border: 1px solid #eaeaea;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-in;
-        }
-
-        .image-holder img {
-            max-width: 100%;
-            max-height: 450px;
-            object-fit: contain;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        /* مشخصات اثر متناسب با تایپوگرافی بیوگرافی هنرمند */
-        .details-holder {
-            flex: 1;
-        }
-
-        .details-holder h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 26px;
-            font-weight: 400;
-            color: #111111;
-            margin-bottom: 15px;
-        }
-
-        .details-holder .spec-item {
-            font-size: 14px;
-            color: #555555;
-            margin-bottom: 8px;
-            font-weight: 300;
-        }
-
-        .details-holder .spec-label {
-            color: #999999;
-            margin-right: 5px;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .details-holder .year {
-            display: inline-block;
-            margin-top: 15px;
-            font-size: 13px;
-            color: #111111;
-            font-weight: 500;
-            border-bottom: 1px solid #111111; /* استایل دکمه‌ای مشابه دکمه‌های فرم شما */
-            padding-bottom: 2px;
-        }
-
-        /* فوتر یکپارچه */
-        footer {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 13px;
-            color: #888888;
-            font-weight: 300;
-            border-top: 1px solid #e5e5e5;
-        }
-
-        /* لایت‌باکس با پس‌زمینه سفید خالص منسجم با تم سایت */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.98);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox-modal img {
-            max-width: 90%;
-            max-height: 85%;
-            object-fit: contain;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 35px;
-            right: 40px;
-            font-size: 38px;
-            font-weight: 300;
-            color: #111111;
-            cursor: pointer;
-        }
-
-        /* بهینه‌سازی برای موبایل */
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 20px; padding: 30px 20px; }
-            .painting-row, .painting-row:nth-child(even) { flex-direction: column; gap: 30px; }
-            .section-header h1 { font-size: 30px; }
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #111111; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        header { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 50px 20px 30px; }
+        .brand-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; letter-spacing: 1px; color: #111111; text-decoration: none; }
+        nav { display: flex; gap: 35px; }
+        nav a { font-size: 14px; font-weight: 400; color: #777777; text-decoration: none; transition: color 0.2s ease; }
+        nav a:hover, nav a.active { color: #111111; font-weight: 500; }
+        main { max-width: 1200px; margin: 0 auto; padding: 40px 20px 100px; }
+        .section-header { margin-bottom: 50px; border-bottom: 1px solid #e5e5e5; padding-bottom: 20px; }
+        .section-header h1 { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 400; color: #111111; }
+        /* Masonry Layout */
+        .masonry-gallery { column-count: 3; column-gap: 40px; }
+        .artwork-card { break-inside: avoid; margin-bottom: 40px; padding-bottom: 25px; border-bottom: 1px solid #f5f5f5; }
+        .image-box { background-color: #fafafa; border: 1px solid #eaeaea; padding: 15px; cursor: zoom-in; }
+        .image-box img { width: 100%; height: auto; display: block; transition: opacity 0.3s ease; }
+        .details-box { padding-top: 15px; font-size: 13px; color: #666; }
+        .details-box h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: #111; margin-bottom: 8px; }
+        footer { text-align: center; padding: 40px 20px; border-top: 1px solid #e5e5e5; font-size: 13px; color: #888; }
+        /* Responsive */
+        @media (max-width: 900px) { .masonry-gallery { column-count: 2; } }
+        @media (max-width: 600px) { header { flex-direction: column; } .masonry-gallery { column-count: 1; } }
     </style>
 </head>
 <body>
-
-    <!-- هدر یکپارچه سایت -->
     <header>
         <a href="index.html" class="brand-logo">PEDRAM M.TAHERI</a>
-        <nav>
-            <a href="index.html">About</a>
-            <a href="paintings.html" class="active">Paintings</a>
-            <a href="#">Astrophotography</a>
-            <a href="#">Exhibitions</a>
-            <a href="#">Workshops</a>
-            <a href="#">Contact</a>
-        </nav>
+        <nav><a href="index.html">About</a><a href="paintings.html" class="active">Paintings</a><a href="#">Contact</a></nav>
     </header>
-
-    <!-- محتوای اصلی -->
     <main>
-        <div class="section-header">
-            <h1>Paintings</h1>
-            <p>Contemporary Fine Art & Visual Landscapes</p>
-        </div>
-
-        <div class="paintings-list">
-            
-            <!-- اثر اول -->
-            <div class="painting-row">
-                <div class="image-holder" onclick="viewImage('p1.jpg')">
-                    <img src="p1.jpg" alt="Untitled I">
-                </div>
-                <div class="details-holder">
-                    <h2>Untitled I</h2>
-                    <div class="spec-item"><span class="spec-label">Medium:</span> Acrylic & Texture on Canvas</div>
-                    <div class="spec-item"><span class="spec-label">Dimensions:</span> 80 x 80 cm</div>
-                    <div class="year">2025</div>
-                </div>
-            </div>
-
-            <!-- اثر دوم -->
-            <div class="painting-row">
-                <div class="image-holder" onclick="viewImage('p2.jpg')">
-                    <img src="p2.jpg" alt="Untitled II">
-                </div>
-                <div class="details-holder">
-                    <h2>Untitled II</h2>
-                    <div class="spec-item"><span class="spec-label">Medium:</span> Oil on Canvas</div>
-                    <div class="spec-item"><span class="spec-label">Dimensions:</span> 60 x 90 cm</div>
-                    <div class="year">2024</div>
-                </div>
-            </div>
-
-            <!-- اثر سوم -->
-            <div class="painting-row">
-                <div class="image-holder" onclick="viewImage('p3.jpg')">
-                    <img src="p3.jpg" alt="Untitled III">
-                </div>
-                <div class="details-holder">
-                    <h2>Untitled III</h2>
-                    <div class="spec-item"><span class="spec-label">Medium:</span> Mixed Media on Canvas</div>
-                    <div class="spec-item"><span class="spec-label">Dimensions:</span> 100 x 100 cm</div>
-                    <div class="year">2025</div>
-                </div>
-            </div>
-
+        <div class="section-header"><h1>Paintings</h1></div>
+        <div class="masonry-gallery">
+            <!-- Example: Generate 11 items with p1.jpg to p11.jpg -->
+            <div class="artwork-card"><div class="image-box"><img src="p1.jpg" alt="Artwork"></div><div class="details-box"><h2>Title</h2><p>Description</p></div></div>
+            <!-- ...repeat for all 11 items... -->
         </div>
     </main>
-
-    <!-- لایت‌باکس مینیمال روشن -->
-    <div id="imageLightbox" class="lightbox-modal" onclick="closeImage()">
-        <span class="close-btn">&times;</span>
-        <img id="modalTargetImg" src="">
-    </div>
-
-    <!-- فوتر پایانی سایت -->
-    <footer>
-        © 2026 Pedram M.Taheri. All rights reserved.
-    </footer>
-
-    <script>
-        function viewImage(imgUrl) {
-            document.getElementById('modalTargetImg').src = imgUrl;
-            document.getElementById('imageLightbox').style.display = 'flex';
-        }
-        function closeImage() {
-            document.getElementById('imageLightbox').style.display = 'none';
-        }
-    </script>
-
+    <footer>© 2026 Pedram M.Taheri</footer>
 </body>
 </html>
