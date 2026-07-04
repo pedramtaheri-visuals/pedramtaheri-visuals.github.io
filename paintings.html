@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paintings | Pedram Taheri</title>
+    <title>Paintings | Pedram M.Taheri</title>
     
-    <!-- اتصال به فونت‌های مدرن و مینیمال گوگل مشابه صفحه اول -->
+    <!-- لود فونت‌های رسمی صفحات About و Contact شما -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
-        /* تنظیمات پایه منطبق بر تم مینیمال و روشن صفحه اصلی */
+        /* استایل‌های پایه و یکدست شده با بخش بیوگرافی و تماس */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -22,151 +22,169 @@
             font-family: 'Inter', sans-serif;
             background-color: #ffffff;
             color: #111111;
-            line-height: 1.6;
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* سربرگ (Header) دقیقاً مشابه ساختار ناوبری صفحه اول شما */
+        /* ناوبری اصلی (Header) - کپی دقیق از صفحه تماس و درباره شما */
         header {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 40px 10%;
-            background-color: #ffffff;
+            padding: 50px 20px 30px;
         }
 
-        .brand-name {
-            font-size: 18px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
             color: #111111;
             text-decoration: none;
         }
 
         nav {
             display: flex;
-            gap: 30px;
+            gap: 35px;
         }
 
         nav a {
             font-size: 14px;
             font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #666666;
+            color: #777777;
             text-decoration: none;
+            letter-spacing: 0.5px;
             transition: color 0.2s ease;
         }
 
         nav a:hover, nav a.active {
             color: #111111;
+            font-weight: 500;
         }
 
-        /* بخش عنوان صفحه نقاشی‌ها */
-        .page-title {
-            text-align: center;
-            margin: 60px 0 40px;
+        /* ساختار محتوایی گالری بر اساس چیدمان فرم تماس و متن‌های About */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 100px;
         }
 
-        .page-title h1 {
-            font-size: 28px;
-            font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: 5px;
+        .section-header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid #e5e5e5; /* خط جداکننده نازک مشابه بخش Contact */
+            padding-bottom: 20px;
+        }
+
+        .section-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 400;
             color: #111111;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        .page-title p {
-            font-size: 14px;
+        .section-header p {
+            font-size: 15px;
+            color: #666666;
             font-weight: 300;
-            color: #888888;
-            letter-spacing: 1px;
         }
 
-        /* گالری تصاویر به سبک فریم‌های نمایشگاهی تمیز */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 50px;
-            padding: 20px 10% 80px;
-        }
-
-        .artwork-item {
+        /* گالری نقاشی‌ها با ساختار سطر به سطر تمیز نمایشگاهی */
+        .paintings-list {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 80px;
         }
 
-        /* ابعاد و قاب تصاویر نقاشی */
-        .image-container {
-            width: 100%;
-            aspect-ratio: 1 / 1; /* قاب مربعی شیک برای نمایش آثار */
-            overflow: hidden;
-            background-color: #f9f9f9;
-            cursor: pointer;
+        .painting-row {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        /* راست به چپ کردن تناوبی برای جذابیت بصری چیدمان */
+        .painting-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* بخش تصویر با حفظ ابعاد دقیق و بدون دفرمه شدن */
+        .image-holder {
+            flex: 1;
+            background-color: #fafafa;
+            border: 1px solid #eaeaea;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid #eeeeee;
+            cursor: zoom-in;
         }
 
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* تصویر بدون برش خوردگی کامل داخل قاب دیده می‌شود */
-            padding: 15px;
-            transition: opacity 0.3s ease;
+        .image-holder img {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
 
-        .image-container:hover img {
-            opacity: 0.85;
+        /* مشخصات اثر متناسب با تایپوگرافی بیوگرافی هنرمند */
+        .details-holder {
+            flex: 1;
         }
 
-        /* توضیحات متنی زیر هر اثر به سبک نمایشگاه‌ها */
-        .artwork-details {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .artwork-details h3 {
-            font-size: 15px;
-            font-weight: 500;
+        .details-holder h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 400;
             color: #111111;
-            margin-bottom: 6px;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
-        .artwork-details p {
+        .details-holder .spec-item {
+            font-size: 14px;
+            color: #555555;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        .details-holder .spec-label {
+            color: #999999;
+            margin-right: 5px;
             font-size: 13px;
-            font-weight: 300;
-            color: #666666;
-            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .artwork-details .year {
-            font-size: 12px;
-            color: #999999;
-            margin-top: 6px;
+        .details-holder .year {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 13px;
+            color: #111111;
+            font-weight: 500;
+            border-bottom: 1px solid #111111; /* استایل دکمه‌ای مشابه دکمه‌های فرم شما */
+            padding-bottom: 2px;
         }
 
-        /* فوتر مینیمال انتهای صفحه */
+        /* فوتر یکپارچه */
         footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
             text-align: center;
-            padding: 40px 0;
-            font-size: 12px;
+            font-size: 13px;
+            color: #888888;
             font-weight: 300;
-            color: #999999;
-            letter-spacing: 1px;
-            border-top: 1px solid #f5f5f5;
+            border-top: 1px solid #e5e5e5;
         }
 
-        /* سیستم لایت‌باکس مینیمال برای بزرگ‌نمایی */
-        .lightbox {
+        /* لایت‌باکس با پس‌زمینه سفید خالص منسجم با تم سایت */
+        .lightbox-modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 2000;
             top: 0;
             left: 0;
             width: 100%;
@@ -176,106 +194,114 @@
             align-items: center;
         }
 
-        .lightbox img {
-            max-width: 85%;
-            max-height: 80%;
+        .lightbox-modal img {
+            max-width: 90%;
+            max-height: 85%;
             object-fit: contain;
         }
 
-        .lightbox-close {
+        .close-btn {
             position: absolute;
-            top: 30px;
+            top: 35px;
             right: 40px;
-            font-size: 32px;
+            font-size: 38px;
             font-weight: 300;
             color: #111111;
             cursor: pointer;
+        }
+
+        /* بهینه‌سازی برای موبایل */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; padding: 30px 20px; }
+            .painting-row, .painting-row:nth-child(even) { flex-direction: column; gap: 30px; }
+            .section-header h1 { font-size: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- سربرگ یکپارچه با نام پدرو طاهری -->
+    <!-- هدر یکپارچه سایت -->
     <header>
-        <a href="index.html" class="brand-name">Pedram M.Taheri</a>
+        <a href="index.html" class="brand-logo">PEDRAM M.TAHERI</a>
         <nav>
             <a href="index.html">About</a>
             <a href="paintings.html" class="active">Paintings</a>
+            <a href="#">Astrophotography</a>
             <a href="#">Exhibitions</a>
             <a href="#">Workshops</a>
             <a href="#">Contact</a>
         </nav>
     </header>
 
-    <!-- عنوان گالری نقاشی‌ها -->
-    <div class="page-title">
-        <h1>Paintings</h1>
-        <p>Fine Art & Contemporary Explorations</p>
-    </div>
-
-    <!-- گالری منظم آثار نقاشی -->
-    <div class="gallery-grid">
-        
-        <!-- اثر اول -->
-        <div class="artwork-item">
-            <div class="image-container" onclick="openLightbox('artwork1.jpg')">
-                <img src="artwork1.jpg" alt="Untitled I">
-            </div>
-            <div class="artwork-details">
-                <h3>Untitled I</h3>
-                <p>Acrylic & Texture on Canvas</p>
-                <p>80 x 80 cm</p>
-                <p class="year">2025</p>
-            </div>
+    <!-- محتوای اصلی -->
+    <main>
+        <div class="section-header">
+            <h1>Paintings</h1>
+            <p>Contemporary Fine Art & Visual Landscapes</p>
         </div>
 
-        <!-- اثر دوم -->
-        <div class="artwork-item">
-            <div class="image-container" onclick="openLightbox('artwork2.jpg')">
-                <img src="artwork2.jpg" alt="Untitled II">
+        <div class="paintings-list">
+            
+            <!-- اثر اول -->
+            <div class="painting-row">
+                <div class="image-holder" onclick="viewImage('p1.jpg')">
+                    <img src="p1.jpg" alt="Untitled I">
+                </div>
+                <div class="details-holder">
+                    <h2>Untitled I</h2>
+                    <div class="spec-item"><span class="spec-label">Medium:</span> Acrylic & Texture on Canvas</div>
+                    <div class="spec-item"><span class="spec-label">Dimensions:</span> 80 x 80 cm</div>
+                    <div class="year">2025</div>
+                </div>
             </div>
-            <div class="artwork-details">
-                <h3>Untitled II</h3>
-                <p>Oil on Canvas</p>
-                <p>60 x 90 cm</p>
-                <p class="year">2024</p>
-            </div>
-        </div>
 
-        <!-- اثر سوم -->
-        <div class="artwork-item">
-            <div class="image-container" onclick="openLightbox('artwork3.jpg')">
-                <img src="artwork3.jpg" alt="Untitled III">
+            <!-- اثر دوم -->
+            <div class="painting-row">
+                <div class="image-holder" onclick="viewImage('p2.jpg')">
+                    <img src="p2.jpg" alt="Untitled II">
+                </div>
+                <div class="details-holder">
+                    <h2>Untitled II</h2>
+                    <div class="spec-item"><span class="spec-label">Medium:</span> Oil on Canvas</div>
+                    <div class="spec-item"><span class="spec-label">Dimensions:</span> 60 x 90 cm</div>
+                    <div class="year">2024</div>
+                </div>
             </div>
-            <div class="artwork-details">
-                <h3>Untitled III</h3>
-                <p>Mixed Media on Canvas</p>
-                <p>100 x 100 cm</p>
-                <p class="year">2025</p>
-            </div>
-        </div>
 
+            <!-- اثر سوم -->
+            <div class="painting-row">
+                <div class="image-holder" onclick="viewImage('p3.jpg')">
+                    <img src="p3.jpg" alt="Untitled III">
+                </div>
+                <div class="details-holder">
+                    <h2>Untitled III</h2>
+                    <div class="spec-item"><span class="spec-label">Medium:</span> Mixed Media on Canvas</div>
+                    <div class="spec-item"><span class="spec-label">Dimensions:</span> 100 x 100 cm</div>
+                    <div class="year">2025</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- لایت‌باکس مینیمال روشن -->
+    <div id="imageLightbox" class="lightbox-modal" onclick="closeImage()">
+        <span class="close-btn">&times;</span>
+        <img id="modalTargetImg" src="">
     </div>
 
-    <!-- لایت‌باکس مینیمال سفید برای نمایش تک اثر -->
-    <div id="galleryLightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightboxImage" src="">
-    </div>
-
-    <!-- فوتر پایانی -->
+    <!-- فوتر پایانی سایت -->
     <footer>
         © 2026 Pedram M.Taheri. All rights reserved.
     </footer>
 
-    <!-- جاوااسکریپت برای مدیریت لایت‌باکس عکس‌ها -->
     <script>
-        function openLightbox(src) {
-            document.getElementById('lightboxImage').src = src;
-            document.getElementById('galleryLightbox').style.display = 'flex';
+        function viewImage(imgUrl) {
+            document.getElementById('modalTargetImg').src = imgUrl;
+            document.getElementById('imageLightbox').style.display = 'flex';
         }
-        function closeLightbox() {
-            document.getElementById('galleryLightbox').style.display = 'none';
+        function closeImage() {
+            document.getElementById('imageLightbox').style.display = 'none';
         }
     </script>
 
