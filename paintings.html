@@ -1,258 +1,281 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paintings | Pedram Taheri</title>
-    <!-- آیکون بالای صفحه (Favicon) - نام عکس آیکون خود را جایگزین کنید -->
-    <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <!-- اتصال به فونت‌های مدرن و مینیمال گوگل مشابه صفحه اول -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* تنظیمات فونت و رنگ زمینه تاریک و هنری */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b0c10;
-            color: #c5c6c7;
+        /* تنظیمات پایه منطبق بر تم مینیمال و روشن صفحه اصلی */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        /* هدر و منوی بالای صفحه */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* سربرگ (Header) دقیقاً مشابه ساختار ناوبری صفحه اول شما */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background-color: #1f2833;
-            border-bottom: 1px solid #45f3ff33;
+            padding: 40px 10%;
+            background-color: #ffffff;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #45f3ff;
+        .brand-name {
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #111111;
             text-decoration: none;
-            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
         }
 
         nav a {
-            color: #ffffff;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666666;
             text-decoration: none;
-            margin-right: 20px;
-            font-size: 16px;
-            transition: color 0.3s;
+            transition: color 0.2s ease;
         }
 
-        nav a:hover {
-            color: #45f3ff;
+        nav a:hover, nav a.active {
+            color: #111111;
         }
 
-        /* عنوان صفحه گالری */
-        .gallery-title {
+        /* بخش عنوان صفحه نقاشی‌ها */
+        .page-title {
             text-align: center;
-            margin: 50px 0 20px;
+            margin: 60px 0 40px;
         }
 
-        .gallery-title h1 {
-            font-size: 36px;
-            color: #ffffff;
-            margin-bottom: 10px;
+        .page-title h1 {
+            font-size: 28px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #111111;
+            margin-bottom: 8px;
         }
 
-        .gallery-title p {
-            color: #66fcf1;
-            font-size: 18px;
+        .page-title p {
+            font-size: 14px;
+            font-weight: 300;
+            color: #888888;
+            letter-spacing: 1px;
         }
 
-        /* چیدمان کارت‌های گالری */
-        .gallery-container {
+        /* گالری تصاویر به سبک فریم‌های نمایشگاهی تمیز */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 40px 8%;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 50px;
+            padding: 20px 10% 80px;
         }
 
-        .paint-card {
-            background-color: #1f2833;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .artwork-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .paint-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(69, 243, 255, 0.2);
-        }
-
-        /* تنظیمات ابعاد تصاویر */
-        .paint-img-wrapper {
+        /* ابعاد و قاب تصاویر نقاشی */
+        .image-container {
             width: 100%;
-            height: 350px; /* ارتفاع ثابت برای هماهنگی کارت‌ها */
+            aspect-ratio: 1 / 1; /* قاب مربعی شیک برای نمایش آثار */
             overflow: hidden;
+            background-color: #f9f9f9;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #eeeeee;
         }
 
-        .paint-img-wrapper img {
+        .image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* تصویر بدون دفرمه شدن کل کادر را پر می‌کند */
-            transition: transform 0.5s;
+            object-fit: contain; /* تصویر بدون برش خوردگی کامل داخل قاب دیده می‌شود */
+            padding: 15px;
+            transition: opacity 0.3s ease;
         }
 
-        .paint-card:hover .paint-img-wrapper img {
-            transform: scale(1.05);
+        .image-container:hover img {
+            opacity: 0.85;
         }
 
-        /* اطلاعات نقاشی */
-        .paint-info {
-            padding: 20px;
+        /* توضیحات متنی زیر هر اثر به سبک نمایشگاه‌ها */
+        .artwork-details {
             text-align: center;
+            margin-top: 20px;
         }
 
-        .paint-info h3 {
-            margin: 0 0 10px;
-            color: #ffffff;
-            font-size: 20px;
+        .artwork-details h3 {
+            font-size: 15px;
+            font-weight: 500;
+            color: #111111;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
         }
 
-        .paint-info p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #a9b7c6;
+        .artwork-details p {
+            font-size: 13px;
+            font-weight: 300;
+            color: #666666;
+            margin-bottom: 4px;
         }
 
-        .paint-info .meta {
-            color: #45f3ff;
-            font-weight: bold;
-            margin-top: 10px;
+        .artwork-details .year {
+            font-size: 12px;
+            color: #999999;
+            margin-top: 6px;
         }
 
-        /* فوتر سایت */
+        /* فوتر مینیمال انتهای صفحه */
         footer {
             text-align: center;
-            padding: 30px;
-            background-color: #1f2833;
-            margin-top: 50px;
-            font-size: 14px;
-            color: #66fcf1;
+            padding: 40px 0;
+            font-size: 12px;
+            font-weight: 300;
+            color: #999999;
+            letter-spacing: 1px;
+            border-top: 1px solid #f5f5f5;
         }
 
-        /* سیستم بزرگ‌نمایی تصویر (Lightbox) */
+        /* سیستم لایت‌باکس مینیمال برای بزرگ‌نمایی */
         .lightbox {
             display: none;
             position: fixed;
-            z-index: 999;
+            z-index: 1000;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(255, 255, 255, 0.98);
             justify-content: center;
             align-items: center;
         }
 
         .lightbox img {
-            max-width: 90%;
-            max-height: 85%;
-            border: 2px solid #45f3ff;
-            border-radius: 4px;
+            max-width: 85%;
+            max-height: 80%;
+            object-fit: contain;
         }
 
         .lightbox-close {
             position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #fff;
-            font-size: 40px;
+            top: 30px;
+            right: 40px;
+            font-size: 32px;
+            font-weight: 300;
+            color: #111111;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <!-- هدر سایت -->
+    <!-- سربرگ یکپارچه با نام پدرو طاهری -->
     <header>
-        <a href="index.html" class="logo">PEDRAM TAHERI</a>
-        <nav dir="ltr">
-            <a href="index.html">Home</a>
-            <a href="paintings.html" style="color: #45f3ff;">Paintings</a>
-            <a href="#">Astrophotography</a>
-            <a href="#">About</a>
+        <a href="index.html" class="brand-name">Pedram M.Taheri</a>
+        <nav>
+            <a href="index.html">About</a>
+            <a href="paintings.html" class="active">Paintings</a>
+            <a href="#">Exhibitions</a>
+            <a href="#">Workshops</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
 
-    <!-- عنوان صفحه -->
-    <div class="gallery-title">
+    <!-- عنوان گالری نقاشی‌ها -->
+    <div class="page-title">
         <h1>Paintings</h1>
-        <p>Fine Art by Pedram Taheri</p>
+        <p>Fine Art & Contemporary Explorations</p>
     </div>
 
-    <!-- بخش گالری نقاشی‌ها -->
-    <div class="gallery-container">
+    <!-- گالری منظم آثار نقاشی -->
+    <div class="gallery-grid">
         
-        <!-- نقاشی اول -->
-        <div class="paint-card">
-            <div class="paint-img-wrapper" onclick="openLightbox('p1.jpg')">
-                <!-- به جای p1.jpg اسم فایل عکس واقعی خود را قرار دهید -->
-                <img src="p1.jpg" alt="Untitled I">
+        <!-- اثر اول -->
+        <div class="artwork-item">
+            <div class="image-container" onclick="openLightbox('artwork1.jpg')">
+                <img src="artwork1.jpg" alt="Untitled I">
             </div>
-            <div class="paint-info">
+            <div class="artwork-details">
                 <h3>Untitled I</h3>
                 <p>Acrylic & Texture on Canvas</p>
                 <p>80 x 80 cm</p>
-                <p class="meta">2025</p>
+                <p class="year">2025</p>
             </div>
         </div>
 
-        <!-- نقاشی دوم -->
-        <div class="paint-card">
-            <div class="paint-img-wrapper" onclick="openLightbox('p2.jpg')">
-                <!-- به جای p2.jpg اسم فایل عکس واقعی خود را قرار دهید -->
-                <img src="p2.jpg" alt="Untitled II">
+        <!-- اثر دوم -->
+        <div class="artwork-item">
+            <div class="image-container" onclick="openLightbox('artwork2.jpg')">
+                <img src="artwork2.jpg" alt="Untitled II">
             </div>
-            <div class="paint-info">
+            <div class="artwork-details">
                 <h3>Untitled II</h3>
                 <p>Oil on Canvas</p>
                 <p>60 x 90 cm</p>
-                <p class="meta">2024</p>
+                <p class="year">2024</p>
             </div>
         </div>
 
-        <!-- نقاشی سوم -->
-        <div class="paint-card">
-            <div class="paint-img-wrapper" onclick="openLightbox('p3.jpg')">
-                <!-- به جای p3.jpg اسم فایل عکس واقعی خود را قرار دهید -->
-                <img src="p3.jpg" alt="Untitled III">
+        <!-- اثر سوم -->
+        <div class="artwork-item">
+            <div class="image-container" onclick="openLightbox('artwork3.jpg')">
+                <img src="artwork3.jpg" alt="Untitled III">
             </div>
-            <div class="paint-info">
+            <div class="artwork-details">
                 <h3>Untitled III</h3>
                 <p>Mixed Media on Canvas</p>
                 <p>100 x 100 cm</p>
-                <p class="meta">2025</p>
+                <p class="year">2025</p>
             </div>
         </div>
 
     </div>
 
-    <!-- پنجره بزرگ‌نمایی عکس -->
-    <div id="customLightbox" class="lightbox" onclick="closeLightbox()">
+    <!-- لایت‌باکس مینیمال سفید برای نمایش تک اثر -->
+    <div id="galleryLightbox" class="lightbox" onclick="closeLightbox()">
         <span class="lightbox-close">&times;</span>
-        <img id="lightboxImg" src="">
+        <img id="lightboxImage" src="">
     </div>
 
-    <!-- فوتر -->
+    <!-- فوتر پایانی -->
     <footer>
-        © 2026 Pedram Taheri. All Rights Reserved.
+        © 2026 Pedram M.Taheri. All rights reserved.
     </footer>
 
-    <!-- کدهای جاوااسکریپت برای باز و بسته شدن عکس‌ها -->
+    <!-- جاوااسکریپت برای مدیریت لایت‌باکس عکس‌ها -->
     <script>
-        function openLightbox(imgSrc) {
-            document.getElementById('lightboxImg').src = imgSrc;
-            document.getElementById('customLightbox').style.display = 'flex';
+        function openLightbox(src) {
+            document.getElementById('lightboxImage').src = src;
+            document.getElementById('galleryLightbox').style.display = 'flex';
         }
         function closeLightbox() {
-            document.getElementById('customLightbox').style.display = 'none';
+            document.getElementById('galleryLightbox').style.display = 'none';
         }
     </script>
 
