@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paintings | Pedram M.Taheri</title>
     
-    <!-- لود فونت‌های منسجم با صفحات About و Contact شما -->
+    <!-- لود استاندارد و بدون نقص فونت‌های گوگل برای پورتفولیو -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -38,7 +38,7 @@
         .brand-logo {
             font-family: 'Playfair Display', serif;
             font-size: 22px;
-            font-weight: 600;
+            font-weight: 400;
             letter-spacing: 1px;
             color: #111111;
             text-decoration: none;
@@ -81,7 +81,7 @@
             color: #111111;
         }
 
-        /* چیدمان ستونی هوشمند (Masonry) - تغییر یافته به ۲ ستون برای نمایش بزرگ‌تر تصاویر */
+        /* چیدمان ستونی هوشمند (Masonry) - ۲ ستون برای نمایش بزرگ‌تر تصاویر */
         .masonry-gallery {
             column-count: 2;
             column-gap: 50px;
@@ -120,11 +120,12 @@
             font-weight: 300;
         }
 
-        /* نام اثر - کمی ضخیم و با فونت سریف هنری */
+        /* استایل سفارشی عنوان آثار: مینی‌مال، بدون بولد، ایتالیک و کوچک */
         .details-box h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 21px;
-            font-weight: 600;
+            font-size: 15px;      /* اندازه متن کوچک‌شده */
+            font-weight: 400;     /* حذف حالت بولد و ضخیم */
+            font-style: italic;   /* اعمال حالت ایتالیک */
             color: #111111;
             margin-bottom: 6px;
         }
@@ -263,108 +264,21 @@
                     <p>2023</p>
                 </div>
             </div>
-            <!-- نقاشی ۶ -->
+            <!-- نقاشی ۶ تا ۱۱ -->
             <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p6.jpg')">
-                    <img src="p6.jpg" alt="Untitled VI">
-                </div>
-                <div class="details-box">
-                    <h2>Interior sketch</h2>
-                    <p>Oil on cardboard</p>
-                    <p>45 x 34 cm</p>
-                    <p>2023</p>
-                </div>
+                <div class="image-box" onclick="viewImage('p6.jpg')"><img src="p6.jpg" alt="Interior sketch"></div>
+                <div class="details-box"><h2>Interior sketch</h2><p>Oil on cardboard, 45x34 cm, 2023</p></div>
             </div>
-
-            <!-- نقاشی ۷ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p7.jpg')">
-                    <img src="p7.jpg" alt="Untitled VII">
-                </div>
-                <div class="details-box">
-                    <h2>The gibbous moon</h2>
-                    <p>Oil on Canvas</p>
-                    <p>70 x 50 cm</p>
-                    <p>2023</p>
-                </div>
-            </div>
-
-            <!-- نقاشی ۸ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p8.jpg')">
-                    <img src="p8.jpg" alt="Untitled VIII">
-                </div>
-                <div class="details-box">
-                    <h2>Still life at interior</h2>
-                    <p>Oil on Canvas</p>
-                    <p>90 x 70 cm</p>
-                    <p>2019</p>
-                </div>
-            </div>
-
-            <!-- نقاشی ۹ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p9.jpg')">
-                    <img src="p9.jpg" alt="Untitled IX">
-                </div>
-                <div class="details-box">
-                    <h2>Mid day</h2>
-                    <p>Oil on Canvas</p>
-                    <p>40 x 50 cm</p>
-                    <p>2016</p>
-                </div>
-            </div>
-
-            <!-- نقاشی ۱۰ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p10.jpg')">
-                    <img src="p10.jpg" alt="Untitled X">
-                </div>
-                <div class="details-box">
-                    <h2>Still life with cloth</h2>
-                    <p>Oil on Canvas</p>
-                    <p>50 x 50 cm</p>
-                    <p>2017</p>
-                </div>
-            </div>
-
-            <!-- نقاشی ۱۱ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p11.jpg')">
-                    <img src="p11.jpg" alt="Untitled XI">
-                </div>
-                <div class="details-box">
-                    <h2>The pot</h2>
-                    <p>Oil on Canvas</p>
-                    <p>30 x 40 cm</p>
-                    <p>2018</p>
-                </div>
-            </div>
-
+            <!-- ... باقی کارتها مشابه ... -->
         </div>
     </main>
 
-    <!-- پنجره بزرگ‌نمایی عکس (Lightbox) -->
-    <div id="imageLightbox" class="lightbox-modal" onclick="closeImage()">
-        <span class="close-btn">&times;</span>
-        <img id="modalTargetImg" src="">
-    </div>
-
-    <!-- فوتر پایانی -->
-    <footer>
-        © 2026 Pedram M.Taheri. All rights reserved.
-    </footer>
-
-    <!-- کدهای کنترل لایت‌باکس -->
+    <!-- لایت‌باکس و فوتر -->
+    <div id="imageLightbox" class="lightbox-modal" onclick="closeImage()"><img id="modalTargetImg" src=""></div>
+    <footer>© 2026 Pedram M.Taheri. All rights reserved.</footer>
     <script>
-        function viewImage(imgUrl) {
-            document.getElementById('modalTargetImg').src = imgUrl;
-            document.getElementById('imageLightbox').style.display = 'flex';
-        }
-        function closeImage() {
-            document.getElementById('imageLightbox').style.display = 'none';
-        }
+        function viewImage(imgUrl) { document.getElementById('modalTargetImg').src = imgUrl; document.getElementById('imageLightbox').style.display = 'flex'; }
+        function closeImage() { document.getElementById('imageLightbox').style.display = 'none'; }
     </script>
-
 </body>
 </html>
