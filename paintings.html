@@ -1,110 +1,143 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paintings | Pedram Taheri</title>
+    <!-- آیکون بالای صفحه (Favicon) - نام عکس آیکون خود را جایگزین کنید -->
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <style>
-        /* Modern Minimalist Dark Theme */
-        body { 
-            background-color: #0c0f14; 
-            color: #f1f2f6; 
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
+        /* تنظیمات فونت و رنگ زمینه تاریک و هنری */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            margin: 0;
+            padding: 0;
         }
+
+        /* هدر و منوی بالای صفحه */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 8%;
-            border-bottom: 1px solid #1e2430;
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-decoration: none;
-        }
-        nav a {
-            color: #a4b0be;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-        nav a:hover, nav a.active {
-            color: #f39c12; 
-        }
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .hero h1 {
-            font-size: 42px;
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 0;
-            color: #ffffff;
-        }
-        .gallery-section {
-            padding: 0 8% 80px 8%;
-        }
-        /* Grid layout for real artworks */
-        .artwork-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 45px;
-            margin-top: 20px;
-        }
-        .artwork-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .image-frame {
-            width: 100%;
-            background-color: #151a24;
-            border: 1px solid #1e2430;
-            border-radius: 8px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: border-color 0.3s;
-        }
-        .image-frame:hover {
-            border-color: #f39c12;
-        }
-        .image-frame img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s;
-        }
-        .image-frame:hover img {
-            transform: scale(1.03);
-        }
-        .artwork-details {
-            margin-top: 18px;
-        }
-        .artwork-details h3 {
-            font-size: 18px;
-            font-weight: 400;
-            margin: 0 0 6px 0;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-        .artwork-details p {
-            font-size: 13px;
-            color: #747d8c;
-            margin: 0;
-            line-height: 1.5;
+            padding: 20px 8%;
+            background-color: #1f2833;
+            border-bottom: 1px solid #45f3ff33;
         }
 
-        /* Lightbox Overlay Style (Same Page Zoom) */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #45f3ff;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #45f3ff;
+        }
+
+        /* عنوان صفحه گالری */
+        .gallery-title {
+            text-align: center;
+            margin: 50px 0 20px;
+        }
+
+        .gallery-title h1 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .gallery-title p {
+            color: #66fcf1;
+            font-size: 18px;
+        }
+
+        /* چیدمان کارت‌های گالری */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 8%;
+        }
+
+        .paint-card {
+            background-color: #1f2833;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .paint-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(69, 243, 255, 0.2);
+        }
+
+        /* تنظیمات ابعاد تصاویر */
+        .paint-img-wrapper {
+            width: 100%;
+            height: 350px; /* ارتفاع ثابت برای هماهنگی کارت‌ها */
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .paint-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* تصویر بدون دفرمه شدن کل کادر را پر می‌کند */
+            transition: transform 0.5s;
+        }
+
+        .paint-card:hover .paint-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        /* اطلاعات نقاشی */
+        .paint-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .paint-info h3 {
+            margin: 0 0 10px;
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+        .paint-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #a9b7c6;
+        }
+
+        .paint-info .meta {
+            color: #45f3ff;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* فوتر سایت */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #1f2833;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #66fcf1;
+        }
+
+        /* سیستم بزرگ‌نمایی تصویر (Lightbox) */
         .lightbox {
             display: none;
             position: fixed;
@@ -113,111 +146,109 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(12, 15, 20, 0.95);
+            background-color: rgba(0,0,0,0.9);
             justify-content: center;
             align-items: center;
         }
-        .lightbox-content {
-            max-width: 85%;
+
+        .lightbox img {
+            max-width: 90%;
             max-height: 85%;
+            border: 2px solid #45f3ff;
             border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
         }
-        .close-lightbox {
+
+        .lightbox-close {
             position: absolute;
-            top: 30px;
-            right: 40px;
-            color: #f1f2f6;
+            top: 20px;
+            right: 30px;
+            color: #fff;
             font-size: 40px;
-            font-weight: 200;
             cursor: pointer;
-            transition: color 0.3s;
-        }
-        .close-lightbox:hover {
-            color: #f39c12;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 13px;
-            color: #57606f;
-            border-top: 1px solid #1e2430;
         }
     </style>
 </head>
 <body>
 
+    <!-- هدر سایت -->
     <header>
         <a href="index.html" class="logo">PEDRAM TAHERI</a>
-        <nav>
-            <a href="paintings.html" class="active">Paintings</a>
-            <a href="astrophotography.html">Astrophotography</a>
-            <a href="classes.html">Academy</a>
-            <a href="about.html">About & Contact</a>
+        <nav dir="ltr">
+            <a href="index.html">Home</a>
+            <a href="paintings.html" style="color: #45f3ff;">Paintings</a>
+            <a href="#">Astrophotography</a>
+            <a href="#">About</a>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Paintings</h1>
-        </section>
-
-        <section class="gallery-section">
-            <div class="artwork-grid">
-                
-                <!-- Artwork 1 -->
-                <div class="artwork-item">
-                    <div class="image-frame" onclick="openLightbox('painting1.jpg')">
-                        <img src="painting1.jpg" alt="Fine Art by Pedram Taheri">
-                    </div>
-                    <div class="artwork-details">
-                        <h3>Untitled I</h3>
-                        <p>Acrylic & Texture on Canvas<br>80 x 80 cm<br>2025</p>
-                    </div>
-                </div>
-
-                <!-- Artwork 2 -->
-                <div class="artwork-item">
-                    <div class="image-frame" onclick="openLightbox('painting2.jpg')">
-                        <img src="painting2.jpg" alt="Fine Art by Pedram Taheri">
-                    </div>
-                    <div class="artwork-details">
-                        <h3>Untitled II</h3>
-                        <p>Oil on Canvas<br>60 x 90 cm<br>2024</p>
-                    </div>
-                </div>
-
-                <!-- Artwork 3 -->
-                <div class="artwork-item">
-                    <div class="image-frame" onclick="openLightbox('painting3.jpg')">
-                        <img src="painting3.jpg" alt="Fine Art by Pedram Taheri">
-                    </div>
-                    <div class="artwork-details">
-                        <h3>Untitled III</h3>
-                        <p>Mixed Media on Canvas<br>100 x 100 cm<br>2025</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <!-- Lightbox Container -->
-    <div id="customLightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-content" id="lightboxImg">
+    <!-- عنوان صفحه -->
+    <div class="gallery-title">
+        <h1>Paintings</h1>
+        <p>Fine Art by Pedram Taheri</p>
     </div>
 
+    <!-- بخش گالری نقاشی‌ها -->
+    <div class="gallery-container">
+        
+        <!-- نقاشی اول -->
+        <div class="paint-card">
+            <div class="paint-img-wrapper" onclick="openLightbox('p1.jpg')">
+                <!-- به جای p1.jpg اسم فایل عکس واقعی خود را قرار دهید -->
+                <img src="p1.jpg" alt="Untitled I">
+            </div>
+            <div class="paint-info">
+                <h3>Untitled I</h3>
+                <p>Acrylic & Texture on Canvas</p>
+                <p>80 x 80 cm</p>
+                <p class="meta">2025</p>
+            </div>
+        </div>
+
+        <!-- نقاشی دوم -->
+        <div class="paint-card">
+            <div class="paint-img-wrapper" onclick="openLightbox('p2.jpg')">
+                <!-- به جای p2.jpg اسم فایل عکس واقعی خود را قرار دهید -->
+                <img src="p2.jpg" alt="Untitled II">
+            </div>
+            <div class="paint-info">
+                <h3>Untitled II</h3>
+                <p>Oil on Canvas</p>
+                <p>60 x 90 cm</p>
+                <p class="meta">2024</p>
+            </div>
+        </div>
+
+        <!-- نقاشی سوم -->
+        <div class="paint-card">
+            <div class="paint-img-wrapper" onclick="openLightbox('p3.jpg')">
+                <!-- به جای p3.jpg اسم فایل عکس واقعی خود را قرار دهید -->
+                <img src="p3.jpg" alt="Untitled III">
+            </div>
+            <div class="paint-info">
+                <h3>Untitled III</h3>
+                <p>Mixed Media on Canvas</p>
+                <p>100 x 100 cm</p>
+                <p class="meta">2025</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- پنجره بزرگ‌نمایی عکس -->
+    <div id="customLightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightboxImg" src="">
+    </div>
+
+    <!-- فوتر -->
     <footer>
-        <p>&copy; 2026 Pedram Taheri. All Rights Reserved.</p>
+        © 2026 Pedram Taheri. All Rights Reserved.
     </footer>
 
-    <!-- Simple Script for Lightbox Feature -->
+    <!-- کدهای جاوااسکریپت برای باز و بسته شدن عکس‌ها -->
     <script>
-        function openLightbox(imageSrc) {
-            document.getElementById('lightboxImg').src = imageSrc;
+        function openLightbox(imgSrc) {
+            document.getElementById('lightboxImg').src = imgSrc;
             document.getElementById('customLightbox').style.display = 'flex';
         }
         function closeLightbox() {
