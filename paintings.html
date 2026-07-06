@@ -8,7 +8,7 @@
     <!-- لود فونت‌های منسجم با صفحات About و Contact شما -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
         * {
@@ -176,15 +176,30 @@
 
         /* ریسپانسیو موبایل */
         @media (max-width: 768px) {
-            .masonry-gallery { column-count: 1; }
-            header { flex-direction: column; gap: 20px; padding: 30px 20px; }
+            .masonry-gallery { 
+                column-count: 1; 
+            }
+            header { 
+                flex-direction: column; 
+                gap: 20px; 
+                padding: 30px 20px; 
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px 25px;
+                padding: 0 10px;
+            }
+            nav a {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="brand-logo"><h2>PEDRAM M.TAHERI<h2></a>
+        <a href="index.html" class="brand-logo"><h2>PEDRAM M.TAHERI</h2></a>
         <nav>
             <a href="index.html">About</a>
             <a href="paintings.html" class="active">Paintings</a>
@@ -200,7 +215,7 @@
             <h4>Selected Paintings</h4>
         </div>
 
-        <div class="masonry-gallery">
+<div class="masonry-gallery">
             
             <!-- نقاشی ۱ -->
             <div class="artwork-card">
