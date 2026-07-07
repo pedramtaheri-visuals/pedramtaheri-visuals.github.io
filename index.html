@@ -18,6 +18,7 @@
             font-family: 'Montserrat', sans-serif; 
             margin: 0; 
             padding: 0; 
+            scroll-behavior: smooth;
         }
         
         /* THE PERFECT FULL-WIDTH EXTENDED BANNER */
@@ -128,6 +129,27 @@
             z-index: 1;
         }
 
+        /* طراحی و موقعیت‌دهی آیکون راهنما در نیمه پایینی هدر بالای خط */
+        .scroll-explorer-btn {
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            color: rgba(255, 255, 255, 0.6);
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+        .scroll-explorer-btn:hover {
+            color: #ffffff;
+            transform: translateX(-50%) translateY(4px);
+        }
+        .scroll-explorer-btn svg {
+            width: 34px;
+            height: 34px;
+            fill: currentColor;
+        }
+
         /* Hero Text Box below the painting banner */
         .hero { 
             text-align: center; 
@@ -172,11 +194,16 @@
                 <a href="blog.html" class="active-blog">Blog</a>
             </nav>
         </div>
+        <a href="#visual-exploration" class="scroll-explorer-btn">
+            <svg viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </a>
         <div class="banner-bottom-fade"></div>
     </header>
 
     <main>
-        <section class="hero">
+        <section id="visual-exploration" class="hero">
             <h1>Visual Exploration</h1>
             <p>Welcome to my creative universe. This space connects two distinct worlds: the internal emotional depth of contemporary paintings and the cosmic wonders of deep-space astrophotography.</p>
         </section>
