@@ -54,7 +54,7 @@
 
 /* کانتینر اصلی */
 .workshop-container {
-    max-width: 1200px;
+    max-width: 900px; /* کاهش ۲۵ درصدی عرض کلی کانتینر از ۱۲۰۰ به ۹۰۰ برای فشرده شدن پنجره‌ها */
     margin: 0 auto;
     padding: 4rem 2rem;
 }
@@ -114,8 +114,8 @@
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(335px, 1fr)); /* کاهش ۲۵ درصدی پایه ستون‌ها از ۴۵۰ به ۳۳۵ */
+    gap: 2.25rem; /* کاهش ۲۵ درصدی فواصل بین کارت‌ها */
 }
 
 .course-card {
@@ -134,12 +134,12 @@
 
 .course-badge, .workshop-badge {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.75rem; /* بهینه‌سازی شده برای ابعاد کوچک‌تر */
+    right: 0.75rem;
     background: var(--text-dark);
     color: #fff;
-    padding: 0.3rem 0.8rem;
-    font-size: 0.7rem;
+    padding: 0.22rem 0.6rem; /* کاهش ۲۵ درصدی ابعاد پدینگ پج */
+    font-size: 0.65rem;
     font-weight: 500;
     z-index: 10;
     letter-spacing: 0.5px;
@@ -147,7 +147,7 @@
 
 .course-image {
     width: 100%;
-    height: 100%;
+    height: 195px; /* کاهش ۲۵ درصدی ارتفاع تصویر کارت آنلاین از ۲۶۰ به ۱۹۵ */
     background: #f9f9f9;
     overflow: hidden;
 }
@@ -159,33 +159,33 @@
 }
 
 .course-info {
-    padding: 2.2rem;
+    padding: 1.65rem; /* کاهش ۲۵ درصدی پدینگ داخلی اطلاعات از ۲.۲ به ۱.۶۵ */
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
 .course-info h3 {
-    font-size: 1.35rem;
+    font-size: 1.2rem; /* متناسب‌سازی جزئی اندازه تیتر */
     font-weight: 700;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.75rem 0;
 }
 
 .course-desc {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin: 0 0 1.5rem 0;
+    font-size: 0.9rem;
+    margin: 0 0 1.2rem 0;
     height: 80px; 
     overflow: hidden;
 }
 
 .course-meta {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-light);
     margin-top: auto;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
     border-top: 1px solid var(--border-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.1rem;
 }
 
 /* دکمه‌های کال تو اکشن (CTA) */
@@ -193,11 +193,11 @@
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    padding: 0.8rem 1.5rem;
+    padding: 0.6rem 1.1rem; /* کاهش ۲۵ درصدی ابعاد دکمه‌ها */
     border: 1px solid var(--accent-color);
     color: var(--accent-color);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
 }
 
@@ -221,41 +221,42 @@
     background: #ffffff;
     border: 1px solid var(--border-color);
     position: relative;
+    max-width: 100%;
 }
 
 .featured-image {
     flex: 1;
-    min-height: 350px;
+    min-height: 260px; /* کاهش ۲۵ درصدی حداقل ارتفاع عکس کارت افقی از ۳۵۰ به ۲۶۰ */
     background: #f9f9f9;
 }
 
 .featured-info {
     flex: 1;
-    padding: 3rem;
+    padding: 2.25rem; /* کاهش ۲۵ درصدی پدینگ داخلی کارت افقی از ۳ به ۲.۲۵ */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .featured-info h3 {
-    font-size: 1.55rem;
+    font-size: 1.35rem; /* متناسب‌سازی جزئی اندازه تیتر */
     font-weight: 700;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 1.1rem 0;
 }
 
 .featured-info p {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin: 0 0 2rem 0;
+    font-size: 0.9rem;
+    margin: 0 0 1.5rem 0;
 }
 
 .workshop-features {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .feature-item {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
     color: var(--text-muted);
 }
 
@@ -275,10 +276,10 @@
         flex-direction: column;
     }
     .featured-image {
-        min-height: 250px;
+        min-height: 200px;
     }
     .featured-info {
-        padding: 2rem;
+        padding: 1.65rem;
     }
 }
 
