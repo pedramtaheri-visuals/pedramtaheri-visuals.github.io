@@ -1,14 +1,12 @@
 /* تنظیمات پایه و اعمال فونت مشابه بیدگل */
 :root {
     --bg-color: #ffffff;
-    --text-dark: #222222; /* رنگ متن تیره ملایم مشابه سایت بیدگل */
+    --text-dark: #222222; 
     --text-muted: #555555;
     --text-light: #8e8e8e;
     --border-color: #f0f0f0;
     --accent-color: #111111;
     --accent-hover: #000000;
-    
-    /* تعریف استایل فونت منطبق بر پلتفرم‌های متنی مدرن فارسی */
     --persian-font: 'Vazirmatn', 'IRANSans', 'Segoe UI', Tahoma, sans-serif;
 }
 
@@ -18,7 +16,7 @@
     font-family: var(--persian-font);
     margin: 0;
     padding: 0;
-    line-height: 1.85; /* تنظیم فاصله خطوط متناسب با فونت‌های نشر کتاب */
+    line-height: 1.85; 
     -webkit-font-smoothing: antialiased;
 }
 
@@ -44,7 +42,7 @@
     color: var(--text-light);
     margin-right: 2rem;
     font-size: 0.9rem;
-    font-family: Arial, sans-serif; /* حفظ ساختار انگلیسی منو */
+    font-family: Arial, sans-serif; 
     transition: color 0.3s;
 }
 
@@ -52,9 +50,9 @@
     color: var(--text-dark);
 }
 
-/* کانتینر اصلی */
+/* کانتینر اصلی - کوچک شده برای جمع و جور کردن کل صفحه */
 .workshop-container {
-    max-width: 720px; /* کاهش ۲۰ درصدی عرض کانتینر از ۹۰۰ به ۷۲۰ برای جمع و جورتر شدن کل المان‌ها */
+    max-width: 720px; 
     margin: 0 auto;
     padding: 4rem 2rem;
 }
@@ -75,7 +73,7 @@
 }
 
 .page-intro h1 {
-    font-size: 2.2rem; /* متناسب‌سازی اندازه سربرگ اصلی صفحه با قاب کوچک‌تر */
+    font-size: 2.2rem; 
     font-weight: 700;
     margin: 0 0 1.2rem 0;
     color: #111111;
@@ -107,15 +105,15 @@
     font-size: 0.85rem;
 }
 
-/* شبکه دوره‌های آنلاین */
+/* شبکه دوره‌های آنلاین - ابعاد کارت‌ها از پایه کوچک شده است */
 .courses-section {
     margin-bottom: 5rem;
 }
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); /* کاهش ۲۰ درصدی مبنای عرض کارت آنلاین از ۳۳۵ به ۲۶۸ */
-    gap: 1.8rem; /* کاهش متناسب فواصل */
+    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); 
+    gap: 1.8rem; 
 }
 
 .course-card {
@@ -147,7 +145,7 @@
 
 .course-image {
     width: 100%;
-    height: 156px; /* کاهش ۲۰ درصدی ارتفاع تصویر کارت آنلاین از ۱۹۵ به ۱۵۶ */
+    height: 156px; 
     background: #f9f9f9;
     overflow: hidden;
 }
@@ -159,7 +157,7 @@
 }
 
 .course-info {
-    padding: 1.32rem; /* کاهش ۲۰ درصدی پدینگ داخلی جعبه اطلاعات کارت از ۱.۶۵ به ۱.۳۲ */
+    padding: 1.32rem; 
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -175,7 +173,7 @@
     color: var(--text-muted);
     font-size: 0.85rem;
     margin: 0 0 1rem 0;
-    height: 95px; /* کمی افزایش جا برای جاگذاری متن در ساختار فشرده‌تر */
+    height: 95px; 
     overflow: hidden;
 }
 
@@ -193,7 +191,7 @@
     display: inline-block;
     text-align: center;
     text-decoration: none;
-    padding: 0.5rem 0.9rem; /* کاهش ۲۰ درصدی اندازه و حجم دکمه‌ها */
+    padding: 0.5rem 0.9rem; 
     border: 1px solid var(--accent-color);
     color: var(--accent-color);
     font-weight: 500;
@@ -215,7 +213,7 @@
     background: var(--accent-hover);
 }
 
-/* استایل ورکشاپ حضوری (فضای باز) */
+/* استایل ورکشاپ حضوری (فضای باز) - کوچک و جمع‌وجور شده */
 .featured-workshop-card {
     display: flex;
     background: #ffffff;
@@ -226,13 +224,13 @@
 
 .featured-image {
     flex: 1;
-    min-height: 208px; /* کاهش ۲۰ درصدی حداقل ارتفاع عکس کارت افقی ورکشاپ از ۲۶۰ به ۲۰۸ */
+    min-height: 208px; 
     background: #f9f9f9;
 }
 
 .featured-info {
     flex: 1;
-    padding: 1.8rem; /* کاهش ۲۰ درصدی پدینگ داخلی قاب افقی ورکشاپ از ۲.۲۵ به ۱.۸ */
+    padding: 1.8rem; 
     display: flex;
     flex-direction: column;
     justify-content: center;
