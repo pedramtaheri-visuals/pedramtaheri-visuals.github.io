@@ -4,52 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ورکشاپ‌ها و دوره‌های آموزشی | پدرام طاهری</title>
+    
+    <!-- بارگذاری فونت استاندارد فارسی با وزن‌های دقیق مشابه سایت بیدگل -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;500&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- لینک به استایل اختصاصی ورکشاپ -->
     <link rel="stylesheet" href="workshop.css">
 </head>
 <body class="workshop-body">
+
+    <!-- هدر سایت (هماهنگ با منوی اصلی شما - راست‌چین شده) -->
     <header class="site-header">
-        <div class="logo"><a href="index.html">PEDRAM M.TAHERI</a></div>
+        <div class="logo">
+            <a href="index.html">PEDRAM M.TAHERI</a>
+        </div>
         <nav class="main-nav">
-            <a href="about.html">About</a>
-            <a href="paintings.html">Paintings</a>
-            <a href="exhibitions.html">Exhibitions</a>
-            <a href="workshop.html" class="active">Workshops</a>
-            <a href="astrophotography.html">Night sky</a>
             <a href="contact.html">Contact</a>
             <a href="blog.html">Blog</a>
+            <a href="astrophotography.html">Night sky</a>
+            <a href="workshop.html" class="active">Workshops</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="paintings.html">Paintings</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
+
+    <!-- بخش معرفی اصلی صفحه -->
     <main class="workshop-container">
         <header class="page-intro">
             <span class="sub-title">آکادمی آموزش نقاشی و طراحی</span>
             <h1>مسیر خود را در دنیای هنر آغاز کنید</h1>
+            <p>دوره‌های آموزشی تخصصی، طراحی شده برای هنرجویانی که به دنبال یادگیری عمیق، اصولی و توسعه نگاه شخصی خود در نقاشی هستند.</p>
         </header>
+
+        <!-- ================= بخش اول: دوره‌های آنلاین ================= -->
         <section class="courses-section">
-            <div class="section-header"><h2>دوره‌های آموزشی آنلاین</h2></div>
+            <div class="section-header">
+                <h2>دوره‌های آموزشی آنلاین</h2>
+                <p>یادگیری گام‌به‌گام و بدون محدودیت زمان و مکان</p>
+            </div>
+
             <div class="courses-grid">
+                
+                <!-- کارت دوره آنلاین اول -->
                 <div class="course-card">
                     <div class="course-badge">دوره آنلاین</div>
+                    <div class="course-image">
+                        <img src="figure-drawing.jpg" alt="کورس آنلاین طراحی فیگور پایه">
+                    </div>
                     <div class="course-info">
                         <h3>کورس آنلاین طراحی فیگور پایه</h3>
-                        <p class="course-desc">تمرکز بر آناتومی و فرم.</p>
-                        <a href="courses/figure-drawing.html" class="cta-button">مشاهده دوره</a>
+                        <p class="course-desc">در این دوره با تمرکز بر آناتومی، درک فرم، تناسبات و خطوط محیطی، مهارت طراحی اصولی از فیگور انسان را از پایه فرامی‌گیرید.</p>
+                        <div class="course-meta">
+                            <span>سطح: مقدماتی تا پیشرفته</span>
+                        </div>
+                        <a href="courses/figure-drawing.html" class="cta-button">مشاهده و ورود به دوره ←</a>
                     </div>
                 </div>
+
+                <!-- کارت دوره آنلاین دوم -->
+                <div class="course-card">
+                    <div class="course-badge">دوره آنلاین</div>
+                    <div class="course-image">
+                        <img src="oil-painting.jpg" alt="کورس آنلاین مقدمه ای بر نقاشی با رنگ روغن">
+                    </div>
+                    <div class="course-info">
+                        <h3>کورس آنلاین مقدمه‌ای بر نقاشی با رنگ روغن</h3>
+                        <p class="course-desc">آشنایی با متریال رنگ روغن، تکنیک‌های لایه‌گذاری، ترکیب رنگ‌ها و چگونگی اجرای یک اثر نقاشی روی بوم با رویکرد معاصر.</p>
+                        <div class="course-meta">
+                            <span>سطح: پایه و مقدماتی</span>
+                        </div>
+                        <a href="courses/oil-painting.html" class="cta-button">مشاهده و ورود به دوره ←</a>
+                    </div>
+                </div>
+
             </div>
         </section>
+
+        <!-- ================= بخش دوم: ورکشاپ‌های حضوری ================= -->
         <section class="offline-section">
-            <div class="section-header"><h2>ورکشاپ‌های حضوری</h2></div>
+            <div class="section-header">
+                <h2>ورکشاپ‌های حضوری و تجربی</h2>
+                <p>خلق هنر در دل طبیعت و فضای واقعی</p>
+            </div>
+
+            <!-- کارت بزرگ و جذاب ورکشاپ فضای باز -->
             <div class="featured-workshop-card">
+                <div class="workshop-badge">ظرفیت محدود</div>
+                <div class="featured-image">
+                    <img src="plein-air.jpg" alt="ورکشاپ طراحی و نقاشی در فضای باز">
+                </div>
                 <div class="featured-info">
-                    <h3>ورکشاپ طراحی در فضای باز</h3>
-                    <p>ثبت مستقیم نور و رنگ.</p>
-                    <a href="workshops/plein-air-reg.html" class="cta-button primary">ثبت‌نام</a>
+                    <h3>ورکشاپ طراحی و نقاشی در فضای باز (Plein Air)</h3>
+                    <p>فرصتی بی‌نظیر برای رها شدن از فضای آتلیه و درک مستقیم نور، اتمسفر و رنگ در طبیعت. در این ورکشاپ عملی، تکنیک‌های سریع اسکیس، ثبت سایه‌روشن‌ها و برخورد جسورانه با منظره را به صورت زنده تمرین خواهیم کرد.</p>
+                    
+                    <div class="workshop-features">
+                        <div class="feature-item">📍 <strong>مکان:</strong> محیط‌های طبیعی و فضاهای باز شهری</div>
+                        <div class="feature-item">🎨 <strong>مخاطبان:</strong> علاقه‌مندان به نقاشی منظره و طراحی زنده</div>
+                    </div>
+
+                    <a href="workshops/plein-air-reg.html" class="cta-button primary">ثبت‌نام و رزرو صندلی ←</a>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- فوتر سایت -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Pedram M.Taheri. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
