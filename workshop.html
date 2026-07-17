@@ -1,119 +1,346 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ورکشاپ‌ها و دوره‌های آموزشی | پدرام طاهری</title>
     
-    <!-- بارگذاری فونت استاندارد فارسی با وزن‌های دقیق مشابه سایت بیدگل -->
+    <!-- سئو اختصاصی صفحه کارگاه‌ها و آکادمی -->
+    <title>Art Workshops & Drawing Classes | Pedram M.Taheri</title>
+    <meta name="description" content="Join specialized art workshops and classes by Pedram M.Taheri. Offering structural figure drawing courses and plein air landscape painting sessions.">
+    <meta name="keywords" content="Pedram M.Taheri workshops, drawing classes Tehran, structural figure drawing, plein air painting course, learn oil painting, anatomy for artists">
+    <link rel="canonical" href="https://pedramtaheri.com">
+
+    <!-- لود فونت‌های اصلی سایت -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- لینک به استایل اختصاصی ورکشاپ -->
-    <link rel="stylesheet" href="workshop.css">
-</head>
-<body class="workshop-body">
+    <link href="https://googleapis.com" rel="stylesheet">
 
-    <!-- هدر سایت (هماهنگ با منوی اصلی شما - راست‌چین شده) -->
-    <header class="site-header">
-        <div class="logo">
-            <a href="index.html">PEDRAM M.TAHERI</a>
+    <style>
+        /* Base Dark Theme */
+        body { 
+            background-color: #0c0f14; 
+            color: #f1f2f6; 
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            scroll-behavior: smooth;
+        }
+
+        /* Standard Minimal Header */
+        .page-header {
+            width: 100%;
+            padding: 60px 0 20px 0;
+            border-bottom: 1px solid #1e2430;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+        }
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-h1 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 26px; 
+            font-weight: 400; 
+            letter-spacing: 5px; 
+            margin: 0 0 15px 0;
+        }
+        .logo-h1 a { color: #ffffff; text-decoration: none; }
+
+        nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
+        nav a { 
+            font-family: 'Montserrat', sans-serif;
+            color: rgba(255, 255, 255, 0.6); 
+            text-decoration: none; 
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+            transition: color 0.3s; 
+        }
+        nav a:hover { color: #ffffff; }
+        nav a.active { color: #ffffff; font-weight: 600; border-bottom: 1px solid #ffffff; padding-bottom: 2px; }
+
+        /* Workshop Layout Containers */
+        .workshop-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .workshop-intro {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .workshop-intro h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            letter-spacing: 4px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        .workshop-intro p {
+            font-size: 15px;
+            color: #747d8c;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Course Card Grid Layout */
+        .courses-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .course-card {
+            background-color: #11151d;
+            border: 1px solid #1e2430;
+            border-radius: 8px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .course-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .course-info p {
+            font-size: 14.5px;
+            color: #a4b0be;
+            line-height: 1.7;
+            margin: 0 0 25px 0;
+            font-weight: 300;
+        }
+
+        /* Curriculum Bullet Points */
+        .course-highlights {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .course-highlights li {
+            font-size: 14px;
+            color: #bdc3c7;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        /* Sidebar Meta Information Panel */
+        .course-meta-panel {
+            background-color: #0c0f14;
+            border: 1px solid #1e2430;
+            border-radius: 6px;
+            padding: 25px;
+        }
+
+        .meta-row {
+            margin-bottom: 15px;
+            font-size: 13.5px;
+            line-height: 1.4;
+        }
+        .meta-row strong {
+            display: block;
+            color: #747d8c;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        .meta-row span {
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        /* CTA Registration Button */
+        .enroll-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px 0;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 25px;
+            transition: background 0.3s, color 0.3s, border-color 0.3s;
+        }
+        .enroll-btn:hover {
+            background-color: #ffffff;
+            color: #0c0f14;
+            border-color: #ffffff;
+        }
+
+        /* Footer Copyright */
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            color: #57606f; 
+            border-top: 1px solid #1e2430; 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+            background-color: #0c0f14;
+            margin-top: 80px;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 850px) {
+            .course-card {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+                gap: 30px;
+            }
+            .workshop-wrap { padding: 50px 15px; }
+            .workshop-intro h2 { font-size: 28px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- هدر هماهنگ با کل وب‌سایت -->
+    <header class="page-header">
+        <div class="nav-container">
+            <div class="logo-h1"><a href="index.html">PEDRAM M.TAHERI</a></div>
+            <nav>
+                <a href="about.html">About</a>
+                <a href="paintings.html">Paintings</a>
+                <a href="exhibition.html">Exhibitions</a>
+                <a href="workshop.html" class="active">Workshops</a>
+                <a href="nightscape.html">Night sky</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>    
+            </nav>
         </div>
-        <nav class="main-nav">
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-            <a href="astrophotography.html">Night sky</a>
-            <a href="workshop.html" class="active">Workshops</a>
-            <a href="exhibitions.html">Exhibitions</a>
-            <a href="paintings.html">Paintings</a>
-            <a href="about.html">About</a>
-        </nav>
     </header>
 
-    <!-- بخش معرفی اصلی صفحه -->
-    <main class="workshop-container">
-        <header class="page-intro">
-            <span class="sub-title"></span>
-            <h1></h1>
-            <p></p>
-        </header>
-
-        <!-- ================= بخش اول: دوره‌های آنلاین ================= -->
-        <section class="courses-section">
-            <div class="section-header">
-                <h2>دوره‌های آموزشی آنلاین </h2>
-                <p>یادگیری گام‌به‌گام و بدون محدودیت زمان و مکان</p>
-                <p>مدرس : پدرام محمدطاهری</p>
-            </div>
-
-            <div class="courses-grid">
-                
-                <!-- کارت دوره آنلاین اول -->
-                <div class="course-card">
-                    <div class="course-badge">دوره آنلاین</div>
-                    <div class="course-image">
-                        <img src="figure-drawing.jpg" alt="کورس آنلاین طراحی فیگور پایه">
-                    </div>
-                    <div class="course-info">
-                        <h3>کورس آنلاین طراحی فیگور پایه</h3>
-                        <p class="course-desc">در این دوره با تکیه بر دو مفهوم ساختار و حرکت به طراحی از بدن انسان می پردازیم و اجزا آناتومی بدن را با فرم های اولیه تفسیر می کنیم</p>
-                        <div class="course-meta">
-                            <span>سطح: مقدماتی تا متوسط</span>
-                        </div>
-                        <a href="courses/figure-drawing.html" class="cta-button">مشاهده و ورود به دوره ←</a>
-                    </div>
-                </div>
-
-                <!-- کارت دوره آنلاین دوم -->
-                <div class="course-card">
-                    <div class="course-badge">دوره آنلاین</div>
-                    <div class="course-image">
-                        <img src="oil-painting.jpg" alt="کورس آنلاین مقدمه ای بر نقاشی با رنگ روغن">
-                    </div>
-                    <div class="course-info">
-                        <h3>کورس آنلاین مقدمه‌ای بر نقاشی با رنگ روغن</h3>
-                        <p class="course-desc">در این دوره تلاش می کنیم ضمن آشنایی با ابزار و مواد اولیه برای نقاشی رنگ روغن  با مفاهیم اولیه در نقاشی مثل ارزشهای رنگی به شکل عملی آشنا شویم و در پایان به نقاشی از مدل ها و اشیا واقعی بپردازیم</p>
-                        <div class="course-meta">
-                            <span>سطح: پایه و مقدماتی</span>
-                        </div>
-                        <a href="courses/oil-painting.html" class="cta-button">مشاهده و ورود به دوره ←</a>
-                    </div>
-                </div>
-
-            </div>
+    <!-- کانتینر اصلی کارگاه‌های آموزشی -->
+    <main class="workshop-wrap">
+        
+        <section class="workshop-intro">
+            <h2>Educational Programs</h2>
+            <p>Professional art courses bridging classical drawing traditions with modern structural anatomy. Tailored for independent artists, students, and fine art enthusiasts.</p>
         </section>
 
-        <!-- ================= بخش دوم: ورکشاپ‌های حضوری ================= -->
-        <section class="offline-section">
-            <div class="section-header">
-                <h2>ورکشاپ‌های حضوری و تجربی</h2>
-                <p>نقاشی در فضای باز و نقاشی منظره</p>
-            </div>
+        <div class="courses-grid">
 
-            <!-- کارت بزرگ و جذاب ورکشاپ فضای باز -->
-            <div class="featured-workshop-card">
-                <div class="workshop-badge">ظرفیت محدود</div>
-                <div class="featured-image">
-                    <img src="plein-air.jpg" alt="ورکشاپ نقاشی در فضای باز">
-                </div>
-                <div class="featured-info">
-                    <h3>ورکشاپ نقاشی در فضای باز (Plein Air)</h3>
-                    <p>در این کارگاه به مبانی اولیه نقاشی در فضای باز خواهیم پرداخت و توانایی خود را برای نقاشی در زیر نور طبیعی و شرایط متغیر بیرون استودیو گسترش می دهیم</p>
+            <!-- دوره اول: طراحی فیگور ساختاری (آنلاین/حضوری) -->
+            <article class="course-card">
+                <div class="course-info">
+                    <h3>Structural Figure Drawing</h3>
+                    <p>A comprehensive program focusing on human anatomy, dynamic structural form, planes of the body, and spatial analysis. Inspired by the strict academic lineage of classical drafting, this course teaches students how to see and reconstruct the human figure with deep volumetric understanding.</p>
                     
-                    <div class="workshop-features">
-                        
-                    </div>
+                    <ul class="course-highlights">
+                        <li>Understanding skeletal landmarks and core muscle masses.</li>
+                        <li>Analysing the figure through volumetric rendering and geometric perspective.</li>
+                        <li>Live demonstrations, portfolio reviews, and personalized critiques.</li>
+                    </ul>
 
-                    <a href="workshops/plein-air-reg.html" class="cta-button primary">ثبت‌نام ←</a>
+                    <!-- 🔥 باکس هوشمند جذب مخاطب فارسی‌زبان -->
+                    <div style="margin-top: 35px; background-color: #1a2230; padding: 25px; border-right: 4px solid #ffffff; border-radius: 4px; text-align: right;" dir="rtl">
+                        <h4 style="font-family: 'Montserrat', sans-serif; color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">🎨 دوره تخصصی طراحی فیگور ساختاری</h4>
+                        <p style="font-size: 13.5px; color: #bdc3c7; line-height: 1.8; margin: 0;">این دوره به شکل کاملاً ساختاریافته، آناتومی و فرم سه بعدی بدن انسان را آموزش می‌دهد. هنرجویان با یادگیری نحوه تحلیل حجم‌ها، مهارت طراحی ذهنی و آکادمیک خود را ارتقا می‌دهند. کلاس‌ها شامل کرکسیون انفرادی و پشتیبانی مداوم است.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <!-- پنل مشخصات و دکمه ثبت‌نام -->
+                <div class="course-meta-panel">
+                    <div class="meta-row">
+                        <strong>Format</strong>
+                        <span>Online & Intensive</span>
+                    </div>
+                    <div class="meta-row">
+                        <strong>Duration</strong>
+                        <span>8 Weeks (Weekly Sessions)</span>
+                    </div>
+                    <div class="meta-row">
+                        <strong>Required Materials</strong>
+                        <span>Graphite, Charcoal, Newsprint</span>
+                    </div>
+                    <div class="meta-row">
+                        <strong>Level</strong>
+                        <span>Intermediate to Advanced</span>
+                    </div>
+                    <a href="contact.html" class="enroll-btn">Inquire / Register</a>
+                </div>
+            </article>
+
+
+            <!-- دوره دوم: کارگاه نقاشی فضای باز / امپرسیونیسم طبیعی -->
+            <article class="course-card">
+                <div class="course-info">
+                    <h3>Plein Air Landscape Painting</h3>
+                    <p>Immersive outdoor painting sessions studying transient sunlight, atmospheric perspective, and color harmony directly from nature. Students learn the methodology of the 20th-century British realism school, controlling values and capturing the genuine spirit of edge-of-city landscapes.</p>
+                    
+                    <ul class="course-highlights">
+                        <li>Mastering limited palettes and fast-drying oil techniques.</li>
+                        <li>Capturing accurate light values and weather atmospheres.</li>
+                        <li>Composition tactics for selecting powerful natural frames.</li>
+                    </ul>
+
+                    <!-- 🔥 باکس هوشمند جذب مخاطب فارسی‌زبان -->
+                    <div style="margin-top: 35px; background-color: #1a2230; padding: 25px; border-right: 4px solid #ffffff; border-radius: 4px; text-align: right;" dir="rtl">
+                        <h4 style="font-family: 'Montserrat', sans-serif; color: #ffffff; margin: 0 0 10px 0; font-size: 16px; font-weight: 600;">🌿 کارگاه عملی نقاشی در فضای باز (Plein Air)</h4>
+                        <p style="font-size: 13.5px; color: #bdc3c7; line-height: 1.8; margin: 0;">آموزش زنده در دل طبیعت و حواشی شهر. در این کارگاه یاد می‌گیرید چطور تغییرات سریع نور روز، اتمسفر هوا و هارمونی رنگ‌های رنگ‌روغن را در لحظه مهار کنید. این کلاس‌ها برای درک عمیق‌تر نقاشی روی بوم فوق‌العاده است.</p>
+                    </div>
+                </div>
+
+                <!-- پنل مشخصات و دکمه ثبت‌نام -->
+                <div class="course-meta-panel">
+                    <div class="meta-row">
+                        <strong>Format</strong>
+                        <span>On-Site / Outdoor Sessions</span>
+                    </div>
+                    <div class="meta-row">
+                        <strong>Location</strong>
+                        <span>Tehran & Suburbs (Iran)</span>
+                    </div>
+                    <div class="meta-row">
+                        <strong>Required Materials</strong>
+                        <span>Portable Easel, Oil Paints, Panels</span>
+                    </div>
+                    <div class="meta-row">
+                        <strong>Capacity</strong>
+                        <span>Limited to 8 Students</span>
+                    </div>
+                    <a href="contact.html" class="enroll-btn">Join Workshop</a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- بخش راهنمای ثبت‌نام نهایی به زبان فارسی برای راحتی کار کاربران داخل کشور -->
+        <div style="margin-top: 70px; background-color: #11151d; border: 1px dashed #1e2430; padding: 40px; text-align: center; border-radius: 8px;">
+            <p style="font-size: 16px; color: #ffffff; margin-bottom: 15px; font-weight: 400;" dir="rtl">📥 راهنمای ثبت‌نام و مشاوره دوره‌ها برای هنرجویان داخل ایران</p>
+            <p style="font-size: 14px; color: #a4b0be; line-height: 1.8; max-width: 700px; margin: 0 auto 25px auto;" dir="rtl">
+                هنرجویان گرامی جهت اطلاع از زمان دقیق شروع دوره‌های جدید، هزینه‌ها و رزرو ظرفیت کارگاه‌های حضوری و آنلاین، می‌توانند مشخصات خود را از طریق بخش <a href="contact.html" style="color: #ffffff; text-decoration: underline;">Contact</a> ارسال نمایند یا مستقیماً از طریق ایمیل با آتلیه در ارتباط باشند.
+            </p>
+            <p style="font-size: 14px; color: #ffffff; margin: 0;">
+                <strong>Studio Email:</strong> <a href="mailto:pedram.paintings@gmail.com" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #747d8c;">pedram.paintings@gmail.com</a>
+            </p>
+        </div>
+
     </main>
 
-    <!-- فوتر سایت -->
-    <footer class="site-footer">
-        <p>2026 Pedram M.Taheri. All rights reserved.</p>
+    <!-- پاصفحه یکپارچه سایت -->
+    <footer dir="ltr">
+        <p style="margin: 0;">&copy; 2026 Pedram M.Taheri. All rights reserved.</p>
     </footer>
 
 </body>
