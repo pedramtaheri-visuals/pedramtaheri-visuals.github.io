@@ -2,20 +2,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- سئو اختصاصی گالری آثار نقاشی -->
     <title>Selected Paintings & Fine Art Gallery | Pedram M.Taheri</title>
-    <meta name="description" content="Explore the online art gallery of Pedram M.Taheri (Pedram Mohammad Taheri). Contemporary oil paintings featuring still lifes, interior spaces, urban landscapes, and plein air works.">
+    <meta name="description" content="Explore the official online art gallery of Pedram M.Taheri. Contemporary realist oil paintings featuring still lifes, interior spaces, urban landscapes, and plein air works.">
     <meta name="keywords" content="Pedram M.Taheri paintings, Pedram Taheri oil paintings, contemporary realist painter, Iranian fine art gallery, plein air landscape paintings, still life artwork">
     <link rel="canonical" href="https://pedramtaheri.com">
 
-    <!-- لود فونت‌های اصلی -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com" rel="stylesheet">
 
     <style>
-        /* Base Dark Canvas */
         body { 
             background-color: #0c0f14; 
             color: #f1f2f6; 
@@ -24,8 +20,6 @@
             padding: 0; 
             scroll-behavior: smooth;
         }
-
-        /* Standard Minimal Header */
         .page-header {
             width: 100%;
             padding: 60px 0 20px 0;
@@ -47,12 +41,7 @@
         }
         .logo-h1 a { color: #ffffff; text-decoration: none; }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; 
-            gap: 25px; 
-        }
+        nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
         nav a { 
             font-family: 'Montserrat', sans-serif;
             color: rgba(255, 255, 255, 0.6); 
@@ -66,127 +55,42 @@
         nav a:hover { color: #ffffff; }
         nav a.active { color: #ffffff; font-weight: 600; border-bottom: 1px solid #ffffff; padding-bottom: 2px; }
 
-        /* Gallery Layout */
-        .gallery-wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-        }
+        .gallery-wrap { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .gallery-intro { text-align: center; margin-bottom: 60px; }
+        .gallery-intro h2 { font-family: 'Cinzel', serif; font-size: 36px; letter-spacing: 4px; color: #ffffff; margin-bottom: 15px; font-weight: 300; }
+        .gallery-intro p { font-size: 15px; color: #747d8c; max-width: 700px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
 
-        .gallery-intro {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .gallery-intro h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 36px;
-            letter-spacing: 4px;
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
-        .gallery-intro p {
-            font-size: 15px;
-            color: #747d8c;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        /* Advanced Masonry/Flex Grid for different painting aspects */
         .paintings-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 40px;
             align-items: start;
         }
-
-        /* Art Piece Card */
         .painting-card {
             background-color: #11151d;
             border: 1px solid #1e2430;
             border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.4s setup, border-color 0.4s;
+            transition: transform 0.4s, border-color 0.4s;
             display: flex;
             flex-direction: column;
         }
-        .painting-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
+        .painting-card:hover { transform: translateY(-8px); border-color: rgba(255, 255, 255, 0.3); }
+        .painting-img-holder { width: 100%; position: relative; background-color: #080a0e; overflow: hidden; }
+        .painting-img-holder img { width: 100%; height: auto; display: block; transition: transform 0.6s; }
+        .painting-card:hover .painting-img-holder img { transform: scale(1.03); }
 
-        /* Image Display Container */
-        .painting-img-holder {
-            width: 100%;
-            position: relative;
-            background-color: #080a0e;
-            overflow: hidden;
-        }
-        .painting-img-holder img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.6s;
-        }
-        .painting-card:hover .painting-img-holder img {
-            transform: scale(1.03);
-        }
+        .painting-meta { padding: 25px; text-align: left; }
+        .painting-meta h3 { font-family: 'Cinzel', serif; font-size: 18px; color: #ffffff; margin: 0 0 8px 0; letter-spacing: 1px; font-weight: 400; }
+        .painting-specs { font-size: 13px; color: #747d8c; margin: 0 0 12px 0; line-height: 1.5; font-weight: 400; letter-spacing: 0.5px; }
+        .painting-desc { font-size: 13.5px; color: #a4b0be; margin: 0; line-height: 1.6; font-weight: 300; }
 
-        /* Detailed Artwork Information labels */
-        .painting-meta {
-            padding: 25px;
-            text-align: left;
-        }
-        .painting-meta h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 18px;
-            color: #ffffff;
-            margin: 0 0 8px 0;
-            letter-spacing: 1px;
-            font-weight: 400;
-        }
-        .painting-specs {
-            font-size: 13px;
-            color: #747d8c;
-            margin: 0 0 12px 0;
-            line-height: 1.5;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-        .painting-desc {
-            font-size: 13.5px;
-            color: #a4b0be;
-            margin: 0;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-
-        /* Footer Copyright */
-        footer { 
-            text-align: center; 
-            padding: 40px; 
-            color: #57606f; 
-            border-top: 1px solid #1e2430; 
-            font-size: 12px; 
-            letter-spacing: 1px; 
-            background-color: #0c0f14;
-            margin-top: 60px;
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            .gallery-intro h2 { font-size: 28px; }
-            .paintings-grid { grid-template-columns: 1fr; gap: 30px; }
-            .gallery-wrap { padding: 50px 15px; }
-        }
+        footer { text-align: center; padding: 40px; color: #57606f; border-top: 1px solid #1e2430; font-size: 12px; letter-spacing: 1px; background-color: #0c0f14; margin-top: 60px; }
+        @media (max-width: 768px) { .gallery-intro h2 { font-size: 28px; } .paintings-grid { grid-template-columns: 1fr; gap: 30px; } .gallery-wrap { padding: 50px 15px; } }
     </style>
 </head>
-
 <body>
 
-    <!-- هدر هماهنگ با کل سایت -->
     <header class="page-header">
         <div class="nav-container">
             <div class="logo-h1"><a href="index.html">PEDRAM M.TAHERI</a></div>
@@ -202,63 +106,132 @@
         </div>
     </header>
 
-    <!-- کانتینر اصلی گالری نقاشی‌ها -->
     <main class="gallery-wrap">
-        
         <section class="gallery-intro">
             <h2>Selected Works</h2>
             <p>A collection of contemporary oil paintings exploring internal environments, quiet domestic architectures, and the subtle light across urban and natural landscapes.</p>
         </section>
 
-        <!-- شبکه بهینه‌شده نمایش نقاشی‌ها -->
         <div class="paintings-grid">
 
-            <!-- نمونه اثر اول (عمودی) -->
+            <!-- Painting 1 -->
             <article class="painting-card">
                 <div class="painting-img-holder">
-                    <!-- سئو: حتماً alt را متناسب با موضوع دقیق نقاشی بنویسید -->
-                    <img src="painting-1.jpg" alt="Interior space oil painting by Pedram M.Taheri">
+                    <img src="1.jpg" alt="Oil painting 1 by Pedram M.Taheri">
                 </div>
                 <div class="painting-meta">
-                    <h3>Silent Interior</h3>
-                    <div class="painting-specs">Oil on Canvas<br>60 x 50 cm | 2024</div>
-                    <p class="painting-desc">An exploration of light falling across empty space, emphasizing atmospheric tension and silence within private chambers.</p>
+                    <h3>Artwork Title 1</h3>
+                    <div class="painting-specs">Oil on Canvas<br>Dimensions | Year</div>
                 </div>
             </article>
 
-            <!-- نمونه اثر دوم (افقی یا مربعی) -->
+            <!-- Painting 2 -->
             <article class="painting-card">
                 <div class="painting-img-holder">
-                    <img src="painting-2.jpg" alt="Plein air urban landscape painting by Pedram M.Taheri">
+                    <img src="2.jpg" alt="Oil painting 2 by Pedram M.Taheri">
                 </div>
                 <div class="painting-meta">
-                    <h3>Suburban Dusk</h3>
-                    <div class="painting-specs">Oil on Linen Mounted Panel<br>40 x 40 cm | 2025</div>
-                    <p class="painting-desc">Captured entirely outdoors (plein air), studying the transient golden hour colors at the edges of the city.</p>
+                    <h3>Artwork Title 2</h3>
+                    <div class="painting-specs">Oil on Panel<br>Dimensions | Year</div>
                 </div>
             </article>
 
-            <!-- نمونه اثر سوم (عمودی بلند) -->
+            <!-- Painting 3 -->
             <article class="painting-card">
                 <div class="painting-img-holder">
-                    <img src="painting-3.jpg" alt="Still life oil painting study by Pedram M.Taheri">
+                    <img src="3.jpg" alt="Oil painting 3 by Pedram M.Taheri">
                 </div>
                 <div class="painting-meta">
-                    <h3>Studio Light</h3>
-                    <div class="painting-specs">Oil on Board<br>70 x 50 cm | 2024</div>
-                    <p class="painting-desc">A careful analysis of form and tone under controlled north light within the tradition of academic realism.</p>
+                    <h3>Artwork Title 3</h3>
+                    <div class="painting-specs">Oil on Canvas<br>Dimensions | Year</div>
                 </div>
             </article>
 
-            <!-- نمونه اثر چهارم -->
+            <!-- Painting 4 -->
             <article class="painting-card">
                 <div class="painting-img-holder">
-                    <img src="painting-4.jpg" alt="Contemporary realism interior painting by Pedram M.Taheri">
+                    <img src="4.jpg" alt="Oil painting 4 by Pedram M.Taheri">
                 </div>
                 <div class="painting-meta">
-                    <h3>The Corner Window</h3>
-                    <div class="painting-specs">Oil on Canvas<br>80 x 60 cm | 2023</div>
-                    <p class="painting-desc">Focusing on architectural boundaries and the subtle interaction between indoor shadow and external ambient daylight.</p>
+                    <h3>Artwork Title 4</h3>
+                    <div class="painting-specs">Oil on Board<br>Dimensions | Year</div>
+                </div>
+            </article>
+
+            <!-- Painting 5 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="5.jpg" alt="Oil painting 5 by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Artwork Title 5</h3>
+                    <div class="painting-specs">Oil on Canvas<br>Dimensions | Year</div>
+                </div>
+            </article>
+
+            <!-- Painting 6 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="6.jpg" alt="Oil painting 6 by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Artwork Title 6</h3>
+                    <div class="painting-specs">Oil on Panel<br>Dimensions | Year</div>
+                </div>
+            </article>
+
+            <!-- Painting 7 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="7.jpg" alt="Oil painting 7 by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Artwork Title 7</h3>
+                    <div class="painting-specs">Oil on Canvas<br>Dimensions | Year</div>
+                </div>
+            </article>
+
+            <!-- Painting 8 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="8.jpg" alt="Oil painting 8 by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Artwork Title 8</h3>
+                    <div class="painting-specs">Oil on Board<br>Dimensions | Year</div>
+                </div>
+            </article>
+
+            <!-- Painting 9 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="9.jpg" alt="Oil painting 9 by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Artwork Title 9</h3>
+                    <div class="painting-specs">Oil on Canvas<br>Dimensions | Year</div>
+                </div>
+            </article>
+
+            <!-- Painting 10 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="10.jpg" alt="Oil painting 10 by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Artwork Title 10</h3>
+                    <div class="painting-specs">Oil on Panel<br>Dimensions | Year</div>
+                </div>
+            </article>
+
+            <!-- Painting 11 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="11.jpg" alt="Oil painting 11 by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Artwork Title 11</h3>
+                    <div class="painting-specs">Oil on Canvas<br>Dimensions | Year</div>
                 </div>
             </article>
 
