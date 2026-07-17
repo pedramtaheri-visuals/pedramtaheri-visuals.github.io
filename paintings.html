@@ -3,53 +3,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selected Paintings & Fine Art Gallery | Pedram M.Taheri</title>
-    <!-- [SEO Meta Tags & Font Loading as in original...] -->
+    <meta name="description" content="Explore the official online art gallery of Pedram M.Taheri. Contemporary realist oil paintings featuring still lifes, interior spaces, urban landscapes, and plein air works.">
+    <meta name="keywords" content="Pedram M.Taheri paintings, Pedram Taheri oil paintings, contemporary realist painter, Iranian fine art gallery, plein air landscape paintings, still life artwork">
+    <link rel="canonical" href="https://pedramtaheri.com">
+
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+
     <style>
-        /* [Dark theme CSS styling, flexbox grid as in original...] */
-        body { background-color: #0c0f14; color: #f1f2f6; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
-        .page-header { width: 100%; padding: 60px 0 20px 0; border-bottom: 1px solid #1e2430; }
-        .nav-container { display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .logo-h1 { font-family: 'Cinzel', serif; font-size: 26px; letter-spacing: 5px; margin: 0 0 15px 0; }
+        body { 
+            background-color: #0c0f14; 
+            color: #f1f2f6; 
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            scroll-behavior: smooth;
+        }
+        .page-header {
+            width: 100%;
+            padding: 60px 0 20px 0;
+            border-bottom: 1px solid #1e2430;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+        }
+        .nav-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-h1 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 26px; 
+            font-weight: 400; 
+            letter-spacing: 5px; 
+            margin: 0 0 15px 0;
+        }
         .logo-h1 a { color: #ffffff; text-decoration: none; }
+
         nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
-        nav a { color: rgba(255, 255, 255, 0.6); text-decoration: none; text-transform: uppercase; letter-spacing: 2px; }
-        nav a.active { color: #ffffff; border-bottom: 1px solid #ffffff; }
+        nav a { 
+            font-family: 'Montserrat', sans-serif;
+            color: rgba(255, 255, 255, 0.6); 
+            text-decoration: none; 
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+            transition: color 0.3s; 
+        }
+        nav a:hover { color: #ffffff; }
+        nav a.active { color: #ffffff; font-weight: 600; border-bottom: 1px solid #ffffff; padding-bottom: 2px; }
+
         .gallery-wrap { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
         .gallery-intro { text-align: center; margin-bottom: 60px; }
-        .paintings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
-        .painting-card { background-color: #11151d; border: 1px solid #1e2430; border-radius: 8px; overflow: hidden; }
-        .painting-img-holder img { width: 100%; height: auto; display: block; }
-        .painting-meta { padding: 25px; }
-        .painting-meta h3 { font-family: 'Cinzel', serif; color: #ffffff; }
-        .painting-specs { font-size: 13px; color: #747d8c; }
+        .gallery-intro h2 { font-family: 'Cinzel', serif; font-size: 36px; letter-spacing: 4px; color: #ffffff; margin-bottom: 15px; font-weight: 300; }
+        .gallery-intro p { font-size: 15px; color: #747d8c; max-width: 700px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
+
+        .paintings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+        .painting-card {
+            background-color: #11151d;
+            border: 1px solid #1e2430;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.4s, border-color 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+        .painting-card:hover { transform: translateY(-8px); border-color: rgba(255, 255, 255, 0.3); }
+        .painting-img-holder { width: 100%; position: relative; background-color: #080a0e; overflow: hidden; }
+        .painting-img-holder img { width: 100%; height: auto; display: block; transition: transform 0.6s; }
+        .painting-card:hover .painting-img-holder img { transform: scale(1.03); }
+
+        .painting-meta { padding: 25px; text-align: left; }
+        .painting-meta h3 { font-family: 'Cinzel', serif; font-size: 18px; color: #ffffff; margin: 0 0 8px 0; letter-spacing: 1px; font-weight: 400; }
+        .painting-specs { font-size: 13px; color: #747d8c; margin: 0 0 12px 0; line-height: 1.5; font-weight: 400; letter-spacing: 0.5px; }
+        .painting-desc { font-size: 13.5px; color: #a4b0be; margin: 0; line-height: 1.6; font-weight: 300; }
+
+        footer { text-align: center; padding: 40px; color: #57606f; border-top: 1px solid #1e2430; font-size: 12px; letter-spacing: 1px; background-color: #0c0f14; margin-top: 60px; }
+        @media (max-width: 768px) { .gallery-intro h2 { font-size: 28px; } .paintings-grid { grid-template-columns: 1fr; gap: 30px; } .gallery-wrap { padding: 50px 15px; } }
     </style>
 </head>
 <body>
+
     <header class="page-header">
         <div class="nav-container">
             <div class="logo-h1"><a href="index.html">PEDRAM M.TAHERI</a></div>
-            <nav><a href="about.html">About</a><a href="paintings.html" class="active">Paintings</a><a href="contact.html">Contact</a></nav>
+            <nav>
+                <a href="about.html">About</a>
+                <a href="paintings.html" class="active">Paintings</a>
+                <a href="exhibition.html">Exhibitions</a>
+                <a href="workshop.html">Workshops</a>
+                <a href="nightscape.html">Night sky</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>    
+            </nav>
         </div>
     </header>
+
     <main class="gallery-wrap">
         <section class="gallery-intro">
             <h2>Selected Works</h2>
             <p>A collection of contemporary oil paintings exploring internal environments, quiet domestic architectures, and the subtle light across urban and natural landscapes.</p>
         </section>
-        <div class="paintings-grid">
-            <!-- Example: 6 real paintings using <img> src -->
-            <article class="painting-card"><div class="painting-img-holder"><img src="moonrise.jpg" alt="Moonrise"></div><div class="painting-meta"><h3>Moonrise</h3><p class="painting-specs">Oil on Canvas</p></div></article>
-            <article class="painting-card"><div class="painting-img-holder"><img src="autumn dusk.jpg" alt="Autumn dusk"></div><div class="painting-meta"><h3>Autumn dusk</h3><p class="painting-specs">Oil on Canvas</p></div></article>
-            <!-- [4 more paintings] -->
-        </div>
-    </main>
-</body>
-</html>
 
-            <!-- Painting 7: The gibbous moon -->
+        <div class="paintings-grid">
+
+            <!-- Painting 1 -->
             <article class="painting-card">
                 <div class="painting-img-holder">
-                    <img src="the gibbous moon.jpg" alt="the gibbous moon Oil painting by Pedram M.Taheri">
+                    <img src="moon-rise-pedram-taheri-painting.jpg" alt="Oil painting moon-rise by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Moonrise</h3>
+                    <div class="painting-specs">Oil on Canvas<br>50 x 50 cm | 2024</div>
+                </div>
+            </article>
+
+            <!-- Painting 2 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="autumn-dusk-pedram-taheri-painting.jpg" alt="autumn dusk Oil painting by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Autumn dusk</h3>
+                    <div class="painting-specs">Oil on Canvas<br>70 x 50 cm | 2025</div>
+                </div>
+            </article>
+
+            <!-- Painting 3 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="above-the-night-pedram-taheri-painting.jpg" alt="above the night Oil painting by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Above the night</h3>
+                    <div class="painting-specs">oil on cardboard<br>30 x 23 cm | 2025</div>
+                </div>
+            </article>
+
+            <!-- Painting 4 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="the-morning-star-pedram-taheri-painting.jpg" alt="the morning star Oil painting by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>The morning star</h3>
+                    <div class="painting-specs">Oil on Canvas<br>50 x 50 cm | 2023</div>
+                </div>
+            </article>
+
+            <!-- Painting 5 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="dusk-and-silence-pedram-taheri-painting.jpg" alt="dusk and silence Oil painting by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Dusk and silence</h3>
+                    <div class="painting-specs">Oil on Canvas<br>60 x 45 cm | 2023</div>
+                </div>
+            </article>
+
+            <!-- Painting 6 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="interior-sketch-pedram-taheri-painting.jpg" alt="interior sketch Oil painting 6 by Pedram M.Taheri">
+                </div>
+                <div class="painting-meta">
+                    <h3>Interior sketch</h3>
+                    <div class="painting-specs">Oil on cardboard<br>45 x 34 cm | 2023</div>
+                </div>
+            </article>
+
+            <!-- Painting 7 -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="the-gibbous-moon-pedram-taheri-painting.jpg" alt="the gibbous moon Oil painting by Pedram M.Taheri">
                 </div>
                 <div class="painting-meta">
                     <h3>The gibbous moon</h3>
@@ -57,10 +191,10 @@
                 </div>
             </article>
 
-            <!-- Painting 8: Still life at interior -->
+            <!-- Painting 8 -->
             <article class="painting-card">
                 <div class="painting-img-holder">
-                    <img src="still life at interior.jpg" alt="still life at interior Oil painting by Pedram M.Taheri">
+                    <img src="still-life-at-interior-pedram-taheri-painting.jpg" alt="still life at interior Oil painting by Pedram M.Taheri">
                 </div>
                 <div class="painting-meta">
                     <h3>Still life at interior</h3>
@@ -68,10 +202,10 @@
                 </div>
             </article>
 
-            <!-- Painting 9: Mid day -->
+            <!-- Painting 9 -->
             <article class="painting-card">
                 <div class="painting-img-holder">
-                    <img src="mid-day.jpg" alt="mid-day Oil painting by Pedram M.Taheri">
+                    <img src="mid-day-pedram-taheri-painting.jpg" alt="mid-day Oil painting by Pedram M.Taheri">
                 </div>
                 <div class="painting-meta">
                     <h3>Mid day</h3>
@@ -79,10 +213,10 @@
                 </div>
             </article>
 
-            <!-- Painting 10: Still life with cloth -->
+            <!-- Painting 10 -->
             <article class="painting-card">
                 <div class="painting-img-holder">
-                    <img src="still life with cloth.jpg" alt="still life with cloth Oil painting by Pedram M.Taheri">
+                    <img src="still-life-with-cloth-pedram-taheri-painting.jpg" alt="still life with cloth Oil painting by Pedram M.Taheri">
                 </div>
                 <div class="painting-meta">
                     <h3>Still life with cloth</h3>
@@ -90,10 +224,10 @@
                 </div>
             </article>
 
-            <!-- Painting 11: The pot -->
+            <!-- Painting 11 -->
             <article class="painting-card">
                 <div class="painting-img-holder">
-                    <img src="the pot.jpg" alt="the pot Oil painting by Pedram M.Taheri">
+                    <img src="the-pot-pedram-taheri-painting-oil-on-canvs.jpg" alt="the pot Oil painting by Pedram M.Taheri">
                 </div>
                 <div class="painting-meta">
                     <h3>The pot</h3>
