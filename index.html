@@ -61,14 +61,14 @@
             .immersive-header-container { height: 118vh; background-size: cover; }
         }
 
-        /* ساختار دو خطی هدر بر اساس تصویر ارسالی شما */
+        /* کاهش غلظت تیرگی بالای هدر از 0.8 به 0.4 جهت شفافیت و وضوح بیشتر نقاشی */
         .nav-overlay-header {
             display: flex;
             flex-direction: column; 
             align-items: center;
             justify-content: center;
             padding: 50px 20px 30px 20px;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
             z-index: 10;
         }
 
@@ -88,30 +88,30 @@
             color: #bdc3c7;
         }
 
-        /* استایل جدید متن معرفی با فونت Montserrat جهت خوانایی حداکثری */
+        /* استایل متن معرفی با فونت Montserrat جهت خوانایی حداکثری */
         .artist-sub {
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.9); /* افزایش کمی روشنایی متن برای خوانایی در پس‌زمینه روشن‌تر */
             letter-spacing: 1px;
             margin: 0;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.9); /* تقویت سایه متن برای تفکیک بهتر از نقاشی شفاف‌شده */
             text-align: center;
             font-weight: 400;
         }
 
-        /* ردیف منوها - افزایش فاصله پایینی منو برای هدایت متن‌ها به مرکز دقیق تصویر هدر */
+        /* ردیف منوها - فونت مدرن و خوانای Montserrat */
         nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap; 
             gap: 30px; 
-            margin-bottom: 290px; /* افزایش فاصله برای قرارگیری دقیق در مرکز عمودی تصویر */
+            margin-bottom: 290px; 
         }
 
         nav a { 
             font-family: 'Montserrat', sans-serif;
-            color: rgba(255, 255, 255, 0.7); 
+            color: rgba(255, 255, 255, 0.8); 
             text-decoration: none; 
             font-size: 13px;
             font-weight: 500;
@@ -144,7 +144,7 @@
             nav {
                 gap: 15px 20px; 
                 padding: 0 10px;
-                margin-bottom: 160px; /* تنظیم مرکزیت در نسخه موبایل */
+                margin-bottom: 160px; 
             }
             nav a {
                 font-size: 11px; 
@@ -152,27 +152,34 @@
             }
         }
 
-        /* Smooth extended dark fade at the bottom */
+        /* کاهش غلظت تیرگی لایه پایینی هدر جهت نمایش واضح‌تر انتهای نقاشی */
         .banner-bottom-fade {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 35%; 
-            background: linear-gradient(to top, #0c0f14 15%, transparent 100%);
+            height: 25%; /* کاهش ارتفاع پرده تیره */
+            background: linear-gradient(to top, #0c0f14 5%, transparent 100%);
             z-index: 1;
         }
 
-        /* طراحی و موقعیت‌دهی آیکون راهنما در نیمه پایینی هدر بالای خط */
+        /* تغییر موقعیت دکمه به ۵٪ بالای لبه نمایشگر (Viewport) جهت قرارگیری در محدوده دید اولیه کاربر */
         .scroll-explorer-btn {
+            position: fixed; /* تغییر به حالت شناور ثابت در محدوده هدر یا موقعیت‌یابی بر اساس دید */
             position: absolute;
-            bottom: 45px;
+            bottom: calc(148vh - 95vh); /* محاسبه هوشمند برای قرارگیری دقیق در انتهای صفحه مانیتور پیش از اسکرول */
             left: 50%;
             transform: translateX(-50%);
             z-index: 5;
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.7);
             transition: color 0.3s, transform 0.3s;
             display: inline-block;
+        }
+        @media (max-width: 1400px) {
+            .scroll-explorer-btn { bottom: calc(138vh - 95vh); }
+        }
+        @media (max-width: 1024px) {
+            .scroll-explorer-btn { bottom: calc(118vh - 95vh); }
         }
         .scroll-explorer-btn:hover {
             color: #ffffff;
@@ -228,11 +235,12 @@
                 <a href="blog.html">Blog</a>    
             </nav>
             
-            <!-- نام و متن معرفی متصل به هم که اکنون در مرکز کل هدر جای گرفته‌اند -->
+            <!-- نام و متن معرفی در مرکز هدر -->
             <a href="#" class="logo">PEDRAM M.TAHERI</a>
             <p class="artist-sub">Iranian Painter, Art teacher & Nigh sky Photographer</p>
         </div>
         
+        <!-- دکمه راهنما که اکنون بر اساس محاسبات CSS بالا آورده شده تا در نگاه اول دیده شود -->
         <a href="#visual-exploration" class="scroll-explorer-btn">
             <svg viewBox="0 0 24 24">
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
