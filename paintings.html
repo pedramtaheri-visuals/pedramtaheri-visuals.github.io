@@ -1,407 +1,274 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paintings | Pedram M.Taheri</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
     
-    <!-- لود فونت‌های منسجم با صفحات About و Contact شما -->
+    <!-- سئو اختصاصی گالری آثار نقاشی -->
+    <title>Selected Paintings & Fine Art Gallery | Pedram M.Taheri</title>
+    <meta name="description" content="Explore the online art gallery of Pedram M.Taheri (Pedram Mohammad Taheri). Contemporary oil paintings featuring still lifes, interior spaces, urban landscapes, and plein air works.">
+    <meta name="keywords" content="Pedram M.Taheri paintings, Pedram Taheri oil paintings, contemporary realist painter, Iranian fine art gallery, plein air landscape paintings, still life artwork">
+    <link rel="canonical" href="https://pedramtaheri.com">
+
+    <!-- لود فونت‌های اصلی -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com" rel="stylesheet">
-    
+
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        /* Base Dark Canvas */
+        body { 
+            background-color: #0c0f14; 
+            color: #f1f2f6; 
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            scroll-behavior: smooth;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
-            color: #111111;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+        /* Standard Minimal Header */
+        .page-header {
+            width: 100%;
+            padding: 60px 0 20px 0;
+            border-bottom: 1px solid #1e2430;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
         }
-
-        /* سربرگ یکپارچه با سایت شما */
-        header {
-            max-width: 1200px;
-            margin: 0 auto;
+        .nav-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 50px 20px 30px;
+            justify-content: center;
         }
-
-        .brand-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: #111111;
-            text-decoration: none;
+        .logo-h1 { 
+            font-family: 'Cinzel', serif; 
+            font-size: 26px; 
+            font-weight: 400; 
+            letter-spacing: 5px; 
+            margin: 0 0 15px 0;
         }
+        .logo-h1 a { color: #ffffff; text-decoration: none; }
 
         nav {
             display: flex;
-            gap: 35px;
+            justify-content: center;
+            flex-wrap: wrap; 
+            gap: 25px; 
         }
-
-        nav a {
-            font-size: 14px;
-            font-weight: 400;
-            color: #777777;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        nav a:hover, nav a.active {
-            color: #111111;
+        nav a { 
+            font-family: 'Montserrat', sans-serif;
+            color: rgba(255, 255, 255, 0.6); 
+            text-decoration: none; 
+            font-size: 12px;
             font-weight: 500;
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+            transition: color 0.3s; 
         }
+        nav a:hover { color: #ffffff; }
+        nav a.active { color: #ffffff; font-weight: 600; border-bottom: 1px solid #ffffff; padding-bottom: 2px; }
 
-        main {
+        /* Gallery Layout */
+        .gallery-wrap {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px 100px;
+            padding: 80px 20px;
         }
 
-        .section-header {
-            margin-bottom: 50px;
-            border-bottom: 1px solid #e5e5e5;
-            padding-bottom: 20px;
+        .gallery-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .gallery-intro h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            letter-spacing: 4px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        .gallery-intro p {
+            font-size: 15px;
+            color: #747d8c;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
         }
 
-        .section-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            font-weight: 400;
-            color: #111111;
+        /* Advanced Masonry/Flex Grid for different painting aspects */
+        .paintings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            align-items: start;
         }
 
-        /* چیدمان ستونی هوشمند (Masonry) - تغییر یافته به ۲ ستون برای نمایش بزرگ‌تر تصاویر */
-        .masonry-gallery {
-            column-count: 2;
-            column-gap: 50px;
+        /* Art Piece Card */
+        .painting-card {
+            background-color: #11151d;
+            border: 1px solid #1e2430;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.4s setup, border-color 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+        .painting-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
-        .artwork-card {
-            break-inside: avoid;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #f5f5f5;
+        /* Image Display Container */
+        .painting-img-holder {
+            width: 100%;
+            position: relative;
+            background-color: #080a0e;
+            overflow: hidden;
         }
-
-        .image-box {
-            background-color: #fafafa;
-            border: 1px solid #eaeaea;
-            padding: 20px;
-            cursor: zoom-in;
-        }
-
-        .image-box img {
+        .painting-img-holder img {
             width: 100%;
             height: auto;
             display: block;
-            transition: opacity 0.3s ease;
+            transition: transform 0.6s;
+        }
+        .painting-card:hover .painting-img-holder img {
+            transform: scale(1.03);
         }
 
-        .image-box:hover img {
-            opacity: 0.85;
+        /* Detailed Artwork Information labels */
+        .painting-meta {
+            padding: 25px;
+            text-align: left;
         }
-
-        /* تنظیم تایپوگرافی مشخصات زیر نقاشی‌ها */
-        .details-box {
-            padding-top: 15px;
-            font-size: 14px;
-            color: #555555;
-            font-weight: 300;
+        .painting-meta h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            letter-spacing: 1px;
+            font-weight: 400;
         }
-
-        /* نام اثر - کمی ضخیم و با فونت سریف هنری */
-        .details-box h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 21px;
-            font-weight: 600;
-            color: #111111;
-            margin-bottom: 6px;
-        }
-
-        .details-box p {
-            margin-bottom: 3px;
-        }
-
-        footer {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
+        .painting-specs {
             font-size: 13px;
-            color: #888888;
+            color: #747d8c;
+            margin: 0 0 12px 0;
+            line-height: 1.5;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        .painting-desc {
+            font-size: 13.5px;
+            color: #a4b0be;
+            margin: 0;
+            line-height: 1.6;
             font-weight: 300;
-            border-top: 1px solid #e5e5e5;
         }
 
-        /* سیستم لایت‌باکس بزرگ‌نمایی - اصلاح شده به پس‌زمینه سیاه عمیق */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000000; /* رنگ سیاه خالص مطابق با صفحه اول */
-            justify-content: center;
-            align-items: center;
+        /* Footer Copyright */
+        footer { 
+            text-align: center; 
+            padding: 40px; 
+            color: #57606f; 
+            border-top: 1px solid #1e2430; 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+            background-color: #0c0f14;
+            margin-top: 60px;
         }
 
-        .lightbox-modal img {
-            max-width: 90%;
-            max-height: 85%;
-            object-fit: contain;
-        }
-
-        /* دکمه خروج اسلایدر - اصلاح شده به سفید برای تضاد با تم تیره */
-        .close-btn {
-            position: absolute;
-            top: 35px;
-            right: 40px;
-            font-size: 38px;
-            font-weight: 300;
-            color: #ffffff; /* تغییر به رنگ سفید */
-            cursor: pointer;
-        }
-
-        /* ریسپانسیو موبایل */
+        /* Mobile Optimization */
         @media (max-width: 768px) {
-            .masonry-gallery { 
-                column-count: 1; 
-            }
-            header { 
-                flex-direction: column; 
-                gap: 20px; 
-                padding: 30px 20px; 
-            }
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px 25px;
-                padding: 0 10px;
-            }
-            nav a {
-                font-size: 13px;
-            }
+            .gallery-intro h2 { font-size: 28px; }
+            .paintings-grid { grid-template-columns: 1fr; gap: 30px; }
+            .gallery-wrap { padding: 50px 15px; }
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <a href="index.html" class="brand-logo"><h3>PEDRAM M.TAHERI</h3></a>
-        <nav>
-            <a href="about.html" class="active">About</a>
-            <a href="paintings.html" class="active">Paintings</a>
-            <a href="exhibition.html" class="active">Exhibitions</a>
-            <a href="workshop.html" class="active">Workshops</a>
-            <a href="nightscape.html" class="active">Nightscape</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
+    <!-- هدر هماهنگ با کل سایت -->
+    <header class="page-header">
+        <div class="nav-container">
+            <div class="logo-h1"><a href="index.html">PEDRAM M.TAHERI</a></div>
+            <nav>
+                <a href="about.html">About</a>
+                <a href="paintings.html" class="active">Paintings</a>
+                <a href="exhibition.html">Exhibitions</a>
+                <a href="workshop.html">Workshops</a>
+                <a href="nightscape.html">Night sky</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>    
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <div class="section-header">
-            <h4>Selected Paintings</h4>
-        </div>
+    <!-- کانتینر اصلی گالری نقاشی‌ها -->
+    <main class="gallery-wrap">
+        
+        <section class="gallery-intro">
+            <h2>Selected Works</h2>
+            <p>A collection of contemporary oil paintings exploring internal environments, quiet domestic architectures, and the subtle light across urban and natural landscapes.</p>
+        </section>
 
-        <div class="masonry-gallery">
-            
-            <!-- نقاشی ۱ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p1.jpg')">
-                    <img src="p1.jpg" alt="Untitled I">
-                </div>
-                <div class="details-box">
-                    <h2>Moonrise</h2>
-                    <p>Oil on Canvas</p>
-                    <p>50 x 50 cm</p>
-                    <p>2024</p>
-                </div>
-            </div>
+        <!-- شبکه بهینه‌شده نمایش نقاشی‌ها -->
+        <div class="paintings-grid">
 
-            <!-- نقاشی ۲ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p2.jpg')">
-                    <img src="p2.jpg" alt="Untitled II">
+            <!-- نمونه اثر اول (عمودی) -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <!-- سئو: حتماً alt را متناسب با موضوع دقیق نقاشی بنویسید -->
+                    <img src="painting-1.jpg" alt="Interior space oil painting by Pedram M.Taheri">
                 </div>
-                <div class="details-box">
-                    <h2>Autumn dusk</h2>
-                    <p>Oil on Canvas</p>
-                    <p>70 x 50 cm</p>
-                    <p>2025</p>
+                <div class="painting-meta">
+                    <h3>Silent Interior</h3>
+                    <div class="painting-specs">Oil on Canvas<br>60 x 50 cm | 2024</div>
+                    <p class="painting-desc">An exploration of light falling across empty space, emphasizing atmospheric tension and silence within private chambers.</p>
                 </div>
-            </div>
+            </article>
 
-            <!-- نقاشی ۳ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p3.jpg')">
-                    <img src="p3.jpg" alt="Untitled III">
+            <!-- نمونه اثر دوم (افقی یا مربعی) -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="painting-2.jpg" alt="Plein air urban landscape painting by Pedram M.Taheri">
                 </div>
-                <div class="details-box">
-                    <h2>Above the night</h2>
-                    <p>oil on cardboard</p>
-                    <p>30 x 23 cm</p>
-                    <p>2025</p>
+                <div class="painting-meta">
+                    <h3>Suburban Dusk</h3>
+                    <div class="painting-specs">Oil on Linen Mounted Panel<br>40 x 40 cm | 2025</div>
+                    <p class="painting-desc">Captured entirely outdoors (plein air), studying the transient golden hour colors at the edges of the city.</p>
                 </div>
-            </div>
+            </article>
 
-            <!-- نقاشی ۴ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p4.jpg')">
-                    <img src="p4.jpg" alt="Untitled IV">
+            <!-- نمونه اثر سوم (عمودی بلند) -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="painting-3.jpg" alt="Still life oil painting study by Pedram M.Taheri">
                 </div>
-                <div class="details-box">
-                    <h2>The morning star</h2>
-                    <p>Oil on Canvas</p>
-                    <p>50 x 50 cm</p>
-                    <p>2023</p>
+                <div class="painting-meta">
+                    <h3>Studio Light</h3>
+                    <div class="painting-specs">Oil on Board<br>70 x 50 cm | 2024</div>
+                    <p class="painting-desc">A careful analysis of form and tone under controlled north light within the tradition of academic realism.</p>
                 </div>
-            </div>
+            </article>
 
-            <!-- نقاشی ۵ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p5.jpg')">
-                    <img src="p5.jpg" alt="Untitled V">
+            <!-- نمونه اثر چهارم -->
+            <article class="painting-card">
+                <div class="painting-img-holder">
+                    <img src="painting-4.jpg" alt="Contemporary realism interior painting by Pedram M.Taheri">
                 </div>
-                <div class="details-box">
-                    <h2>Dusk and silence</h2>
-                    <p>Oil on Canvas</p>
-                    <p>60 x 45 cm</p>
-                    <p>2023</p>
+                <div class="painting-meta">
+                    <h3>The Corner Window</h3>
+                    <div class="painting-specs">Oil on Canvas<br>80 x 60 cm | 2023</div>
+                    <p class="painting-desc">Focusing on architectural boundaries and the subtle interaction between indoor shadow and external ambient daylight.</p>
                 </div>
-            </div>
-
-            <!-- نقاشی ۶ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p6.jpg')">
-                    <img src="p6.jpg" alt="Untitled VI">
-                </div>
-                <div class="details-box">
-                    <h2>Interior sketch</h2>
-                    <p>Oil on cardboard</p>
-                    <p>45 x 34 cm</p>
-                    <p>2023</p>
-                </div>
-            </div>
-
-            <!-- نقاشی ۷ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p7.jpg')">
-                    <img src="p7.jpg" alt="Untitled VII">
-                </div>
-                <div class="details-box">
-                    <h2>The gibbous moon</h2>
-                    <p>Oil on Canvas</p>
-                    <p>70 x 50 cm</p>
-                    <p>2023</p>
-                </div>
-            </div>
-
-            <!-- نقاشی ۸ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p8.jpg')">
-                    <img src="p8.jpg" alt="Untitled VIII">
-                </div>
-                <div class="details-box">
-                    <h2>Still life at interior</h2>
-                    <p>Oil on Canvas</p>
-                    <p>90 x 70 cm</p>
-                    <p>2019</p>
-                </div>
-            </div>
-
-            <!-- نقاشی ۹ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p9.jpg')">
-                    <img src="p9.jpg" alt="Untitled IX">
-                </div>
-                <div class="details-box">
-                    <h2>Mid day</h2>
-                    <p>Oil on Canvas</p>
-                    <p>40 x 50 cm</p>
-                    <p>2016</p>
-                </div>
-            </div>
-
-            <!-- نقاشی ۱۰ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p10.jpg')">
-                    <img src="p10.jpg" alt="Untitled X">
-                </div>
-                <div class="details-box">
-                    <h2>Still life with cloth</h2>
-                    <p>Oil on Canvas</p>
-                    <p>50 x 50 cm</p>
-                    <p>2017</p>
-                </div>
-            </div>
-
-            <!-- نقاشی ۱۱ -->
-            <div class="artwork-card">
-                <div class="image-box" onclick="viewImage('p11.jpg')">
-                    <img src="p11.jpg" alt="Untitled XI">
-                </div>
-                <div class="details-box">
-                    <h2>The pot</h2>
-                    <p>Oil on Canvas</p>
-                    <p>30 x 40 cm</p>
-                    <p>2018</p>
-                </div>
-            </div>
+            </article>
 
         </div>
     </main>
 
-    <!-- پنجره بزرگ‌نمایی عکس (Lightbox) -->
-    <div id="imageLightbox" class="lightbox-modal" onclick="closeImage()">
-        <span class="close-btn">&times;</span>
-        <img id="modalTargetImg" src="">
-    </div>
-
-    <!-- فوتر پایانی -->
-    <footer>
-        © 2026 Pedram M.Taheri. All rights reserved.
+    <!-- پاصفحه یکپارچه سایت -->
+    <footer dir="ltr">
+        <p style="margin: 0;">&copy; 2026 Pedram M.Taheri. All rights reserved.</p>
     </footer>
-
-    <!-- کدهای کنترل لایت‌باکس -->
-    <script>
-        function viewImage(imgUrl) {
-            document.getElementById('modalTargetImg').src = imgUrl;
-            document.getElementById('imageLightbox').style.display = 'flex';
-        }
-        function closeImage() {
-            document.getElementById('imageLightbox').style.display = 'none';
-        }
-    </script>
 
 </body>
 </html>
