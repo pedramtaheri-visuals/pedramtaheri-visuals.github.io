@@ -80,12 +80,23 @@
             color: #ffffff; 
             text-decoration: none; 
             letter-spacing: 7px; 
-            margin-bottom: 25px; 
+            margin-bottom: 12px; /* کاهش فاصله تا نوشته پایینی */
             text-shadow: 0 2px 8px rgba(0,0,0,0.8); 
             transition: color 0.3s;
         }
         .logo:hover {
             color: #bdc3c7;
+        }
+
+        /* استایل جدید متن معرفی با فونت یکسان Cinzel و اندازه متناسب */
+        .artist-sub {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            color: #cdcdcd;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            text-align: center;
         }
 
         /* ردیف منوها - بازگشت به فونت مدرن و خوانای Montserrat */
@@ -94,7 +105,7 @@
             justify-content: center;
             flex-wrap: wrap; 
             gap: 30px; 
-            margin-bottom: 25px; /* ایجاد فاصله مناسب تا لوگوی پایین منو */
+            margin-bottom: 180px; /* ایجاد فضای عمودی مناسب برای قرارگیری متن‌ها در مرکز نقاشی */
         }
 
         nav a { 
@@ -123,12 +134,16 @@
             .logo {
                 font-size: 22px; 
                 letter-spacing: 4px;
-                margin-bottom: 15px;
+                margin-bottom: 8px;
+            }
+            .artist-sub {
+                font-size: 11px;
+                letter-spacing: 1px;
             }
             nav {
                 gap: 15px 20px; 
                 padding: 0 10px;
-                margin-bottom: 15px;
+                margin-bottom: 100px;
             }
             nav a {
                 font-size: 11px; 
@@ -201,7 +216,7 @@
 
     <header class="immersive-header-container">
         <div class="nav-overlay-header">
-            <!-- ردیف منوها ابتدا در بالاترین قسمت قرار گرفت -->
+            <!-- منوی ناوبری بالایی هدر -->
             <nav>
                 <a href="about.html">About</a>
                 <a href="paintings.html">Paintings</a>
@@ -212,11 +227,11 @@
                 <a href="blog.html">Blog</a>    
             </nav>
             
-            <!-- نام شما دقیقاً به بالای متن معرفی منتقل شد -->
+            <!-- نام با فونت Cinzel و فاصله کم از نوشته زیرین -->
             <a href="#" class="logo">PEDRAM M.TAHERI</a>
             
-            <!-- متن معرفی در جای خود حفظ شد (با اعمال فاصله‌دهی استاندارد کلاس بالا) -->
-            <p style="padding-top:172px; margin: 0;"><font color="cdcdcd">Iranian Painter, Art teacher & Nigh sky Photographer</font></p>
+            <!-- متن معرفی جدید با کلاس بهینه‌شده و فونت یکسان با لوگو -->
+            <p class="artist-sub">Iranian Painter, Art teacher & Nigh sky Photographer</p>
         </div>
         
         <a href="#visual-exploration" class="scroll-explorer-btn">
@@ -233,7 +248,7 @@
             <p>Latest Paintings, Exhibitions, Courses and musing on Art</p>
         </section>
 
-        <!-- بخش گالری ۳ تایی (آرت، نجوم، آکادمی) بدون هیچ تغییری حفظ شد -->
+        <!-- بخش گالری ۳ تایی بدون هیچ تغییری -->
         <section class="gallery-section">
             <div class="grid-container">
                 <a href="paintings.html" class="art-card">
