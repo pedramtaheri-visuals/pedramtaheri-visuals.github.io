@@ -1,71 +1,192 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Pedram Mohammad Taheri</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Pedram Mohammad Taheri</title>
+<meta name="description" content="About Pedram Mohammad Taheri (Pedram M.Taheri) — Iranian fine art painter, art teacher, and night sky photographer, trained at the Manouchehr Motabar Studio in Tehran.">
+<link rel="canonical" href="https://pedramtaheri.com">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-    
-    <link href="https://googleapis.com" rel="stylesheet">
-    <style>
-        body { background-color: #0c0f14; color: #f1f2f6; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
-        .minimal-nav { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 50px 20px 30px 20px; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); border-bottom: 1px solid #1e2430; box-sizing: border-box; }
-        .minimal-logo { font-family: 'Cinzel', serif; font-size: 32px; color: #ffffff; text-decoration: none; letter-spacing: 7px; margin-bottom: 25px; }
-        nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        nav a { font-family: 'Montserrat', sans-serif; color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s; }
-        nav a:hover, nav a.active-page { color: #ffffff; }
-        .about-banner { width: 100%; height: 55vh; overflow: hidden; border-bottom: 1px solid #1e2430; background-color: #0c0f14; }
-        .about-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-        .about-content { max-width: 800px; margin: 0 auto; padding: 70px 20px; text-align: justify; }
-        .about-content h1 { font-family: 'Montserrat', sans-serif; font-size: 42px; color: #ffffff; text-align: center; font-weight: 300; letter-spacing: 3px; margin-bottom: 30px; }
-        .about-text { font-size: 16px; color: #bdc3c7; line-height: 1.9; font-weight: 300; }
-        .about-text p { margin-bottom: 25px; }
-        @media (max-width: 768px) { .minimal-logo { font-size: 22px; } nav { gap: 15px 20px; } nav a { font-size: 11px; } .about-banner { height: 35vh; } .about-content h1 { font-size: 32px; } }
-    </style>
+
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com" rel="stylesheet">
+
+<style>
+/* Same base theme as exhibition.html / contact.html for site-wide consistency */
+body {
+  background-color: #0c0f14;
+  color: #f1f2f6;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Shared header/nav (identical structure to exhibition.html and contact.html) */
+.page-header {
+  width: 100%;
+  padding: 60px 0 20px 0;
+  border-bottom: 1px solid #1e2430;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo-h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+.logo-h1 a { color: #ffffff; text-decoration: none; transition: color 0.3s; }
+.logo-h1 a:hover { color: #bdc3c7; }
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+nav a {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+nav a:hover { color: #ffffff; }
+nav a.active { color: #ffffff; font-weight: 600; border-bottom: 1px solid #ffffff; padding-bottom: 2px; }
+
+/* Portrait banner */
+.about-banner {
+  width: 100%;
+  height: 55vh;
+  overflow: hidden;
+  border-bottom: 1px solid #1e2430;
+  background-color: #0c0f14;
+}
+.about-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Content, matching cv-container proportions from exhibition.html */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+.page-title {
+  font-family: 'Cinzel', serif;
+  font-size: 38px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Reuse the profile-box treatment from exhibition.html for the bio text */
+.profile-box {
+  background-color: #11151d;
+  border-left: 2px solid #57606f;
+  padding: 30px 35px;
+  border-radius: 0 8px 8px 0;
+}
+.profile-box p {
+  font-size: 16px;
+  color: #bdc3c7;
+  line-height: 1.9;
+  font-weight: 300;
+  margin: 0 0 25px 0;
+  text-align: justify;
+}
+.profile-box p:last-child { margin-bottom: 0; }
+
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #57606f;
+  border-top: 1px solid #1e2430;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background-color: #0c0f14;
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .page-title { font-size: 28px; }
+  nav { gap: 15px 12px; }
+  .about-banner { height: 35vh; }
+  .profile-box { padding: 20px; }
+}
+</style>
 </head>
 <body>
-    <header class="minimal-nav">
-        <a href="index.html" class="minimal-logo">PEDRAM M.TAHERI</a>
-        <nav>
-            <a href="about.html" class="active-page">About</a>
-            <a href="paintings.html">Paintings</a>
-            <a href="exhibition.html">Exhibitions</a>
-            <a href="workshop.html">Workshops</a>
-            <a href="nightscape.html">Night sky</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-    </header>
-    <main>
-        <section class="about-banner">
-            <img src="about-portrait.jpg" alt="Pedram Taheri Profile">
-        </section>
-        <section class="about-content">
-            <h1>About the Artist</h1>
-            <div class="about-text" dir="ltr">
-                <p>Pedram Mohammad Taheri, painter, art teacher, and nightscape photographer. Born in Tehran, Iran, in 1989. In the early 2010s, he first became acquainted with the academic form of drawing in the studio of the renowned master Manouchehr Motabar in Tehran, and then continued his artistic activity as a drawing teacher in the same studio. </p>
-                <p>He began painting in a self-taught manner based on the study of the works of 20th-century British realist painters. Some of his paintings were painted en plein air, and some versions were done in the studio. His works, mainly in oil, often depict still lifes, interior spaces, urban landscapes, and the marginal nature of cities and mountains. He has also been a night sky photographer for many years, recording nature and human elements at night.</p>
-            </div>
-        </section>
-    </main>
-    <footer style="text-align: center; padding: 40px; color: #57606f; border-top: 1px solid #1e2430; font-size: 12px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; background-color: #0c0f14;" dir="ltr">
-        <p style="margin: 0; display: inline-block;">&copy; 2026 Pedram M. Taheri. All rights reserved.</p>
-    </footer>
+
+<header class="page-header">
+<div class="nav-container">
+<div class="logo-h1"><a href="index.html">PEDRAM M.TAHERI</a></div>
+<nav>
+<a href="about.html" class="active">About</a>
+<a href="paintings.html">Paintings</a>
+<a href="exhibition.html">Exhibitions</a>
+<a href="workshop.html">Workshops</a>
+<a href="nightscape.html">Night sky</a>
+<a href="contact.html">Contact</a>
+<a href="blog.html">Blog</a>
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="about-banner">
+<img src="about-portrait.jpg" alt="Pedram Taheri Profile">
+</section>
+
+<section class="about-content">
+<h2 class="page-title">About the Artist</h2>
+
+<div class="profile-box">
+<p>Pedram Mohammad Taheri, painter, art teacher, and nightscape photographer. Born in Tehran, Iran, in 1989. In the early 2010s, he first became acquainted with the academic form of drawing in the studio of the renowned master Manouchehr Motabar in Tehran, and then continued his artistic activity as a drawing teacher in the same studio.</p>
+<p>He began painting in a self-taught manner based on the study of the works of 20th-century British realist painters. Some of his paintings were painted en plein air, and some versions were done in the studio. His works, mainly in oil, often depict still lifes, interior spaces, urban landscapes, and the marginal nature of cities and mountains. He has also been a night sky photographer for many years, recording nature and human elements at night.</p>
+</div>
+
+</section>
+</main>
+
+<footer dir="ltr">
+<p style="margin: 0;">&copy; 2026 Pedram M.Taheri. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
