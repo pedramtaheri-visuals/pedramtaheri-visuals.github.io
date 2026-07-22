@@ -1,129 +1,223 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Pedram Taheri</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Pedram Taheri</title>
+<meta name="description" content="Get in touch with Pedram Mohammad Taheri (Pedram M.Taheri) — Iranian fine art painter, art educator, and night sky photographer.">
+<link rel="canonical" href="https://pedramtaheri.com">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-    
-    <link href="https://googleapis.com" rel="stylesheet">
-    <!-- لود کردن آیکون‌های مدرن شبکه‌های اجتماعی -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        body { background-color: #0c0f14; color: #f1f2f6; font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; }
-        .minimal-nav { width: 100%; display: flex; flex-direction: column; align-items: center; padding: 50px 20px 30px 20px; background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent); border-bottom: 1px solid #1e2430; box-sizing: border-box; }
-        .minimal-logo { font-family: 'Cinzel', serif; font-size: 32px; color: #ffffff; text-decoration: none; letter-spacing: 7px; margin-bottom: 25px; }
-        nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        nav a { color: rgba(255, 255, 255, 0.7); text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s; }
-        nav a:hover, nav a.active-page { color: #ffffff; }
-        .contact-container { max-width: 600px; margin: 0 auto; padding: 80px 20px; text-align: center; }
-        .contact-container h1 { font-family: 'Cinzel', serif; font-size: 36px; color: #ffffff; letter-spacing: 2px; margin-bottom: 40px; font-weight: 400; }
-        .custom-text-section { font-size: 16px; color: #bdc3c7; line-height: 1.9; font-weight: 300; margin-bottom: 50px; }
-        .social-section { text-align: center; padding-top: 40px; border-top: 1px solid #1e2430; }
-        .social-section h3 { font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: 2px; margin-bottom: 25px; color: #ffffff; font-weight: 400; }
-        .social-icons { display: flex; justify-content: center; gap: 35px; }
-        .social-icons a { color: rgba(255,255,255,0.6); font-size: 24px; transition: color 0.3s, transform 0.3s; text-decoration: none; }
-        .social-icons a:hover { color: #ffffff; transform: translateY(-5px); }
-        @media (max-width: 768px) { .minimal-logo { font-size: 22px; } nav { gap: 15px 20px; } nav a { font-size: 11px; } .contact-container { padding: 60px 20px; } .contact-container h1 { font-size: 28px; } }
-    </style>
-</head>
-<body>
-    <header class="minimal-nav">
-        <a href="index.html" class="minimal-logo">PEDRAM M.TAHERI</a>
-        <nav>
-            <a href="about.html">About</a>
-            <a href="paintings.html">Paintings</a>
-            <a href="exhibition.html">Exhibitions</a>
-            <a href="workshop.html">Workshops</a>
-            <a href="nightscape.html">Night sky</a>
-            <a href="contact.html" class="active-page">Contact</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-    </header>
-    <main class="contact-container">
-        <h1>Contact</h1>
-        
-        <!-- متن پیش‌فرض درباره راه‌های ارتباطی -->
-        <div class="custom-text-section" dir="ltr">
-            <p> Best way to contact me is via E-mail: Pedrammtaheri.photo@gmail.com </p>
-        </div>
 
-        <!-- بخش شبکه‌های اجتماعی -->
-        <section class="social-section">
-            <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Font Awesome for social icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
+/* Same base theme as exhibition.html for visual consistency across the site */
+body {
+  background-color: #0c0f14;
+  color: #f1f2f6;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Shared header/nav (identical structure to exhibition.html) */
+.page-header {
+  width: 100%;
+  padding: 60px 0 20px 0;
+  border-bottom: 1px solid #1e2430;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo-h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  margin: 0 0 15px 0;
   text-align: center;
+}
+.logo-h1 a { color: #ffffff; text-decoration: none; transition: color 0.3s; }
+.logo-h1 a:hover { color: #bdc3c7; }
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+nav a {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  margin: 5px 2px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+nav a:hover { color: #ffffff; }
+nav a.active { color: #ffffff; font-weight: 600; border-bottom: 1px solid #ffffff; padding-bottom: 2px; }
+
+/* Contact-specific layout, matching cv-container proportions */
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+.page-title {
+  font-family: 'Cinzel', serif;
+  font-size: 38px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
-.fa:hover {
-    opacity: 0.7;
+/* Reuse the profile-box treatment from exhibition.html for the intro text */
+.profile-box {
+  background-color: #11151d;
+  border-left: 2px solid #57606f;
+  padding: 25px 30px;
+  margin-bottom: 60px;
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+}
+.profile-box p {
+  font-size: 16px;
+  color: #bdc3c7;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 300;
+}
+.profile-box a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px dashed #747d8c;
+  transition: color 0.3s;
+}
+.profile-box a:hover { color: #bdc3c7; }
 
+/* Social icons section */
+.social-section {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid #1e2430;
+}
+.social-section h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.social-icons a.fa {
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  padding: 0;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.social-icons a.fa:hover { transform: translateY(-4px); opacity: 0.85; }
+.fa-facebook { background: #3b5998; color: #ffffff; }
+.fa-youtube-play { background: #bb0000; color: #ffffff; }
+.fa-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #ffffff; }
 
-
-color: #57606f;.fa-youtube {
-  background: #bb0000;
-  color: white;
+/* Footer, identical to the rest of the site */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #57606f;
+  border-top: 1px solid #1e2430;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background-color: #0c0f14;
+  margin-top: 60px;
 }
 
-.fa-instagram {
-  background: #125688;
-  color: rgb(170, 13, 13);
+@media (max-width: 768px) {
+  .page-title { font-size: 28px; }
+  nav { gap: 15px 12px; }
+  .profile-box { padding: 20px; }
+  .social-icons a.fa { width: 42px; height: 42px; line-height: 42px; font-size: 18px; }
 }
-
-.fa-pinterest {
-  background: #e21219;
-  color: white;
-}
-
-
 </style>
 </head>
 <body>
 
-<h2></h2>
+<header class="page-header">
+<div class="nav-container">
+<div class="logo-h1"><a href="index.html">PEDRAM M.TAHERI</a></div>
+<nav>
+<a href="about.html">About</a>
+<a href="paintings.html">Paintings</a>
+<a href="exhibition.html">Exhibitions</a>
+<a href="workshop.html">Workshops</a>
+<a href="nightscape.html">Night sky</a>
+<a href="contact.html" class="active">Contact</a>
+<a href="blog.html">Blog</a>
+</nav>
+</div>
+</header>
 
-<!-- Add font awesome icons -->
-<a href="https://www.facebook.com/pedram.taheri.92" class="fa fa-facebook"></a>
-<a href="https://www.youtube.com/@Pedram.M.taheri" class="fa fa-youtube"></a>
-<a href="https://www.instagram.com/pedram.m.taheri/" class="fa fa-instagram"></a>
-<a href="https://www.pinterest.com" class="fa fa-pinterest"></a>
+<main class="contact-container">
+<h2 class="page-title">Contact</h2>
 
-      
-</body>
-</html> 
+<section class="profile-box">
+<p>The best way to reach me is by email, at
+<a href="mailto:pedram.paintings@gmail.com">pedram.paintings@gmail.com</a>.
+I'm happy to answer questions about original paintings, prints, workshops, or collaborations.</p>
+</section>
 
+<section class="social-section">
+<h3>Find Me Online</h3>
+<div class="social-icons">
+<a href="https://www.facebook.com/pedram.taheri.92" class="fa fa-facebook" title="Facebook" target="_blank" rel="noopener"></a>
+<a href="https://www.youtube.com/@Pedram.M.taheri" class="fa fa-youtube-play" title="YouTube" target="_blank" rel="noopener"></a>
+<a href="https://www.instagram.com/pedram.m.taheri/" class="fa fa-instagram" title="Instagram" target="_blank" rel="noopener"></a>
+</div>
+</section>
+</main>
 
-            </div>
-        </section>
-    </main>
-    <footer style="text-align: center; padding: 40px; color: #57606f; border-top: 1px solid #1e2430; font-size: 12px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; background-color: #0c0f14;" dir="ltr">
-        <p style="margin: 0; display: inline-block;">&copy; 2026 Pedram M.Taheri. All rights reserved.</p>
-    </footer>
+<footer dir="ltr">
+<p style="margin: 0;">&copy; 2026 Pedram M.Taheri. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
