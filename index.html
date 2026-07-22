@@ -85,6 +85,19 @@ body {
   z-index: 10;
 }
 
+/* NEW: logo + subtitle now live in their own block, centered
+   vertically in the hero instead of sitting right under the nav */
+.hero-title-block {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 0 20px;
+  z-index: 8;
+}
+
 .logo, h1.logo-h1 {
   font-family: 'Cinzel', serif;
   font-size: 32px;
@@ -209,6 +222,8 @@ footer { text-align: center; padding: 40px; color: #57606f; border-top: 1px soli
 <a href="contact.html">Contact</a>
 <a href="blog.html">Blog</a>
 </nav>
+</div>
+<div class="hero-title-block">
 <h1 class="logo-h1"><a href="https://pedramtaheri.com">PEDRAM M.TAHERI</a></h1>
 <!-- FIXED: "Nigh sky" typo -> "Night sky" -->
 <p class="artist-sub">Iranian Painter, Art teacher & Night sky Photographer</p>
