@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- سئو پیشرفته: عنوان صفحه آسمان شب و عکاسی نجومی -->
+<title>Night Sky &amp; Deep-Sky Astrophotography | Pedram M.Taheri</title>
+<meta name="description" content="A field log of nightscape and deep-sky astrophotography by Pedram Mohammad Taheri (Pedram M.Taheri) — fifteen frames captured under dark skies. Fine art prints coming soon.">
+<meta name="keywords" content="Pedram M.Taheri astrophotography, night sky photography, deep sky, nightscape, Iranian astrophotographer, fine art prints, International Dark-Sky Association">
+<link rel="canonical" href="https://pedramtaheri.com">
+
+<!-- لود فونت‌های نمایشی و رابط -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Cinzel:wght@400;500&family=Montserrat:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ============================================================
+   بخش ۱: هدر — عیناً هم‌ساختار با exhibition.html (رنگ، فونت، نویگیشن)
+   ============================================================ */
+body {
+  background-color: #0c0f14;
+  color: #f1f2f6;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.page-header {
+  width: 100%;
+  padding: 60px 0 20px 0;
+  border-bottom: 1px solid #1e2430;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo-h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+.logo-h1 a { color: #ffffff; text-decoration: none; transition: color 0.3s; }
+.logo-h1 a:hover { color: #bdc3c7; }
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+nav a {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+nav a:hover { color: #ffffff; }
+nav a.active { color: #ffffff; font-weight: 600; border-bottom: 1px solid #ffffff; padding-bottom: 2px; }
+
+/* ============================================================
+   بخش ۲: بدنه صفحه — کاملاً متفاوت، فضای "دفتر رصد" شبانه
+   تم رنگی: سیاهِ عمیق‌تر از بقیه سایت + سبز ایرگلو + بنفش شفق
+   ============================================================ */
+:root {
+  --void: #05060a;
+  --plate: #0a0d14;
+  --line: #1b202b;
+  --ink: #f1f2f6;
+  --dust: #838da0;
+  --airglow: #4db88a;
+  --afterglow: #b56b9e;
+}
+
+.sky-hero {
+  position: relative;
+  background: var(--void);
+  overflow: hidden;
+  padding: 110px 20px 90px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+/* زمینه ستاره‌ای تولیدشده با CSS، بدون فایل خارجی */
+.sky-hero::before,
+.sky-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  opacity: 0.6;
+}
+.sky-hero::before {
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 80% 10%, #ffffff 100%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 60% 70%, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 30% 80%, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 90% 60%, #ffffff 100%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 45% 40%, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 15% 55%, #ffffff 100%, transparent 100%),
+    radial-gradient(1px 1px at 70% 85%, #ffffff 100%, transparent 100%);
+  background-size: 100% 100%;
+}
+.sky-hero::after {
+  /* چند ستاره‌ی چشمک‌زن، محدود و کنترل‌شده */
+  background-image:
+    radial-gradient(1.5px 1.5px at 25% 30%, var(--airglow) 100%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 75% 25%, var(--afterglow) 100%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 55% 65%, #ffffff 100%, transparent 100%);
+  animation: twinkle 5s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sky-hero::after { animation: none; opacity: 0.5; }
+}
+
+.sky-hero-content { position: relative; z-index: 1; }
+.sky-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--airglow);
+  text-transform: uppercase;
+  margin: 0 0 18px 0;
+}
+.sky-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 44px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin: 0 0 18px 0;
+  text-transform: uppercase;
+}
+.sky-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--dust);
+  letter-spacing: 1px;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+/* دفتر رصد — گالری نامنظم به‌جای گرید یکنواخت */
+.log-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 80px 24px 40px 24px;
+  background: var(--void);
+}
+.log-columns {
+  column-count: 3;
+  column-gap: 24px;
+}
+@media (max-width: 980px) { .log-columns { column-count: 2; } }
+@media (max-width: 640px) { .log-columns { column-count: 1; } }
+
+.plate {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  background: var(--plate);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.plate.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .plate { opacity: 1; transform: none; transition: none; }
+}
+
+.plate-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--ratio, 4 / 5);
+  background:
+    linear-gradient(160deg, #0d1220 0%, #05060a 60%),
+    radial-gradient(circle at 30% 20%, rgba(77,184,138,0.10), transparent 55%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plate-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* راهنمای جایگزینی عکس — تا وقتی فایل واقعی گذاشته نشده نمایش داده می‌شود */
+.plate-frame .frame-placeholder {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #4a5468;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.plate-meta {
+  padding: 16px 18px 18px 18px;
+  border-top: 1px solid var(--line);
+}
+.plate-index {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--airglow);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.plate-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+.plate-data {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--dust);
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+}
+.plate-data span { color: #b8c0cf; }
+
+/* پنل چاپ — به‌زودی */
+.prints-panel {
+  max-width: 1180px;
+  margin: 30px auto 0 auto;
+  padding: 0 24px 100px 24px;
+  background: var(--void);
+}
+.prints-box {
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  padding: 46px 30px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(77,184,138,0.04), transparent);
+}
+.prints-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--afterglow);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.prints-box h3 {
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 0 0 14px 0;
+  text-transform: uppercase;
+}
+.prints-box p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: var(--dust);
+  max-width: 560px;
+  margin: 0 auto 20px auto;
+  line-height: 1.8;
+  font-weight: 300;
+}
+.prints-box a.notify {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 3px;
+  padding: 10px 22px;
+  transition: 0.3s;
+}
+.prints-box a.notify:hover { background: #ffffff; color: var(--void); border-color: #ffffff; }
+
+/* پاصفحه هم‌ساختار با کل سایت */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #57606f;
+  border-top: 1px solid #1e2430;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background-color: #0c0f14;
+}
+
+@media (max-width: 768px) {
+  .sky-title { font-size: 30px; letter-spacing: 2px; }
+  .log-wrap { padding: 60px 18px 20px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- هدر بالای صفحه — دقیقاً هم‌ساختار با exhibition.html -->
+<header class="page-header">
+<div class="nav-container">
+<div class="logo-h1"><a href="index.html">PEDRAM M.TAHERI</a></div>
+<nav>
+<a href="about.html">About</a>
+<a href="paintings.html">Paintings</a>
+<a href="exhibition.html">Exhibitions</a>
+<a href="workshop.html">Workshops</a>
+<a href="nightscape.html" class="active">Night sky</a>
+<a href="contact.html">Contact</a>
+<a href="blog.html">Blog</a>
+</nav>
+</div>
+</header>
+
+<!-- بخش قهرمان صفحه: زمینه ستاره‌ای + عنوان -->
+<section class="sky-hero">
+<div class="sky-hero-content">
+<p class="sky-eyebrow">Field Log &middot; Dark Sky Observations</p>
+<h1 class="sky-title">Night Sky</h1>
+<p class="sky-sub">Fifteen frames from nights spent away from city light &mdash;<br>
+nightscapes and deep-sky fields, recorded one exposure at a time.</p>
+</div>
+</section>
+
+<!-- دفتر رصد: گالری ۱۵ قاب، به‌جای گرید یکنواخت به‌صورت ستونی نامنظم -->
+<main class="log-wrap">
+<div class="log-columns" id="logColumns">
+
+<!--
+  راهنما برای جایگزینی عکس‌های واقعی:
+  هر <img> کامنت شده را باز کنید و src را به نام فایل واقعی خود تغییر دهید،
+  مثلاً: nightsky-01.jpg تا زمانی که کاور نشده جای‌گزین با یک پلاک خالی نمایش داده می‌شود.
+  متن TITLE / LOCATION / DATE / EXPOSURE را هم با اطلاعات واقعی هر عکس جایگزین کنید.
+-->
+
+<article class="plate" style="--ratio: 4/5;">
+  <div class="plate-frame">
+    <!-- <img src="nightsky-01.jpg" alt="Deep sky photo by Pedram M.Taheri"> -->
+    <span class="frame-placeholder">FRAME 01<br>add nightsky-01.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;01</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 3/4;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 02<br>add nightsky-02.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;02</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 1/1;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 03<br>add nightsky-03.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;03</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 16/10;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 04<br>add nightsky-04.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;04</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 4/5;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 05<br>add nightsky-05.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;05</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 3/4;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 06<br>add nightsky-06.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;06</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 1/1;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 07<br>add nightsky-07.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;07</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 4/5;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 08<br>add nightsky-08.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;08</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 16/10;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 09<br>add nightsky-09.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;09</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 3/4;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 10<br>add nightsky-10.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;10</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 4/5;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 11<br>add nightsky-11.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;11</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 1/1;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 12<br>add nightsky-12.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;12</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 16/10;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 13<br>add nightsky-13.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;13</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 3/4;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 14<br>add nightsky-14.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;14</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+<article class="plate" style="--ratio: 4/5;">
+  <div class="plate-frame">
+    <span class="frame-placeholder">FRAME 15<br>add nightsky-15.jpg</span>
+  </div>
+  <div class="plate-meta">
+    <div class="plate-index">FRAME&nbsp;15</div>
+    <h3 class="plate-title">Untitled</h3>
+    <div class="plate-data">
+      LOCATION&nbsp;<span>—</span><br>
+      DATE&nbsp;<span>—</span><br>
+      EXPOSURE&nbsp;<span>—</span>
+    </div>
+  </div>
+</article>
+
+</div>
+</main>
+
+<!-- پنل چاپ‌های هنری — این بخش برای آینده آماده است، فعلاً به‌عنوان اعلان -->
+<section class="prints-panel">
+<div class="prints-box">
+<div class="prints-eyebrow">Coming Soon</div>
+<h3>Fine Art Prints</h3>
+<p>Select frames from this collection will soon be available as limited fine art prints. Leave your email and be the first to know when the print shop opens.</p>
+<a class="notify" href="mailto:pedram.paintings@gmail.com?subject=Notify%20me%20-%20Night%20Sky%20Prints">Notify Me by Email</a>
+</div>
+</section>
+
+<!-- پاصفحه هم‌ساختار با کل سایت -->
+<footer dir="ltr">
+<p style="margin: 0;">&copy; 2026 Pedram M.Taheri. All rights reserved.</p>
+</footer>
+
+<script>
+// نمایش تدریجی قاب‌ها هنگام اسکرول — ساده و محدود
+(function () {
+  var plates = document.querySelectorAll('.plate');
+  if (!('IntersectionObserver' in window)) {
+    plates.forEach(function (p) { p.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  plates.forEach(function (p) { io.observe(p); });
+})();
+</script>
+
+</body>
+</html>
