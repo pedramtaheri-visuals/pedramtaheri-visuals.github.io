@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order a Print | Pedram M.Taheri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF9F5;
+    --ink:#1B1B1F;
+    --stone:#DEDACE;
+    --stone-dark:#B9B2A0;
+    --indigo:#20305C;
+    --indigo-deep:#131F3D;
+    --gold:#9C7A34;
+    --muted:#736F64;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  /* nav, matched to the rest of pedramtaheri.com */
+  .site-nav{
+    display:flex;justify-content:space-between;align-items:center;
+    max-width:1120px;margin:0 auto;padding:28px 32px;
+    border-bottom:1px solid var(--stone);
+  }
+  .logo{
+    font-family:'Fraunces',serif;font-weight:600;letter-spacing:0.04em;
+    font-size:17px;text-decoration:none;
+  }
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
+  .nav-links a{font-size:14px;text-decoration:none;color:var(--muted);}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a.current{color:var(--ink);border-bottom:1px solid var(--indigo);padding-bottom:2px;}
+  .nav-toggle{display:none;}
+
+  main{max-width:1120px;margin:0 auto;padding:64px 32px 100px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:18px;
+  }
+  h1{
+    font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,54px);
+    line-height:1.05;margin:0 0 20px;max-width:14ch;
+  }
+  .intro{font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;margin:0 0 56px;}
+
+  .grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:start;}
+
+  fieldset{border:none;padding:0;margin:0 0 36px;}
+  legend{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--muted);padding:0 0 14px;width:100%;
+    border-bottom:1px solid var(--stone);margin-bottom:20px;
+  }
+  .field{margin-bottom:18px;}
+  .field label{
+    display:block;font-size:13px;color:var(--muted);margin-bottom:6px;
+  }
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  select,input[type=text],input[type=email],input[type=number],textarea{
+    width:100%;font-family:'Work Sans',sans-serif;font-size:15px;color:var(--ink);
+    background:#fff;border:1px solid var(--stone-dark);border-radius:2px;
+    padding:11px 12px;outline:none;
+  }
+  select:focus,input:focus,textarea:focus{border-color:var(--indigo);}
+  textarea{resize:vertical;min-height:80px;}
+
+  .option-tiles{display:flex;gap:10px;flex-wrap:wrap;}
+  .tile{
+    border:1px solid var(--stone-dark);border-radius:2px;padding:10px 16px;
+    font-size:14px;cursor:pointer;background:#fff;color:var(--muted);
+  }
+  .tile.active{border-color:var(--indigo);color:var(--ink);background:#EEF0F6;}
+
+  .submit-btn{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.06em;
+    text-transform:uppercase;background:var(--indigo);color:#fff;border:none;
+    padding:16px 28px;border-radius:2px;cursor:pointer;width:100%;margin-top:8px;
+  }
+  .submit-btn:hover{background:var(--indigo-deep);}
+  .submit-note{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.5;}
+
+  /* docket / print label -- signature element */
+  .docket-wrap{position:sticky;top:32px;}
+  .docket{
+    background:var(--indigo-deep);color:#EDEBE3;border-radius:3px;
+    padding:0;overflow:hidden;
+  }
+  .docket-head{
+    padding:22px 24px 18px;border-bottom:1px dashed rgba(237,235,227,0.3);
+  }
+  .docket-head .k{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.14em;
+    text-transform:uppercase;color:var(--gold);
+  }
+  .docket-head h2{
+    font-family:'Fraunces',serif;font-weight:500;font-size:22px;margin:6px 0 4px;
+  }
+  .docket-head .loc{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#BFC4D6;}
+  .docket-rows{padding:18px 24px;}
+  .drow{
+    display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;padding:7px 0;border-bottom:1px solid rgba(237,235,227,0.12);
+  }
+  .drow span:first-child{color:#9198B0;}
+  .drow span:last-child{color:#EDEBE3;text-align:right;}
+  .docket-foot{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 24px 22px;
+  }
+  .docket-foot .id{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9198B0;}
+  .perf{
+    height:0;border-top:2px dotted rgba(0,0,0,0.15);position:relative;margin:0 24px;
+  }
+  .docket-note{
+    font-size:12.5px;color:var(--muted);margin-top:16px;line-height:1.6;
+  }
+
+  footer{
+    max-width:1120px;margin:0 auto;padding:40px 32px 60px;color:var(--muted);
+    font-size:13px;border-top:1px solid var(--stone);
+  }
+
+  @media(max-width:860px){
+    .grid{grid-template-columns:1fr;}
+    .docket-wrap{position:static;}
+    .row2{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="https://pedramtaheri.com/index.html">PEDRAM M.TAHERI</a>
+  <ul class="nav-links">
+    <li><a href="https://pedramtaheri.com/about.html">About</a></li>
+    <li><a href="https://pedramtaheri.com/paintings.html">Paintings</a></li>
+    <li><a href="https://pedramtaheri.com/exhibition.html">Exhibitions</a></li>
+    <li><a href="https://pedramtaheri.com/workshop.html">Workshops</a></li>
+    <li><a class="current" href="https://pedramtaheri.com/nightscape.html">Night sky</a></li>
+    <li><a href="https://pedramtaheri.com/contact.html">Contact</a></li>
+    <li><a href="https://pedramtaheri.com/blog.html">Blog</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="eyebrow">Field Log · Fine Art Print Order</div>
+  <h1>Order a print</h1>
+  <p class="intro">Archival pigment prints from the night sky collection. Every frame is
+    hand-checked for color and shipped rolled or ready to hang, worldwide.</p>
+
+  <div class="grid">
+    <form id="order-form">
+
+      <fieldset>
+        <legend>01 — Choose a frame</legend>
+        <div class="field">
+          <label for="frame">Frame</label>
+          <select id="frame">
+            <option value="0">Frame 01 · Blossom tree · Iran, Damavand</option>
+            <option value="1">Frame 02 · Milky Way · Iran, Mount Damavand</option>
+            <option value="2">Frame 03 · Dirt road · Iran, Damavand</option>
+            <option value="3">Frame 04 · Big potatoes · Iran, Tehran</option>
+            <option value="4">Frame 05 · Mount Damavand · Iran, Polour</option>
+            <option value="5">Frame 06 · Rise of stars · Iran, Tabas</option>
+            <option value="6">Frame 07 · Earth as a spaceship · Iran, Northern Alborz</option>
+            <option value="7">Frame 08 · Lunar eclipse · Iran, Mount Damavand</option>
+            <option value="8">Frame 09 · Moon rise · Iran, Mount Damavand</option>
+            <option value="9">Frame 10 · Nature does not allow perfection · Iran, Northern Alborz</option>
+            <option value="10">Frame 11 · Somamous · Iran, Northern Alborz</option>
+            <option value="11">Frame 12 · Stars above old village · Iran, Tabas, Isfahak</option>
+            <option value="12">Frame 13 · Summer sky · Iran, Mount Damavand</option>
+            <option value="13">Frame 14 · Summer stars · Iran, Tabas</option>
+            <option value="14">Frame 15 · Village · Iran, Northern Alborz</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>02 — Print specification</legend>
+        <div class="field">
+          <label>Size</label>
+          <div class="option-tiles" data-group="size">
+            <div class="tile active" data-value="12&#215;18&#8243;">12&#215;18&#8243;</div>
+            <div class="tile" data-value="20&#215;30&#8243;">20&#215;30&#8243;</div>
+            <div class="tile" data-value="30&#215;45&#8243;">30&#215;45&#8243;</div>
+            <div class="tile" data-value="Custom">Custom</div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Paper</label>
+          <div class="option-tiles" data-group="paper">
+            <div class="tile active" data-value="Matte fine art">Matte fine art</div>
+            <div class="tile" data-value="Metallic">Metallic</div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Framing</label>
+          <div class="option-tiles" data-group="framing">
+            <div class="tile active" data-value="Unframed, rolled">Unframed, rolled</div>
+            <div class="tile" data-value="Framed, walnut">Framed, walnut</div>
+            <div class="tile" data-value="Framed, black">Framed, black</div>
+          </div>
+        </div>
+        <div class="field" style="max-width:140px;">
+          <label for="qty">Quantity</label>
+          <input type="number" id="qty" value="1" min="1">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>03 — Shipping details</legend>
+        <div class="row2">
+          <div class="field"><label for="name">Full name</label><input type="text" id="name" placeholder="Your name"></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" placeholder="name@email.com"></div>
+        </div>
+        <div class="field"><label for="address">Shipping address</label><textarea id="address" placeholder="Street, city, postal code, country"></textarea></div>
+        <div class="field"><label for="notes">Notes (optional)</label><textarea id="notes" placeholder="Anything else worth knowing about your order"></textarea></div>
+      </fieldset>
+
+      <button type="button" class="submit-btn" id="send-btn">Send order request</button>
+      <p class="submit-note">This opens your email client with the order pre-filled, addressed to Pedram directly. Pricing and shipping cost are confirmed by reply before anything is printed.</p>
+    </form>
+
+    <div class="docket-wrap">
+      <div class="docket">
+        <div class="docket-head">
+          <div class="k">Print docket</div>
+          <h2 id="d-title">Blossom tree</h2>
+          <div class="loc" id="d-loc">FRAME 01 · IRAN, DAMAVAND</div>
+        </div>
+        <div class="docket-rows">
+          <div class="drow"><span>Size</span><span id="d-size">12&#215;18&#8243;</span></div>
+          <div class="drow"><span>Paper</span><span id="d-paper">Matte fine art</span></div>
+          <div class="drow"><span>Framing</span><span id="d-framing">Unframed, rolled</span></div>
+          <div class="drow"><span>Quantity</span><span id="d-qty">1</span></div>
+        </div>
+        <div class="perf"></div>
+        <div class="docket-foot">
+          <span class="id">NIGHT SKY COLLECTION</span>
+          <span class="id" id="d-date"></span>
+        </div>
+      </div>
+      <p class="docket-note">This docket updates as you build your order — it's included in the email request so nothing gets lost in translation.</p>
+    </div>
+  </div>
+</main>
+
+<footer>&#169; 2026 Pedram M.Taheri. All rights reserved.</footer>
+
+<script>
+  var frames = [
+    ["Blossom tree","Frame 01 &#183; Iran, Damavand"],
+    ["Milky Way","Frame 02 &#183; Iran, Mount Damavand"],
+    ["Dirt road","Frame 03 &#183; Iran, Damavand"],
+    ["Big potatoes","Frame 04 &#183; Iran, Tehran"],
+    ["Mount Damavand","Frame 05 &#183; Iran, Polour"],
+    ["Rise of stars","Frame 06 &#183; Iran, Tabas"],
+    ["Earth as a spaceship","Frame 07 &#183; Iran, Northern Alborz"],
+    ["Lunar eclipse","Frame 08 &#183; Iran, Mount Damavand"],
+    ["Moon rise","Frame 09 &#183; Iran, Mount Damavand"],
+    ["Nature does not allow perfection","Frame 10 &#183; Iran, Northern Alborz"],
+    ["Somamous","Frame 11 &#183; Iran, Northern Alborz"],
+    ["Stars above old village","Frame 12 &#183; Iran, Tabas, Isfahak"],
+    ["Summer sky","Frame 13 &#183; Iran, Mount Damavand"],
+    ["Summer stars","Frame 14 &#183; Iran, Tabas"],
+    ["Village","Frame 15 &#183; Iran, Northern Alborz"]
+  ];
+
+  var state = { size:"12\u00d718\u2033", paper:"Matte fine art", framing:"Unframed, rolled" };
+
+  var frameSelect = document.getElementById("frame");
+  var dTitle = document.getElementById("d-title");
+  var dLoc = document.getElementById("d-loc");
+  var dSize = document.getElementById("d-size");
+  var dPaper = document.getElementById("d-paper");
+  var dFraming = document.getElementById("d-framing");
+  var dQty = document.getElementById("d-qty");
+  var dDate = document.getElementById("d-date");
+  var qtyInput = document.getElementById("qty");
+
+  function pad(n){ return n < 10 ? "0" + n : "" + n; }
+  function todayStamp(){
+    var d = new Date();
+    return d.getFullYear() + "-" + pad(d.getMonth()+1) + "-" + pad(d.getDate());
+  }
+  dDate.textContent = todayStamp();
+
+  function updateFrame(){
+    var f = frames[Number(frameSelect.value)];
+    dTitle.textContent = f[0];
+    dLoc.innerHTML = f[1].toUpperCase();
+  }
+  frameSelect.addEventListener("change", updateFrame);
+  updateFrame();
+
+  qtyInput.addEventListener("input", function(){
+    dQty.textContent = qtyInput.value || "1";
+  });
+
+  document.querySelectorAll(".option-tiles").forEach(function(group){
+    var key = group.getAttribute("data-group");
+    group.querySelectorAll(".tile").forEach(function(tile){
+      tile.addEventListener("click", function(){
+        group.querySelectorAll(".tile").forEach(function(t){ t.classList.remove("active"); });
+        tile.classList.add("active");
+        state[key] = tile.getAttribute("data-value");
+        if(key === "size") dSize.innerHTML = state.size;
+        if(key === "paper") dPaper.textContent = state.paper;
+        if(key === "framing") dFraming.textContent = state.framing;
+      });
+    });
+  });
+
+  document.getElementById("send-btn").addEventListener("click", function(){
+    var f = frames[Number(frameSelect.value)];
+    var name = document.getElementById("name").value || "(not provided)";
+    var email = document.getElementById("email").value || "(not provided)";
+    var address = document.getElementById("address").value || "(not provided)";
+    var notes = document.getElementById("notes").value || "(none)";
+    var qty = qtyInput.value || "1";
+
+    var subject = "Print order request - " + f[0].replace(/<[^>]*>/g,"");
+    var body =
+      "Print order request\n\n" +
+      "Frame: " + f[1].replace(/&#183;/g,"-").replace(/<[^>]*>/g,"") + " - " + f[0] + "\n" +
+      "Size: " + document.getElementById("d-size").textContent + "\n" +
+      "Paper: " + document.getElementById("d-paper").textContent + "\n" +
+      "Framing: " + document.getElementById("d-framing").textContent + "\n" +
+      "Quantity: " + qty + "\n\n" +
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n" +
+      "Shipping address: " + address + "\n" +
+      "Notes: " + notes;
+
+    var mailto = "mailto:pedrammtaheri.photo@gmail.com" +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    window.location.href = mailto;
+  });
+</script>
+
+</body>
+</html>
