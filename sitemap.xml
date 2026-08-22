@@ -1,43 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
     <loc>https://pedramtaheri.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://pedramtaheri.com/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://pedramtaheri.com/paintings.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://pedramtaheri.com/exhibition.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://pedramtaheri.com/workshop.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://pedramtaheri.com/nightscape.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://pedramtaheri.com/blog.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
+
   <url>
     <loc>https://pedramtaheri.com/contact.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <!-- بلاگ انگلیسی -->
+  <url>
+    <loc>https://pedramtaheri.com/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pedramtaheri.com/blog.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://pedramtaheri.com/blog/fa/index.html" />
+  </url>
+
+  <url>
+    <loc>https://pedramtaheri.com/blog-post-1.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pedramtaheri.com/blog-post-1.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://pedramtaheri.com/blog/fa/post-1.html" />
+  </url>
+
+  <!-- بلاگ فارسی -->
+  <url>
+    <loc>https://pedramtaheri.com/blog/fa/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://pedramtaheri.com/blog/fa/index.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pedramtaheri.com/blog.html" />
+  </url>
+
 </urlset>
