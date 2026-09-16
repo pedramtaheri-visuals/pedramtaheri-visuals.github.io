@@ -61,6 +61,14 @@
     <xhtml:link rel="alternate" hreflang="fa" href="https://pedramtaheri.com/blog/fa/post-1.html" />
   </url>
 
+  <url>
+    <loc>https://pedramtaheri.com/blog-post-2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pedramtaheri.com/blog-post-2.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://pedramtaheri.com/blog/fa/post-2.html" />
+  </url>
+
   <!-- بلاگ فارسی -->
   <url>
     <loc>https://pedramtaheri.com/blog/fa/index.html</loc>
@@ -68,6 +76,14 @@
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="fa" href="https://pedramtaheri.com/blog/fa/index.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://pedramtaheri.com/blog.html" />
+  </url>
+
+  <url>
+    <loc>https://pedramtaheri.com/blog/fa/post-2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://pedramtaheri.com/blog/fa/post-2.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pedramtaheri.com/blog-post-2.html" />
   </url>
 
 </urlset>
